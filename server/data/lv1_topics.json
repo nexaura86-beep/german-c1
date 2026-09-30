@@ -1,0 +1,1703 @@
+[
+  {
+    "id": "telc-c1-lv1-01",
+    "themeTitle": "Eine Box verändert die Welt",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Eine gewellte Stahlbox, zwölf Meter lang, drei Meter hoch und genauso breit. Sie ist zum greifbaren Symbol der Globalisierung geworden. Millionen von Containern kreuzen auf immer größeren Schiffen auf den Weltmeeren und schaffen Produkte von A nach B: [BEISPIEL_0] Der Container hat das Transportwesen auf See und an Land revolutioniert. Er hat den globalen Warentransport enorm vereinfacht und ist Herzstück der modernen Logistik.\n\nBis in die 50er Jahre war es üblich, Waren einzeln zu transportieren oder sie in Säcke oder Kisten zu verladen. 1954 fuhr ein Frachtschiff mit dem Namen „Warrior\" von Brooklyn nach Bremerhaven. An Bord befanden sich 5000 Tonnen Lebensmittel, Haushaltswaren und Post, verteilt auf 194.582 Fässer, Kisten und Säcke. Jedes Stück war in Brooklyn per Hand von einem LKW oder einem Zugwaggon in ein Warenhaus am Hafen und von dort an Bord geschleppt worden, um es in den Tiefen des Lagerraums zu verstauen. [LÜCKE_1] Immer wieder passierten nämlich in den großen Häfen der Welt schwere Unfälle.\n\nEs dauerte zehn Tage, bis die „Warrior“ beladen, und ebenso lange, bis sie in Bremerhaven wieder entladen war - genauso lange, wie die Überfahrt dauerte. Zwar hatte es bereits seit Jahrzehnten Bemühungen gegeben, den Transport von Gütern effizienter zu gestalten. [LÜCKE_2]Erst einem US- amerikanischen Unternehmer gelang es, gemeinsam mit der Marine die ldee einer universellen Transportbox durchzusetzen.\n\nAm 26. April 1956 schipperte Malcolm McLean mit einem umgebauten Tanker von Port Newark Richtung Texas. An Bord waren 56 Container. [LÜCKE_3] Diese 40-FuB-Container sind noch heute täglich in Gebrauch. Dass McLean erfolgreich war, wo andere vor ihm versagt hatten, lag auch an dem mächtigen Kunden an seiner Seite, dem amerikanischen Militär. [LÜCKE_4] McLean überzeugte schließlich die Betreiber des Hafens von New York, einen eigenen Containerterminal einzurichten.\n\nHeute wäre ein Containerterminal für einen Hafenarbeiter aus den 1960er Jahren nicht wiederzuerkennen. Was damals in mehreren Tagen in Kisten und Fässern auf die „Warrior“ gebracht wurde, wird heute in ein paar Stunden verladen. Heute reisen rund 90 Prozent der Güter, die über die Meere verschifft werden, in Containern. [LÜCKE_5] Der Container reduzierte die Transportkosten von Gütern auf einen Bruchteil und brachte die weltweiten Warenströme zwischen Europa, Asien und Amerika zum Fließen. [LÜCKE_6] Heute macht er ungefähr die Hälfte aus. Ohne Container wäre der globalisierte Warenfluss undenkbar. Singapur, einer der größten Häfen der Welt, war dem Container so dankbar, dass dieser sogar eine Banknote zieren durfte.",
+    "example": {
+      "key": "z",
+      "text": "Smartphones aus China, T-Shirts aus Bangladesch, Bananen aus Nicaragua, Kaffee aus Äthiopien oder Wein aus Neuseeland."
+    },
+    "exampleText": "Smartphones aus China, T-Shirts aus Bangladesch, Bananen aus Nicaragua, Kaffee aus Äthiopien oder Wein aus Neuseeland.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Die Größe, die er für seine Transportbehälter gewählt hatte, wurde zum Standard."
+      },
+      {
+        "key": "b",
+        "text": "Dieses erhoffte sich von den Containern logistische Verbesserungen in der Sicherung des Nachschubs."
+      },
+      {
+        "key": "c",
+        "text": "Doch sie waren am Streit über die Abmessungen der Container und an streikenden Hafenarbeitern gescheitert."
+      },
+      {
+        "key": "d",
+        "text": "Es sollte genau dieser Umstand sein, dem sie in der Folge ihre Beschäftigung verdanken würden."
+      },
+      {
+        "key": "e",
+        "text": "Für die Hafenarbeiter war das nicht nur Schwerstarbeit, sondern lebensgefährlich."
+      },
+      {
+        "key": "f",
+        "text": "Gesteuert und auf ihrer Reise verfolgt werden diese dabei von Computern und globalen Logistiksystemen."
+      },
+      {
+        "key": "g",
+        "text": "Handelsrechtliche Überlegungen dieser Art konnten ihren Siegeszug nicht aufhalten."
+      },
+      {
+        "key": "h",
+        "text": "In den 1960er Jahren betrug der Warenhandel weniger als 20 Prozent der globalen Wirtschaftsleistung."
+      }
+    ],
+    "correctAnswers": {
+      "1": "e",
+      "2": "c",
+      "3": "a",
+      "4": "b",
+      "5": "f",
+      "6": "h"
+    },
+    "explanations": {
+      "1": "Passender Satz: E",
+      "2": "Passender Satz: C",
+      "3": "Passender Satz: A",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: F",
+      "6": "Passender Satz: H"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-02",
+    "themeTitle": "Satzzeichen, mächtige Werkzeuge",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Jeder Smartphonebesitzer weiß, dass ein Semikolon und eine Klammer Freundschaften retten können. Braucht es doch nur diese zwei Symbole, und eine Beleidigung wird zum Witz ...;) Selbst mit bloßen Satzzeichen lassen sich mitunter noch ganze Konversationen gestalten. [BEISPIEL_0] Wenig später erhielt er die ebenso knappe wie präzise Antwort: „!“\n\nLegende oder nicht, wenn man sich die den Satzzeichen innewohnende Gestaltungskraft anschaut und sich vergegenwärtigt, dass täglich Tausende Therapeuten nur damit beschäftigt sind, zwischen Partnern zu dolmetschen, ist es doch rätselhaft, dass der Mensch nach Erfindung der Schrift noch Jahrhunderte brauchte, um diese Strukturelemente zu entwickeln.\n\nAls Ur-Satzzeichen gelten die Markierungen in einem Text auf der sogenannten Mescha-Stele aus dem 9. Jahrhundert vor Christus. [LÜCKE_1] Dass es damals schon Satzzeichen gab, heißt aber nicht, dass sie auch allgemein Verwendung fanden. Werke der griechischen und lateinischen Dichter und Redner sind aufgezeichnet in der sogenannten scriptio continua, das heißt in einer Schreibweise ohne Worttrennung.\n\n[LÜCKE_2]Experten erklären das so: In jener ersten Phase war Schrift primär eine Erinnerungsstütze für den professionellen Vortrag. Die Notwendigkeit, sie für andere möglichst einfach lesbar zu machen, bestand nicht.\n\n[LÜCKE_3] Spätestens die Erfindung des Buchdrucks durch Gutenberg läutete dann die zweite große Phase ein. Text war nicht mehr primär gedacht zum Vortrag, sondern für einen stummen Leser. Damit entwickelte sich ein neues Verhältnis zur Sprache. Schrift wurde vom Interpretationsgegenstand zum möglichst präzisen Informationsspeicher. Es vollzog sich ein Wandel von der Mündlichkeit zur Schriftlichkeit der Sprache.\n\nEs regte sich aber auch Kritik daran, dass die Schriftsprache an Genauigkeit gewonnen hatte: Um 1750 befand Jean-Jacques Rousseau in seiner Abhandlung über den Ursprung der Sprachen, dass es einer niedergeschriebenen und festen Regeln unterworfenen Sprache an Lebendigkeit mangele.[LÜCKE_4] So verwendete etwa Goethe Punkt und Komma noch nach Gutdünken. 1876 gab Konrad Duden zwar seinen „Versuch einer deutschen Interpunktionslehre“ heraus, führte dabei jedoch keine weiteren neuen Satzzeichen ein.\n\nDabei scheint schon lange vorher Bedarf an größeren Ausdrucksmöglichkeiten bestanden zu haben. [LÜCKE_5] In der Philosophie, glaubte er, könnten solche durchaus nützlich sein. [LÜCKE_6] Die extreme Verknappung der schriftlichen Kommunikation mittels Kurznachrichten verlangt anscheinend wieder nach einer Simulation von Mündlichkeit. Der Erfolg der Emojis, die zunächst noch aus Satzzeichen wie :( bestanden, entspringe dem Wunsch, Affekte in geschriebene Sprache zu überführen. Was wir derzeit erleben, ist quasi die Rückkehr des Mündlichen ins Schriftliche - Phase drei.",
+    "example": {
+      "key": "z",
+      "text": "Als Victor Hugo 1862 im Urlaub weilte und neugierig war, wie sich sein Roman Die Elenden verkauft, ließ er seinem Verleger ein schlichtes „?“ kabeln."
+    },
+    "exampleText": "Als Victor Hugo 1862 im Urlaub weilte und neugierig war, wie sich sein Roman Die Elenden verkauft, ließ er seinem Verleger ein schlichtes „?“ kabeln.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bereits 1762 bemängelte der Gelehrte Johann Christoph Gottsched, dass es im Deutschen keine Zeichen für Staunen oder Mitleid gebe."
+      },
+      {
+        "key": "b",
+        "text": "Dabei konnte damals von verbindlichen Normen noch gar keine Rede sein."
+      },
+      {
+        "key": "c",
+        "text": "Das beklagen selbst die leidenschaftlichsten Verfechter von Kurznachrichten."
+      },
+      {
+        "key": "d",
+        "text": "Erst im Mittelalter kamen irische Mönche auf die ldee, diese Textschlangen mit Zeichen zu versehen, um anderen Lesern das Leben einfacher zu machen."
+      },
+      {
+        "key": "e",
+        "text": "Erst viel später – mit den neuen Medien – ging dieser langgehegte Wunsch in Erfüllung."
+      },
+      {
+        "key": "f",
+        "text": "In ihr reiht sich Buchstabe an Buchstabe, Wort an Wort."
+      },
+      {
+        "key": "g",
+        "text": "Rund 2500 Jahre nach den ersten Schriftzeichen trennen darin erstmals Striche und Punkte die Worte."
+      },
+      {
+        "key": "h",
+        "text": "Um dies zu verstehen, muss man die Arbeitsweise in den mittelalterlichen Schreibstuben beachten."
+      }
+    ],
+    "correctAnswers": {
+      "2": "b",
+      "1": "g",
+      "3": "d",
+      "4": "b",
+      "5": "a",
+      "6": "e"
+    },
+    "explanations": {
+      "2": "Passender Satz: B",
+      "1": "Passender Satz: G",
+      "3": "Passender Satz: D",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: A",
+      "6": "Passender Satz: E"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-03",
+    "themeTitle": "Die Hamburger-Hypothese",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "„Heißen Leute aus Hamburg wirklich Hamburger?“ Jeder Hanseat, der die Vereinigten Staaten bereist, muss sich diese Frage früher oder später stellen lassen. Anders als bei den angelsächsischen Leihwörtern Frankfurter (Würstchen), Dresdner (Porzellan) oder Holsteiner (gefleckte Kuh) ist beim Hamburger jedoch weitgehend unklar, warum er heißt, wie er heißt - und wer ihn erfunden hat.\n\n[BEISPIEL_0] Das Städtchen Seymour in Wisconsin etwa verweist stolz darauf, der Imbiss-Betreiber Charlie Nagreen habe anlässlich einer örtlichen Messe 1885 die weltweit ersten flachgedrückten Fleischbällchen serviert. Eine ähnliche Geschichte tischt die Gemeinde Hamburg (Bundesstaat New York) der Öffentlichkeit auf: [LÜCKE_1] Dokumente, die das beweisen, haben Hamburg und Seymour bislang allerdings ebenso wenig vorlegen können wie zahlreiche weitere Städte, die sich ebenfalls rühmen, den ersten Burger gebraten zu haben.\n\n[LÜCKE_2] Bereits 50 Jahre zuvor kannte man das Hamburg Steak, das der Vorläufer des Hamburgers gewesen sein dürfte. In New Yorks einstmals feinstem Restaurant Delmonico's soll bereits 1834 ein solches auf der Karte gestanden haben - wofür es viele Sekundärquellen, aber leider keinen direkten Beleg gibt.\n\nAls gesichert gilt hingegen, dass das Hamburg Steak Anfang des 20. Jahrhunderts in den USA ein gängiges Gericht war. [LÜCKE_3] „Man gebe es zweimal durch die Schneidemaschine und salze es leicht. Mitunter füge man etwas gezuckerten Speck hinzu, um den Geschmack zu verbessern. Das beste Hamburg kommt aus magerem Fleisch der Hüfte\", heißt es etwa in der Cyclopedia of American Agriculture aus dem Jahr 1908. In einer Rezeptsammlung von 1911 ist das Hamburg Steak hingegen eine zu Kugeln geformte Hackmasse, die in Semmelbröseln gewendet wird. [LÜCKE_4]\n\nDas Oxford English Dictionary von 1802 definierte Hamburg Steak seinerzeit schlicht als gepökeltes Rindfleisch. Es ist durchaus plausibel anzunehmen, dass die Hunderttausende von Auswanderern, die über die Hansestadt in die USA verschifft wurden, das mit Salz haltbar gemachte Fleisch als Proviant mit sich führten. Die Verpflegung an Bord war miserabel, zumindest für die weniger betuchten Zwischendeck- Passagiere. [LÜCKE_5]Was lag da näher, als es in Streifen oder Stücke zu schneiden und diese - mangels Teller und Besteck - zwischen zwei Scheiben Brot zu klemmen? Wurde der Hamburger so vielleicht aus der Not geboren, als Reiseproviant armer Leute?\n\n[LÜCKE_6] Die Immigranten-Notverpflegung wäre dann zwischenzeitlich bei Delmonico's zum Gourmet- Schmankerl der US-Oberschicht aufgestiegen, um hundert Jahre später bei McDonald's und Burger King wieder das zu werden, was sie vielleicht einst war: unkomplizierter Proviant für zwischendurch.",
+    "example": {
+      "key": "z",
+      "text": "Weil der Burger eine amerikanische Ikone ist, haben in der Vergangenheit etliche US-Städte Anspruch auf die Vaterschaft erhoben."
+    },
+    "exampleText": "Weil der Burger eine amerikanische Ikone ist, haben in der Vergangenheit etliche US-Städte Anspruch auf die Vaterschaft erhoben.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Beweisen lässt es sich zwar nicht, aber dass der Hamburger an Bord eines Auswandererschiffs erfunden wurde, ist bislang die wahrscheinlichste Annahme ."
+      },
+      {
+        "key": "b",
+        "text": "Diese beiden Beispiele zeigen, dass gehacktes oder geschnetzeltes Fleisch wohl generell als Hamburg bezeichnet wurde."
+      },
+      {
+        "key": "c",
+        "text": "Diese besagt, dass die aus dieser Stadt stammenden Brüder Frank und Charles Menches Ende des 19. Jahrhunderts den Burger erfunden haben sollen."
+      },
+      {
+        "key": "d",
+        "text": "Ebenso liegt die Vermutung nahe, dass ein Ort namens Hamburg dem Burger seinen Namen gab."
+      },
+      {
+        "key": "e",
+        "text": "In vielen amerikanischen Kochbüchern aus dieser Zeit findet man Rezepte für seine Zubereitung."
+      },
+      {
+        "key": "f",
+        "text": "Kochen war dort vermutlich schwierig – doch pur und ohne Beilagen schmeckte das zähe Pökelfleisch nicht besonders."
+      },
+      {
+        "key": "g",
+        "text": "Noch immer wird der Name Hamburger oft irrtümlich auf das Wort ham (Englisch für Schinken) zurückgeführt."
+      },
+      {
+        "key": "h",
+        "text": "Tatsächlich wurde wohl in keiner dieser Städte der erste Burger serviert, denn ein ähnliches Gericht gab es schon früher. 100%"
+      }
+    ],
+    "correctAnswers": {
+      "1": "c",
+      "2": "h",
+      "3": "e",
+      "4": "b",
+      "5": "f",
+      "6": "a"
+    },
+    "explanations": {
+      "1": "Passender Satz: C",
+      "2": "Passender Satz: H",
+      "3": "Passender Satz: E",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: F",
+      "6": "Passender Satz: A"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-04",
+    "themeTitle": "Werbung in der sozialen Marktwirtschaft",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Werbung, so behauptet die Werbeindustrie, sei der Motor unserer sozialen Marktwirtschaft. Die Werbung reguliere die Preise, führe zu ständiger Verbesserung der Produkte und informiere den Verbrecher.[BEISPIEL_0]\n\nWie jeder andere Wirtschaftszweig funktioniert die Werbung nach dem Prinzip von Angebot und Nachfrage. Das Angebot ist in diesem Fall jedoch nur schwer zu verkaufen: Es ist eine Werbung für ein Produkt, und Werbung ist, trotz gegenläufiger Zahlen, in der Meinung vieler immer noch negativ besetzt. Das wissen auch die Werbeschaffenden. Sie müssen die Werbung attraktiv gestalten, so dass sie unterhält, neugierig macht, vielleicht auch erschreckt.[LÜCKE_1] Ein paar Sekunden Aufmerksamkeit - das ist der maximale Preis, den ein Zuschauer bereit ist, für gute Werbung zu zahlen. Die Hersteller des beworbenen Produktes wollen, dass ihr Produkt wahrgenommen und für ein paar Sekunden in den Mittelpunkt der Aufmerksamkeit des Verbrauchers gerückt wird. Genau hier liegt das Problem oder vielmehr die Herausforderung für sie gesamte Werbeinsustrie.[LÜCKE_2]\n\nOb der Ruf der Werbung vom Konsumenten gehört wird und ob er dessen Kaufverhalten tatsächlich ändert, damit beschäftigen sich seit den 1930er Jahren Generationen von Wissenschaftlern. Durch eigene Studien, Befragungen sowie theoretische Anleihen bei Psychologie und Verhaltensforschung versuchen sie, die optimale Werbeformel zu finden.[LÜCKE_3] Besonders die Wirtschaft will wissen, ob das Vermögen gut investiert ist, das Jahr für Jahr in die Werbung fließt. Werbung ist jedoch - und das ist das Einzige, worin sich die Forscher bislang einig sind – zu komplex, um sie auf eine simple Wirkungsformel zu bringen. Zu viele Faktoren sind im Spiel. Jeder, der eine Wertung sieht, reagiert aufgrund seiner persönlichen Einstellungen und Erfahrungen anders. [LÜCKE_4]\n\nWerbungen überschreiten nicht nur regionale und soziale Grenzen, sondern häufig auch die des guten Geschmacks und des Gesetzes. Jeder Bürger, der sich durch eine Werbung beleidigt fühlt, hat in Deutschland das Recht, Beschwerde dagegen einzulegen. [LÜCKE_5] Dieser könnte die Werbegesetze verschärfen und damit die Möglichkeiten der Werbebranche einschränken. Um dies zu verhindern, hat die deutsche Werbeindustrie ein eigenes Kontrollgremium gegenründet, um beanstandete Werbungen selbst zu prüfen: Der Deutsche Werberat kann zwar einzelnen Firmen ihre Werbeaktionen nicht verbieten, er kann jedoch die Empfehlung aussprechen, die Werbung nicht mehr zu senden beziehungsweise zu drucken. [LÜCKE_6] Im letzten Jahr kamen aus der Bevölkerung 606 Beschwerden über Werbungen. Allerdings wurde nur in sieben Fällen eine Rüge ausgesprochen, in immerhin 45 Fällen wurde die Werbung jedoch geändert oder abgesetzt.",
+    "example": {
+      "key": "z",
+      "text": "Kurz: Werbung schaffe Transparenz und damit eine größere Entscheidungsvielfalt."
+    },
+    "exampleText": "Kurz: Werbung schaffe Transparenz und damit eine größere Entscheidungsvielfalt.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Allerdings macht nicht jeder Gebrauch davon, und was könnte man schon tun?"
+      },
+      {
+        "key": "b",
+        "text": "Das oberste Ziel der Werbung ist es nämlich, Interesse zu wecken."
+      },
+      {
+        "key": "c",
+        "text": "Denn diesen Moment Aufmerksamkeit beansprucht jedes beworbene Produkt für sich, und wo viele schreien, werden nur wenige gehört."
+      },
+      {
+        "key": "d",
+        "text": "Dies geschieht natürlich nicht allein aus Forschungsdrang:"
+      },
+      {
+        "key": "e",
+        "text": "Ganz zu schweigen davon, dass Werbebotschaften nicht nur von Land zu Land, sondern sogar schon von Region zu Region anders wahrgenommen werden können."
+      },
+      {
+        "key": "f",
+        "text": "Häufig hören die Zeitungsverleger und Fernsehanstalten auf diese Empfehlung."
+      },
+      {
+        "key": "g",
+        "text": "Hier interessiert allein die finanzielle Zukunft der Werbebranche."
+      },
+      {
+        "key": "h",
+        "text": "Davor aber fürchten sich die Werbetreibenden, weil so der Gesetzgeber auf den Plan gerufen wird. 100%"
+      }
+    ],
+    "correctAnswers": {
+      "1": "b",
+      "2": "c",
+      "3": "d",
+      "4": "e",
+      "5": "h",
+      "6": "f"
+    },
+    "explanations": {
+      "1": "Passender Satz: B",
+      "2": "Passender Satz: C",
+      "3": "Passender Satz: D",
+      "4": "Passender Satz: E",
+      "5": "Passender Satz: H",
+      "6": "Passender Satz: F"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-05",
+    "themeTitle": "Die Brüder Grimm / Der alte Mann und die Wörter",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "In seinem Werk „Grimms Wörter“ machte sich Günter Grass auf die Spuren der Gebrüder Grimm.\n\n[BEISPIEL_0]Dabei skizzierte Grass gekonnt die Geschichte der damaligen Zeit und schlug die Brücke zu den eigenen Begrifflichkeiten, wie Arbeitsbeschaffungsmaßnahme, Angst um den Arbeitsplatz oder Abwrackprämie. Als wir an einem warmen Junitag zum ersten Mal sein Haus in Lübeck betraten, waren wir gespannt, was uns erwarten würde. [LÜCKE_1] Grass bot uns Tee an, vor ihm lagen seine obligatorische Pfeife, ein Aschenbecher und Streichhölzer.\n\nDer Raum legte nicht nur Zeugnis ab von unterschiedlichen Schaffensperioden, er offenbarte auch die unterschiedlichen Kunstformen, in denen er tätig war: [LÜCKE_2] Der gelernte Steinmetz hatte an der Kunstakademie Düsseldorf Grafik und Bildhauerei studiert und nebenbei Gedichte geschrieben. In der Öffentlichkeit stand seit dem Erscheinen von „Die Blechtrommel“ 1959 klar der Schriftsteller im Vordergrund. Für Grass war das kein Problem. Im gesamten Haus war diese künstlerische Begegnung greifbar. [LÜCKE_3] Etwas weiter hinten standen violette Lavendelstauden und duftende Rosenbüsche.\n\nWir sprachen eine Weile miteinander. Bedächtig klopfte Grass seine Pfeife aus, stopfte sie nach, griff nach den Streichhölzern, hielt die Flamme an den Pfeifenkopf und paffte. [LÜCKE_4] Während er rauchte, schien er seine Gedanken zu ordnen und über eine Antwort nachzudenken. Nach wenigen Zügen jedoch legte er die Pfeife wieder beiseite und begann zu sprechen - wach, präzise und überlegt. Was faszinierte dieses Multitalent am Medium Sprache? Wieder griff Grass bedächtig nach seiner Pfeife und ließ sich mit der Antwort Zeit. [LÜCKE_5]Wie schön im Deutschen ein Konjunktiv klinge. In seinem Buch ,,Grimms Wörter\" spürte Grass dem Reichtum der deutschen Sprache nach. Bei Grass stand das sprachwissenschaftliche Schaffen der Brüder Grimm im Fokus seines Buches. [LÜCKE_6] Mit „Grimms Wörter“ verfolgte er die Absicht, die Denkmäler deutscher Sprache sichtbar zu machen, verbunden mit ihrer Geschichte. Das ist ihm gelungen.",
+    "example": {
+      "key": "z",
+      "text": "Minutiös beschrieb er ihre unermüdliche Suche nach Wörtern, ihren Forschergeist, mit dem sie der deutschen Sprache auf den Grund kommen wollten."
+    },
+    "exampleText": "Minutiös beschrieb er ihre unermüdliche Suche nach Wörtern, ihren Forschergeist, mit dem sie der deutschen Sprache auf den Grund kommen wollten.",
+    "options": [
+      {
+        "key": "a",
+        "text": "An den Wänden hingen nämlich Aquarelle und Radierungen, auf Regalen standen Skulpturen."
+      },
+      {
+        "key": "b",
+        "text": "Kurze Zeit darauf saßen wir in einem großräumigen Dachatelier an einem Holztisch."
+      },
+      {
+        "key": "c",
+        "text": "Es sei aber kein Lexikon, sondern ein kritisches Wörterbuch."
+      },
+      {
+        "key": "d",
+        "text": "Im Hof stand eine große Bronzeplastik mit dem Titel „Butt im Griff“."
+      },
+      {
+        "key": "e",
+        "text": "Immer wieder wiederholte sich diese Szene im Laufe unseres Gesprächs."
+      },
+      {
+        "key": "f",
+        "text": "Schließlich entgegnete er, dass das viel mit Ästhetik zu tun habe."
+      },
+      {
+        "key": "g",
+        "text": "Wir zögerten und fragten uns, ob wir die Klingel benutzen oder anklopfen sollten."
+      },
+      {
+        "key": "h",
+        "text": "Zuvor hatte er auf die Besonderheiten der Bildhauerei hingewiesen."
+      }
+    ],
+    "correctAnswers": {
+      "1": "b",
+      "2": "a",
+      "3": "d",
+      "4": "e",
+      "5": "f",
+      "6": "c"
+    },
+    "explanations": {
+      "1": "Passender Satz: B",
+      "2": "Passender Satz: A",
+      "3": "Passender Satz: D",
+      "4": "Passender Satz: E",
+      "5": "Passender Satz: F",
+      "6": "Passender Satz: C"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-06",
+    "themeTitle": "Alternative Heilmethode",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Immer häufiger werden Ärzte und Apotheker nach alternativen Heilmethoden gefragt. Eine Studie ergab, dass fast zwei Drittel der erwachsenen Deutschen mindestens einmal eine Alternative oder Ergänzung zur klassischen Medizin genutzt haben.\n\n[BEISPIEL_0] Eine allgemein gültige Definition gibt es nicht. Häufig werden auch die Begriffe Ganzheitsmedizin oder Naturheilkunde synonym gebraucht. Meist versteht man darunter eine Vielzahl verschiedener medizinischer Praktiken, die genutzt werden, um die körperliche und geistige Gesundheit zu erhalten oder zu verbessern, Erkrankungen vorzubeugen, zu diagnostizieren oder zu heilen. Allen Verfahren gemeinsam ist, dass ihre Vertreter sich von der klassischen „Schulmedizin\" abgrenzen wollen. Doch auch hier sind die Grenzen fließend.\n\n[LÜCKE_1] Zu den alternativen Heilmethoden zählt man zum Beispiel: Akupunktur, Homöopathie oder die traditionelle chinesische Medizin. Dabei ist die Wirksamkeit vieler dieser Heilverfahren mindestens umstritten, wenn nicht sogar widerlegt und nicht wenige Mediziner sehen den Trend zu immer mehr „alternativen“ Behandlungsmethoden mit Sorge. [LÜCKE_2] .\n\nWarum aber setzen dennoch so viele modern denkende Menschen Hoffnungen auf alternative Therapien? Fallen sie dabei lediglich auf fragwürdige Heilungsversprechen herein? Eine einfache Antwort auf diese Fragen gibt es wohl nicht.\n\n[LÜCKE_3] So handeln Patienten mit eher harmlosen Erkrankungen anders als solche mit ernsten Krankheiten. Auch die zur Verfügung stehenden finanziellen Mittel spielen manchmal eine Rolle. Trotz des komplexen Bildes kristallisierten sich aus Patientenbetreuungen drei besonders wichtige Motive heraus: Zum einen legen viele Patienten Wert auf ein persönliches Verhältnis zu ihrem Arzt. Sie wünschen sich, dass der Arzt den ganzen Menschen sieht und es nicht allein um das kranke Organ geht. Zum anderen sind Patienten heutzutage informierter, wollen häufig einfach eine zweite Meinung hören und aktiv das Behandlung erweitern. Der dritte Grund: Menschen suchen nach Behandlungsformen mit möglichst wenigen Nebenwirkungen.\n\n[LÜCKE_4] Aber dies ist offenbar den wenigsten Patienten bekannt. Viele Patienten geben an, nach der alternativen Behandlung gehe es ihnen besser. Schmerzen und andere Symptome hätten abgenommen und die Behandlung wirke bei ihnen besser als Methoden der klassischen Medizin. [LÜCKE_5]Psychologen erklären dies so: Wenn man sich für eine Therapie entscheidet, die zu einem passt, wird diese Therapieform positiv bewertet, was schließlich zu einem positiven Effekt für die Heilung führt. Dieser sogenannten „Placebo-Effekt“ stellt sich auch bei Behandlungsmethoden ein, deren Wirksamkeit wissenschaftlich widerlegt wurde. An dieser Stelle zeigt sich der Unterschied zwischen der wissenschaftlichen Herangehensweise und der Erfahrung der Patienten: [LÜCKE_6] Hauptsache, es geht ihm besser.",
+    "example": {
+      "key": "z",
+      "text": "Aber was ist eigentlich „Alternativmedizin“?"
+    },
+    "exampleText": "Aber was ist eigentlich „Alternativmedizin“?",
+    "options": [
+      {
+        "key": "a",
+        "text": "Allerdings/ doch können einzelne Methoden der alternativen Medizin auch massiv in den Organismus eingreifen."
+      },
+      {
+        "key": "b",
+        "text": "Andererseits habe aber auch die alternative Medizin einige Nachteile, die jedoch weitgehend unbekannt seien."
+      },
+      {
+        "key": "c",
+        "text": "Diese Entwicklung, die man mit dem Spruch „Wer heilt, hat recht“ umschreiben könnte, weise geradezu den Weg zurück ins Mittelalter."
+      },
+      {
+        "key": "d",
+        "text": "Darüber hinaus gibt es klare Gründe für die wachsende Beliebtheit der alternativen Behandlungsmethoden."
+      },
+      {
+        "key": "e",
+        "text": "Nicht selten sind diese vermeintlichen Erfolge aber nicht auf die tatsächliche Wirksamkeit der alternativen Therapien zurückzuführen, sondern auf die innere Erstellung der Patienten."
+      },
+      {
+        "key": "f",
+        "text": "Denn die Entscheidung der Patienten wird in der Regel von einer Vielzahl von Faktoren beeinflusst ."
+      },
+      {
+        "key": "g",
+        "text": "Was bei einigen als Alternativmedizin gilt, wie etwa einige Zweige der Pflanzenheilkunde, fällt bei anderen unter die Schulmedizin."
+      },
+      {
+        "key": "h",
+        "text": "Wenn er z.B. ein Schmerzmittel einnimmt, ist ihm die Funktionsweise des Wirkstoffes nicht so wichtig."
+      }
+    ],
+    "correctAnswers": {
+      "1": "g",
+      "2": "c",
+      "3": "f",
+      "4": "a",
+      "5": "e",
+      "6": "h"
+    },
+    "explanations": {
+      "1": "Passender Satz: G",
+      "2": "Passender Satz: C",
+      "3": "Passender Satz: F",
+      "4": "Passender Satz: A",
+      "5": "Passender Satz: E",
+      "6": "Passender Satz: H"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-07",
+    "themeTitle": "Die Maus als Stimmungsbarometer",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Unser Computer und auch das Internet kennen uns besser als jeder Psychiater:[BEISPIEL_0] Erst kürzlich haben Forscher ein Programm entwickelt, das anhand unserer Tastaturanschläge erkennt, ob wir mal wieder wütend über die langsame Internetverbindung sind oder entspannt vor uns hin tippen.\n\nInzwischen gibt es bereits eine Weiterentwicklung dieser Technologie: [LÜCKE_1] Jeffery Jenkins von der Brigham Young University in Provo und seine Kollegen haben ein Programm entwickelt, das anhand unserer Mausbewegung erkennt, ob wir wütend oder gefrustet sind oder aber entspannt und gut gestimmt. Die typischen Parameter ermittelten die Forscher dabei anhand eines Online-Experiments.\n\nIn diesem Experiment absolvierten die Probanden einen mehrteiligen Test, der angeblich ihre Eignung und Intelligenz testen sollte. Was sie jedoch nicht wussten:[LÜCKE_2] Sie luden extrem langsam und ließen den Testteilnehmern daher nur wenig Zeit, die Fragen korrekt zu beantworten.[LÜCKE_3]Dies steigerte Frustration noch zusätzlich.\n\nDer Ärger über diesen Test wirkte sich messbar auf die Mausbewegungen der Teilnehmer aus. Statt wie normalerweise in gerade oder leicht gekrümmten Kurven bewegten sie den Cursor nun in eckigen, abrupten Bewegungen über den Bildschirm. [LÜCKE_4]“Das erscheint zunächst kontraintuitiv'', sagt Jenkins , ,, man würde eher annehmen, dass ich die Maus schneller bewege, wenn ich ärgerlich bin, aber das ist nicht der Fall''.\n\nDas neuentwickelte Programm kennt diese typischen Eigenheiten ärgerlicher Nutzer und wertet sie entsprechend aus. „Mit Hilfe dieser Technologie sind Websites nicht langer dumm'', so Jenkins, „Sie registrieren nicht nur, was wir explizit eingeben, sondern auch, was wir fühlen''. [LÜCKE_5] Die Software könnte beispielsweise dazu beitragen, nutzerunfreundliche Webseiten und Formulare aufzuspüren. ,,Bisher war es sehr schwer, genau festzustellen, wann dem Nutzer so frustriert ist, dass er die Seite verlässt'', erklärt Jenkins.[LÜCKE_6]. Webentwickler können dann die Webseite gezielt optimieren.\n\nDie Forscher haben bereits ein Patent für die neue Software angemeldet und eine Start-up-Firma arbeitet an der Marktreife des Programms. Jenkins und seine Kollegen arbeiten zudem an einer Version, mit der die Technologie auch auf Touchscreens und mobile Geräte übertragen werden kann.",
+    "example": {
+      "key": "z",
+      "text": "So verraten schon wenige Likes in Facebook, wer wir sind und was wir mögen."
+    },
+    "exampleText": "So verraten schon wenige Likes in Facebook, wer wir sind und was wir mögen.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Die Forscher sammelten zunächst Daten, indem sie die Probanden ihren Gefühlszustand notieren ließen."
+      },
+      {
+        "key": "b",
+        "text": "Die im Browser gezeigten Seiten waren so manipuliert, dass sie absichtlich Frustration und Ärger hervorriefen."
+      },
+      {
+        "key": "c",
+        "text": "Gleichzeitig bewegten sie die Maus langsamer."
+      },
+      {
+        "key": "d",
+        "text": "Indem wir die negative Stimmung registrieren, können wir diesen Punkt nun genau bestimmen,"
+      },
+      {
+        "key": "e",
+        "text": "Jetzt wird nämlich nicht nur die Tastatur, sondern auch die Maus zum Vertreter unserer Befindlichkeiten."
+      },
+      {
+        "key": "f",
+        "text": "Trotz aller technologischen Fortschritte hinken Computer in diesem Bereich hinterher."
+      },
+      {
+        "key": "g",
+        "text": "Während wir dann vielleicht eher ein unliebsames Spionieren sehen, hat diese Technologie auch Vorteile:"
+      },
+      {
+        "key": "h",
+        "text": "Zudem erhielten die Probanden für jede falsche Antwort einen Abzug und damit schlechtere Ergebnisse."
+      }
+    ],
+    "correctAnswers": {
+      "1": "e",
+      "2": "b",
+      "3": "h",
+      "4": "c",
+      "5": "g",
+      "6": "d"
+    },
+    "explanations": {
+      "1": "Passender Satz: E",
+      "2": "Passender Satz: B",
+      "3": "Passender Satz: H",
+      "4": "Passender Satz: C",
+      "5": "Passender Satz: G",
+      "6": "Passender Satz: D"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-08",
+    "themeTitle": "Was Werbung so treibt",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Von Natur aus sind Menschen bequeme Gewohnheitstiere, die es im Alltag heute angenehm, lecker oder praktisch mögen wie gestern .[BEISPIEL_0]Erstens müsste es noch angenehmer, leckerer oder praktischer sein, zweitens billiger und drittens mit Gratiszugabe. So kommt es, dass es Joghurts gibt, die man nicht nur essen kann, sondern die ihre eigene Verdauung gleich mit erledigen und währenddessen auch noch vor ansteckenden Krankheiten schützen sollen.\n\n[LÜCKE_1]Doch das Gegenteil ist der Fall: Es herrscht pure Verzweiflung.\n\nErst kommen Qualität, Leistung und Preis, danach überlegen wir, wie wichtig uns das Neue ist. Das ist die Reihenfolge, die über Erfolg und Misserfolg bei Konsumgütern entscheidet. Laut einer Studie bleiben aber trotzdem mehr als zwei Drittel aller neuen Spülmittel, Biere, Pürees und Joghurts in den Regalen liegen.[LÜCKE_2]Noch schlimmer: Nicht etwa eine falsche Vermarktung ist schuld an diesem Desaster, sondern bei über die Hälfte dieser Produkte ist bereits das grundlegende Konzept fehlerhaft: Qualität, Leistung, Preis, Zielgruppen wurden falsch eingeschätzt.\n\n[LÜCKE_3]Ein Hersteller entwickelt einen Reiniger, nennt ihn „Cillit Bang\" und kommt auf hervorragende Verkaufszahlen. Kurze Zeit später kommt ein anderer Hersteller mit seinem Reiniger namens „Bref“. Auch das geht noch gut. Aber spätestens für einen dritten Reiniger wird es eng: Die Nische im Markt ist bereits geschlossen. [LÜCKE_4]Eine neue Nische muss her. Es ist also grundsätzlich so, dass nur ein Hersteller sich wirklich Gedanken über das neue Produkt macht, und zwar der erste. Alle anderen laufen hinterher. Die meisten Innovationen sind noch immer für die breite Masse konzipiert - nur lassen sie sich nicht einführen, weil das zu teuer ist. Die schönste Zielgruppe nutzt eben nichts, wenn man sie mit den zur Verfügung stehenden Mitteln nicht erreichen kann. [LÜCKE_5]Wenn zum Beispiel eine neue Gesichtscreme auf den Markt kommen soll, wird die Zielgruppe so vorgegeben: alle berufstätigen Frauen in Großstädten zwischen 20 und 39 Jahren mit überdurchschnittlichem Einkommen. Klingt gut. Aber damit wird nur ein Prozent aller Personen über 14 Jahre erreicht. Dies ist natürlich alles andere als ein erfolgreiches Marketing.\n\nAber auch wenn die Definition der Zielgruppe stimmt und das Produkt im Regal steht, kann noch der letzte, alles entscheidende Fehler unterlaufen: wenn nämlich Produkt, Marke und Preis nicht zusammenkommen.[LÜCKE_6]So geschehen bei der durch Kartoffelknödel bekannt gewordenen Marke „Pfanni\". Beispielsweise beschränkte sich die Firma darauf, Kartoffeln zu schälen, in eine Dose abzufüllen und das Etikett von „Pfanni“ aufzukleben.\n\nDer Verbraucher vor dem Supermarkt-Regal wunderte sich dann, warum er Kartoffeln in der Dose für das Dreifache des normalen Preises kaufen soll - und griff lieber günstigeren Glas weniger prominent.",
+    "example": {
+      "key": "z",
+      "text": "Nur drei Gründe gibt es, mal was Neues auszuprobieren."
+    },
+    "exampleText": "Nur drei Gründe gibt es, mal was Neues auszuprobieren.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Also denkt sich die Marketingleitung eine Zielgruppe aus, die irgendwie zum Produkt passen könnte."
+      },
+      {
+        "key": "b",
+        "text": "Damit sind 70 Prozent der Konsumgüter ein Flop, und dass bedeutet eine Fehlinvestition der Unternehmen von zehn Milliarden Euro."
+      },
+      {
+        "key": "c",
+        "text": "Eine typische Entwicklung eines neuen Produkts beginnt zum Beispiel so."
+      },
+      {
+        "key": "d",
+        "text": "Fast scheint es, regiere im Supermarkt das Spaßprinzip."
+      },
+      {
+        "key": "e",
+        "text": "Für jede Zielgruppen gibt es im Supermarkt ein eigens Produkt."
+      },
+      {
+        "key": "f",
+        "text": "Um dieses Problem zu lösen und wieder Erfolg zu haben, müssen Unternehmen ständig Produktpflege betreiben."
+      },
+      {
+        "key": "g",
+        "text": "Und wenn dann der Handel noch seine günstigen Eigenmarken darstellt, beginnt dies von vorne."
+      },
+      {
+        "key": "h",
+        "text": "Viele Marken sind sich zu fein, ihre Waren zu einem marktüblichen Preis anzubieten."
+      }
+    ],
+    "correctAnswers": {
+      "1": "d",
+      "2": "b",
+      "3": "c",
+      "4": "g",
+      "5": "a",
+      "6": "h"
+    },
+    "explanations": {
+      "1": "Passender Satz: D",
+      "2": "Passender Satz: B",
+      "3": "Passender Satz: C",
+      "4": "Passender Satz: G",
+      "5": "Passender Satz: A",
+      "6": "Passender Satz: H"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-09",
+    "themeTitle": "Ein Edelmetall mit langer Geschichte: Goldvorkommen in Deutschland /",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Auf Goldsuche in Deutschland\n\nHerzlich willkommen am Eisenberg in Korbach, Deutschlands größter Goldlagerstätte. [BEISPIEL_0] Gänge, Schichten und Mineralien erzählen von Jahrmillionen Erdgeschichte, der kräftezehrenden Arbeit mittelalterlicher Bergleute und wiederkehrenden Versuchen moderner Glücksritter aus aller Welt, das edle Erz des Waldecker Landes zu bergen.[LÜCKE_1]\n\nSchon der römische Geschichtsschreiber Tacitus erwähnt angeblich einen goldführenden Fluss, den die hier wohnenden Menschen „Aedra“ genannt haben sollen — die heutige Eder. Die Bewohner der Gegend machten sich im Laufe der Jahrhunderte auf die Suche, woher das Gold in der Eder kommt. Sie entdeckten den Eisenberg als Lagerstätte. [LÜCKE_2] Später, um 1200, stießen die Goldgräber in die Tiefe vor und durchlöcherten den Eisenberg in den folgenden 400 Jahren wie einen Schweizer Käse. [LÜCKE_3] Schließlich rühmte auch der große deutsche Philosoph und Naturforscher Albertus Magnus das Gold vom Eisenberg, zugleich die älteste schriftliche Erwähnung.\n\nZentimeterweise trieben sich die Bergleute in den Fels, um das erzhaltige Gestein zu bergen. Die Blütezeit lag im 16. Jahrhundert, aber zu Beginn des Dreißigjährigen Krieges (1618- 1648) schlief der Bergbau wieder ein. Im 20. Jahrhundert entfachte Carl Theodor Rauschenbusch aus dem Siegerland einen neuen Goldrausch am Eisenberg. [LÜCKE_4] Seit 1917 ging Rauschenbusch ans Werk, entdeckte alte Stollen, erschloss bis in die 30er Jahre neue Gruben, doch wurden auch seine Hoffnungen enttäuscht. Von 1974 bis in die 90er Jahre war es dann der Geologe Dr. Jens Kulick, der auf Rauschenbuschs Spuren die Zeugnisse des Goldbergbaus dokumentierte. Kurz vor seinem Tode ließ Kulick den Eisenberg als herausragendes mittelalterliches Industriedenkmal durch das Land Hessen schützen.[LÜCKE_5] Mit Hilfe erfahrener Bergleute und Wissenschaftler hat der 2002 gegründete Verein „Historischer Goldbergbau Eisenberg“ diese Pläne schon kurze Zeit später, in den Jahren 2003/2004, verwirklichen können.\n\nDie Spuren der Goldgräber auf der Suche nach dem begehrten Edelmetall sind an vielen Stellen auf dem Eisenberg sichtbar. Mit Stollen und Schächten durchlöcherten die Bergmänner den 562 Meter hohen Berg und rangen entlang Gold führender Gesteinsschichten dem Berg das begehrte Edelmetall in mühevoller Kleinarbeit ab. [LÜCKE_6] Und auch heute noch steckt über eine Tonne Gold im Eisenberg. Wirtschaftlich lässt sich das edle Metall indes nicht mehr gewinnen. Das Interesse an Gold und die Faszination für das Edelmetall sind aber nach wie vor ungebrochen.",
+    "example": {
+      "key": "z",
+      "text": "Helm auf, Gummistiefel an, dann geht es hinein in den sagenumwobenen Goldberg."
+    },
+    "exampleText": "Helm auf, Gummistiefel an, dann geht es hinein in den sagenumwobenen Goldberg.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Anfangs wurde dort nur oberirdisch gegraben, sodass die Spuren dieses Tagebaus noch heute in der Landschaft zu sehen sind."
+      },
+      {
+        "key": "b",
+        "text": "Dadurch sorgte der Goldsucher in ganz Deutschland für Schlagzeilen."
+      },
+      {
+        "key": "c",
+        "text": "Es gibt vor allem hohe Goldgehalte, die in seltenen Fällen bis über ein Kilo pro Tonne reichen."
+      },
+      {
+        "key": "d",
+        "text": "Insgesamt rund 1,2 Tonnen reines Gold entlockten ihm die Bergleute in harter Arbeit über die Jahrhunderte."
+      },
+      {
+        "key": "e",
+        "text": "Mit diesem Wanderweg ist neben der Gold- und Bergbauabteilung im Museum Korbach ein weiteres attraktives Freizeitangebot in der Region Korbach geschaffen worden."
+      },
+      {
+        "key": "f",
+        "text": "Nicht weniger als rund 20 Kilometer Höhlen und Gänge aus dieser Zeit sind auf engem Raum nachgewiesen."
+      },
+      {
+        "key": "g",
+        "text": "Schnell reiften danach die Pläne, einen Teil des Goldbergbaus auch für Besucher zu erschließen."
+      },
+      {
+        "key": "h",
+        "text": "Sehen Sie selbst: Das Besucherbergwerk bietet Ihnen, liebe Gäste, in der früheren Bergbausiedlung ein spannendes und lehrreiches Abenteuer. 100%"
+      }
+    ],
+    "correctAnswers": {
+      "1": "h",
+      "2": "a",
+      "3": "f",
+      "4": "b",
+      "5": "g",
+      "6": "d"
+    },
+    "explanations": {
+      "1": "Passender Satz: H",
+      "2": "Passender Satz: A",
+      "3": "Passender Satz: F",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: G",
+      "6": "Passender Satz: D"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-10",
+    "themeTitle": "Piraten früher und heute Seeräuber – von der Antike bis zur Gegenwart /",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Sobald die Menschen begannen, Waren über die Meere in andere Länder zu verschiffen, waren die gefürchteten Piraten nicht mehr weit.[BEISPIEL_0] In der Antike raubten die Piraten zum Beispiel Getreide, das aus Ägypten nach Rom verschifft wurde. Bei der so genannten Strandpiraterie wiederum handelt es sich um Plünderungen von gestrandeten Schiffen und Angriffe auf küstennahe Fahrzeuge von Land aus. Ziel der Seeräuber waren vor allem Handelsschiffe, während sie Kriegsschiffe aller Art mieden. Diese waren zum einen größer und besser bewaffnet. [LÜCKE_1]\n\nDas Symbol der Piraten ist bis heute der Totenkopf mit den gekreuzten Knochen oder Entermessern. Die erste Fahne, auf der ein Totenkopf abgebildet war, stammte vermutlich von dem französischen Piraten Emanuel Wynne um 1700. Nicht immer dienten die Fahnen aber zur sofortigen Abschreckung der Gegner. Ihre Totenkopf-Flagge zeigten viele Piraten erst, wenn sie ein Schiff erfolgreich übernommen hatten. [LÜCKE_2] So setzten sie beispielsweise den Union Jack, also die britische Flagge, um britische Schiffe in Sicherheit zu wiegen. Die Fahne sollte auch die Verachtung der anderen Nationalflaggen ausdrücken.\n\nSeeräuber-Legenden wurden weitererzählt und über die Jahrhunderte immer mehr ausgeschmückt. [LÜCKE_3] Oder sie wurden als besonders grausam dargestellt und man schuf gruselige Schauergeschichten. Auch unzählige Piraten-Filme, die sich auch heute noch großer Beliebtheit erfreuen, handeln von heldenhaften Seeleuten und dem abenteuerlichen Leben der \"Herren der sieben Meere“. [LÜCKE_4] Auch Matrosen, die sonst keine Arbeit fanden, heuerten auf Piratenschiffen an.\n\nPiraten gibt es auch heute noch. Vor den Küsten einiger afrikanischer und asiatischer Länder überfallen Kriminelle immer wieder fremde Schiffe und verdienen mit dem Verkauf der Beute ihr [LÜCKE_5] Geld. Seit der Jahrtausendwende hat Piraterie wieder zugenommen und sich zunehmend zu\n\n[LÜCKE_6] einem kritischen Faktor in Bezug auf (für) den Welthandel entwickelt. Daher nehmen auch\n\nheute noch - in Zeiten der modernen Piraterie - Reeder das Risiko überwiegend in Kauf, wenn auch unter dem Druck des Markts.",
+    "example": {
+      "key": "z",
+      "text": "Bereits im Jahr 1200 v. Chr. überfielen Seevölker im Mittelmeer vor allem Schiffe, aber auch Städte in Küstennähe."
+    },
+    "exampleText": "Bereits im Jahr 1200 v. Chr. überfielen Seevölker im Mittelmeer vor allem Schiffe, aber auch Städte in Küstennähe.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Aber gefährliche Seewege zu umfahren, ist mit immensen Kosten verbunden, was sich unmittelbar auf den Verkaufspreis der Waren auswirken würde."
+      },
+      {
+        "key": "b",
+        "text": "Allerdings waren die \"heldenhaften Motive\" der meisten Seeräuber nichts anderes als Habgier."
+      },
+      {
+        "key": "c",
+        "text": "Außerdem gab es dort im Allgemeinen keine Reichtümer und wertvolle Waren zu holen wie auf Handelsschiffen."
+      },
+      {
+        "key": "d",
+        "text": "Manchmal entführen sie auch Mitglieder der Schiffsbesatzung, um Lösegeld für sie zu erpressen."
+      },
+      {
+        "key": "e",
+        "text": "Sie benutzten eine Fahne, die die sieben Weltmeere zeigte."
+      },
+      {
+        "key": "f",
+        "text": "Allerdings waren viele Piraten tatsächlich Helden."
+      },
+      {
+        "key": "g",
+        "text": "Viele Piraten wurden zu wahren Helden gemacht und ihr Leben romantisch überhöht."
+      },
+      {
+        "key": "h",
+        "text": "Zuvor zogen sie nicht selten die \"falsche Flagge\" auf, um andere Schiffe zu täuschen."
+      }
+    ],
+    "correctAnswers": {
+      "1": "c",
+      "2": "h",
+      "3": "g",
+      "4": "b",
+      "5": "d",
+      "6": "a"
+    },
+    "explanations": {
+      "1": "Passender Satz: C",
+      "2": "Passender Satz: H",
+      "3": "Passender Satz: G",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: D",
+      "6": "Passender Satz: A"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-11",
+    "themeTitle": "Kleine Geschichte der deutschen Rechtschreibung / Zur Entwicklung der deutschen Rechtschreibung",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Nicht nur ausländische Deutschlernende, sondern auch deutsche Schüler und Studenten empfinden die deutsche Orthographie mitunter als verwirrend. Warum brauchen wir überhaupt eine einheitliche Schriftform, wenn sie Probleme bereitet?\n\n[BEISPIEL_0]Meistens lesen wir ein Wort nicht Buchstabe für Buchstabe, sondern erfassen das Schriftbild als Ganzes. Würde die Schreibung beständig wechseln, müssten wir jedes Wort neu „lernen'' und ein schnelles Lesen wäre nur noch sehr eingeschränkt möglich. [LÜCKE_1] Der Weg zu einer reformierten Rechtschreibung sollte indes lang und steinig werden.* ([LÜCKE_1])\n\n(* Auch beim Schreiben müssten wir uns ständing überlegen, wie wäre in Wort darstellen. *[LÜCKE_1] *)\n\nMit der Herrschaft Karls des Großen (800 n. Chr) begannen die Versuche, das Lateinische als Schrifltsprache durch die Landessprache abzulösen. Dazu übernahm man das System der Lautzuordnung aus dem Lateinischen und bemühte sich, Entsprechungen für die deutschen Laute zu finden. [LÜCKE_2] lm Laufe der Schriftentwicklung fanden sich verschiedene Lösungen.\n\nEine davon war „Schreibe, wie du sprichst“, mit ihrem bedeutendsten Fürsprecher Johann Christoph Adelung. Problematisch an einer solchen Rechtschreibung waren die unterschiedlichen deutschen Dialekte. [LÜCKE_3] Sollte eine künstliche „Literatursprache“ oder ein bestimmter Dialekt Vorbild für die richtige Schreibung sein? Da Deutschland bis 1871 politisch in viele Einzelstaaten gegliedert war, blieb die Frage ungelöst.\n\nDie zweite war die Festlegung einer einheitlichen Schriftform. Den konsequentesten Versuch hierzu unternahmen Jacob und Wilhelm Grimm ab 1838 in ihrem Deutschen Wörterbuch.[LÜCKE_4] Das Streben nach einer Einheit Deutschlands im sprachlichen Bereich deckte sich mit den seit Mitte des 19. Jahrhunderts verstärkten Forderungen nach einer politischen Einheit. Eine Regelung für den gesamten deutschen Sprachraum lag jedoch noch in weiter Ferne.\n\nIm Januar 1876 tagte erstmals in Berlin die I. Orthographische Konferenz, bei der Repräsentanten aus Deutschland, Österreich und der Schweiz sich bemühten, eine einheitlichere Regelung der deutschen Rechtschreibung zu erreichen. [LÜCKE_5] Einheitlich geregelt wurde die deutsche Schriftsprache für diese drei Länder auf der II. Orthographischen Konferenz von 1901. Die neue Orthographie nach Duden wurde am 1. April 1903 verbindlich in den Schülers eingeführt. 1996 wurde eine weitere deutsche Rechtschreibreform beschlossen. Regeln und Schreibungen wurden nun von einem halbstaatlichen Gremium, der Zwischenstaatlichen Kommission für deutsche Rechtschreibung, mit Sitz am Institut für Deutsche Sprache in Mannheim, geregelt.\n\n[LÜCKE_6] Immer wieder wurde der Start verschoben, Änderungen eingefordert und Beschlossenes wieder umgeworfen. Am 1. August 2006 war es aber dann soweit, dass landesweit eine einheitliche Rechtschreibung verbindlich wurde.",
+    "example": {
+      "key": "z",
+      "text": "In erster Linie dient die Rechtschreibung dem besseren Verständnis und erleichtert das Leben."
+    },
+    "exampleText": "In erster Linie dient die Rechtschreibung dem besseren Verständnis und erleichtert das Leben.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Damit folgte Deutschland nun den erwähnten Richtlinien der übrigen deutschsprachigen Länder."
+      },
+      {
+        "key": "b",
+        "text": "Deshalb war auch der größte Streitpunkt die Frage nach der ,,richtigen‘‘ Schriftsprache."
+      },
+      {
+        "key": "c",
+        "text": "Es dauerte lange, bis Dialekte Eingang in die Schriftsprache fanden."
+      },
+      {
+        "key": "d",
+        "text": "Die Bedeutung dieses Werks lag nicht nur in der Erstellung einer dialektunabhängigen Schrift, sondern auch in der Entwicklung einer deutschen Hochsprache."
+      },
+      {
+        "key": "e",
+        "text": "Die Umsetzung dieser Reform erwies sich allerdings als schwieriger, als man sich das wünschte."
+      },
+      {
+        "key": "f",
+        "text": "Die Vorschläge dieser Vertreter wurden in den verschieden Staaten zunächst unterschiedlich umgesetzt."
+      },
+      {
+        "key": "g",
+        "text": "Dieses fremde Alphabet bot jedoch nicht für alte deutschen Sprachlaute eine Möglichkeit der schriftlichen Wiedergabe."
+      },
+      {
+        "key": "h",
+        "text": "*-Auch beim Schreiben müssten wir uns ständig überlegen, wie wäre in Wort darstellen. *- Der Weg zu einer reformierten Rechtschreibung sollte indes lang und steinig werden. *Es gibt zwei Varianten von Modelltests, entweder ist die Lösung Satz 1 oder Satz 2."
+      }
+    ],
+    "correctAnswers": {
+      "1": "h",
+      "2": "g",
+      "3": "b",
+      "4": "d",
+      "5": "f",
+      "6": "e"
+    },
+    "explanations": {
+      "1": "Passender Satz: H",
+      "2": "Passender Satz: G",
+      "3": "Passender Satz: B",
+      "4": "Passender Satz: D",
+      "5": "Passender Satz: F",
+      "6": "Passender Satz: E"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-12",
+    "themeTitle": "Die bewegte Geschichte des Aufzuges / Der Lift – eine Würdigung / Der Fahrstuhl",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "und seine Geschichte\n\nWer vom Aufzug spricht, redet meist über dessen Ausbleiben: Auf dem Weg in ein wichtiges Meeting verpasst man ihn, und in der morgendlichen Rushhour, wenn der Lift an jedem einzelnen Stockwerk anhält, beschließt so mancher, demnächst wieder die Treppen zu nutzen. [BEISPIEL_0] Die Wartezeiten vor New Yorker Liften allerdings summieren sich im Lauf eines Jahres auf 16.6 Jahre. Daran mag es liegen, dass der Fahrstuhl als technisches Hilfsmittel für gewöhnlich weniger geliebt als bloß geduldet wird. Dabei wäre ohne den Aufzug die Eroberung der Vertikalen in unseren Städten wohl ausgeblieben.\n\nDie Idee des Aufzugs an sich ist mit einiger Sicherheit schon ziemlich alt.[LÜCKE_1] Im großen Stil kam der Aufzug allerdings erst im 19. Jahrhundert in Mode, als Dampfmaschinen das Hochhieven der Plattformen übernehmen konnten. Doch beschränkte sich das maschinelle Liften vorerst auf Waren.\n\nErst Elisha Graves Otis, Gründer der Otis Elevator Company, bereitete dem Fahrstuhl als Verkehrs- system in der Vertikalen den Weg. [LÜCKE_2] Die Entwicklung besserer Seile und Dampfmaschinen sowie der Zustrom von Arbeitskräften in die Städte machten schließlich den Fahrstuhl zum unverzichtbaren Requisit urbanen Lebens. Bald lösten Elektromotoren die Dampfmaschinen ab, so dass schon um 1900 Liftkabinen bis in eine Höhe von 30 Stockwerken fuhren. [LÜCKE_3]\n\nMit dem Bauboom des beginnenden zwanzigsten Jahrhunderts tauchte indes ein neues Problem auf: [LÜCKE_4] Zugleich wünschten Bauherren einen niedrigen Energieverbrauch bei möglichst hoher Transportkapazität. Deshalb zogen auf das Elevatoring spezialisierte Ingenieure bald ein ganzes Dickicht mathematischer Gleichungen zur Optimierung von Liftanlagen heran.\n\nHeute mischt die Fahrstuhlmathematik live bei der Steuerung der Liftkabinen mit, und zwar dann, wenn Wartende dem Lift via Zielruftaste mitteilen, in welches Stockwerk die Fahrt gehen soll. Dann ermittelt der Steuercomputer, welche Kabine idealerweise wo anhält.\n\n[LÜCKE_5] Eine Kabine pro Schacht - das ist so, als würden Eisenbahnen entlang jeder Gleisstrecke jeweils nur einen Zug fahren lassen. Große und hohe Gebäude müssten mit mindestens sechs Fahrstuhlschächten versehen werden, um die Flut an Fahrgästen bewältigen zu können.\n\nDoch könnte eine neue Technologie die Vorherrschaft der seilbetriebenen Aufzüge beenden. [LÜCKE_6] So können mehrere Kabinen im gleichen Schacht fahren. Eine Modellanlage gibt es bereits, bald soll der neue Fahrstuhl in einem eigens dafür errichteten Turm getestet werden.",
+    "example": {
+      "key": "z",
+      "text": "5.9 Jahre verbringen alle Büroangestellten New Yorks zusammengenommen jedes Jahr mit Fahrten im Lift, errechneten Forscher von IBM unlängst."
+    },
+    "exampleText": "5.9 Jahre verbringen alle Büroangestellten New Yorks zusammengenommen jedes Jahr mit Fahrten im Lift, errechneten Forscher von IBM unlängst.",
+    "options": [
+      {
+        "key": "a",
+        "text": "1853 stellte er eine Fangvorrichtung vor, die bei einem Riss des Seils verhinderte, dass die Kabine ungebremst in die Tiefe stürzte."
+      },
+      {
+        "key": "b",
+        "text": "All diesen Neuerungen zum Trotz ist der Fahrstuhl im Grunde selbst heutzutage noch eine ziemlich ineffiziente Sache."
+      },
+      {
+        "key": "c",
+        "text": "Die bequeme Fahrt im Aufzug muss mit langen Wartezeiten erkauft werden - und je mehr Fahrgäste, desto komplizierter die Berechnung der günstigsten Fahrwege."
+      },
+      {
+        "key": "d",
+        "text": "Dieses bahnbrechende Hochhausprojekt erforderte technische Neuerungen."
+      },
+      {
+        "key": "e",
+        "text": "Einfache Glocken oder Summer besorgten in diesen frühen Kabinen die Kommunikation über die Fahrtrichtung und demnächst anzusteuernde Haltestellen."
+      },
+      {
+        "key": "f",
+        "text": "Magnete sollen die Seile ersetzen, die Kabine wie eine Magnetschwebebahn in der Vertikalen auf und ab gleiten."
+      },
+      {
+        "key": "g",
+        "text": "So fanden Archäologen in altrömischen Ruinen Überreste von Schächten, in denen Plattformen auf und ab fahren konnten."
+      },
+      {
+        "key": "h",
+        "text": "Trotz dieser Rückschläge glaubte er fest an seine Idee. 100%"
+      }
+    ],
+    "correctAnswers": {
+      "1": "g",
+      "2": "a",
+      "3": "e",
+      "4": "c",
+      "5": "b",
+      "6": "f"
+    },
+    "explanations": {
+      "1": "Passender Satz: G",
+      "2": "Passender Satz: A",
+      "3": "Passender Satz: E",
+      "4": "Passender Satz: C",
+      "5": "Passender Satz: B",
+      "6": "Passender Satz: F"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-13",
+    "themeTitle": "Wie sich das Postwesen entwickelte",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Im Zeitalter von Internet, E-Mails und Smartphones verschicken und empfangen wir Botschaften und Dokumente in Sekundenschnelle. [BEISPIEL_0] Das war nicht immer so einfach. Damit Nachrichten überhaupt verlässlich übermittelt werden konnten, mussten zuerst die Schrift und ein tragbarer Schriftträger erfunden werden. Erste Ansätze zu einem geordneten Nachrichtenwesen, das in erster Linie staatspolitischen und militärischen Zwecken diente, gab es dann in den vorantiken Hochkulturen und in der Antike.\n\nSo nutzten etwa die alten Ägypter zuerst den Nil, um schriftliche Nachrichten durch Schiffsreisende zu übermitteln. Zusätzlich sandten die ägyptischen Könige Boten, die zunächst zu Fuß unterwegs waren, in die entlegenen Provinzen. [LÜCKE_1] Aus der Zeit um 255 v. Chr. ist das Kontrollbuch eines Briefboten erhalten, in dem jede Auslieferung vom Empfänger bestätigt wurde. Auch aus Persien weiß man von einem System der Nachrichtenübermittlung durch berittene Boten, mit Zwischenstationen auf den wichtigsten Verkehrsrouten.\n\nDie Römer entwickelten eine eigene Staatspost, die direkt dem Kaiser unterstand und nicht für private Sendungen zuständig war. In diesem staatlichen System wurden die Sendungen so weit wie möglich auf dem Schiffsweg befördert. Für die Weiterbeförderung an Land wurden dann Reiter eingesetzt. Für private Sendungen mussten andere Wege gefunden werden, zum Beispiel reisende Freunde für Nachrichten, die über längere Distanzen übermittelt werden sollten. [LÜCKE_2]\n\nNach dem Zerfall des Weströmischen Reiches funktionierte die Nachrichtenübermittlung in Europa nur mehr eingeschränkt, vor allem über missionierende Mönche und das Botennetz der Karolinger. Im Hochmittelalter unterhielten die Klöster eigene Botendienste, und auch die deutsch-römischen, französischen und englischen Herrscher setzten eigene Fußboten ein.\n\nDie moderne Geschichte des Postwesens beginnt in der Frühen Neuzeit mit der Einführung des Stafettensystems mit Reiter- und Pferdewechsel. [LÜCKE_3] Er wurde im Jahr 1490 von Janetto von Taxis zwischen dem Hof Maximilians I. in Innsbruck und jenem seines minderjährigen Sohnes Philipp in den Burgundischen Niederlanden eingerichtet. Diese Postkurse wurden in der Folge je nach Bedarf bis Rom, Neapel, Verona und zu anderen Städten ausgedehnt.\n\nZu Beginn war die Post für den privaten Briefverkehr gesperrt. Es durften nur Briefe und Kleingüter aus dem dynastischen Bereich befördert werden. Nach 1520 nahm dann die Beförderung der Privatpost auf dem Niederländischen Postkurs unaufhaltsam zu. [LÜCKE_4] Neben Briefen und ähnlichen Sendungen beförderte die Post nun auch Personen, die mit Begleitung von Poststation zu Poststation reisten und dabei die Reitpferde wechselten.\n\nDer zunehmende Postverkehr führte schon früh zu Versuchen administrativer Verbesserungen und Vereinfachungen. [LÜCKE_5] Außerdem ging es um eine größere Sicherheit für die der Post anvertrauten Briefe und Güter und um die Einstellung zuverlässiger Boten, die ausreichenden Lohn erhalten sollten.\n\nNach dem Ende des Dreißigjährigen Krieges schließlich begann der Einsatz von Postkutschen, zunächst im Personenverkehr. [LÜCKE_6] Die noch heute bestehenden Bezeichnungen wie „Gasthof zur Post\" erinnern daran. Um 1800 waren alle mitteleuropäischen Städte durch regelmäßige Postverbindungen miteinander verbunden.",
+    "example": {
+      "key": "z",
+      "text": "Distanzen spielen für uns keine Rolle mehr."
+    },
+    "exampleText": "Distanzen spielen für uns keine Rolle mehr.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Später setzten sie auch reitende Briefboten ein."
+      },
+      {
+        "key": "b",
+        "text": "Zunächst stillschweigend geduldet, wurde die Beförderung privater Korrespondenz schließlich genehmigt."
+      },
+      {
+        "key": "c",
+        "text": "Für kürzere Entfernungen hingegen schickten wohlhabende römische Bürger ihre Sklaven zu Fuß auf den Weg."
+      },
+      {
+        "key": "d",
+        "text": "Entlang der Postkurse entstanden an den Poststationen Wirtshäuser, die mit den Postgesellschaften kooperierten."
+      },
+      {
+        "key": "e",
+        "text": "Eine solche Gebühr gab es zu jener Zeit noch nicht."
+      },
+      {
+        "key": "f",
+        "text": "Diese galten vorwiegend der Abschaffung von Unzulänglichkeiten bei der Zustellung und der Verminderung hoher Verlustquoten der Sendungen."
+      },
+      {
+        "key": "g",
+        "text": "Dagegen wurden diese Berufsboten oft sehr schlecht bezahlt."
+      },
+      {
+        "key": "h",
+        "text": "Die erste zeitlich und räumlich zentral organisierte Postverbindung war der sogenannte „Niederländische Postkurs“."
+      }
+    ],
+    "correctAnswers": {
+      "1": "a",
+      "2": "c",
+      "3": "h",
+      "4": "b",
+      "5": "f",
+      "6": "d"
+    },
+    "explanations": {
+      "1": "Passender Satz: A",
+      "2": "Passender Satz: C",
+      "3": "Passender Satz: H",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: F",
+      "6": "Passender Satz: D"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-14",
+    "themeTitle": "Wie Zimmerpflanzen die Wohnzimmer eroberten",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Exotische Zimmerpflanzen sind für uns inzwischen alltäglich, doch noch vor 200 Jahren gab es in unseren Breiten kaum eine Möglichkeit, Wohnungen mit lebendigem Grün aus fernen Ländern zu schmücken. Denn Pflanzen konnten zu dieser Zeit noch nicht über lange Strecken transportiert werden. Erst mit der Erfindung des englischen Arztes und Hobbybotanikers Nathaniel Ward sollte sich dies ändern: Er konzipierte eine Art\n\nMini-Gewächshaus, das es ermöglichte, Pflanzen über weite Distanzen zu befördern. Dieser speziell angefertigte Glasbehälter wurde unter dem Namen „Wardscher Kasten“ berühmt. 1833 wurden zwei dieser Behälter mit Farnen und Gräsern auf eine mehrmonatige Seereise von England nach Australien geschickt. [LÜCKE_1] Nach diesem beeindruckenden Erfolg machte Ward seine Erfindung bekannt, und Pflanzensammler konnten sich von nun an nicht mehr nur Samen, sondern auch Pflanzen aus weit entfernten Gegenden liefern lassen.\n\nMit Wards Erfindung begann eigentlich erst die Geschichte der Zimmerpflanze. Vorher war exotisches Grün lediglich gut betuchten Adeligen vorbehalten. [LÜCKE_2] Nachdem die ersten Zimmerpflanzen mit dem Schiff nach Europa gelangt waren, entwickelten sie sich dort schnell zum Statussymbol. Das erstarkende Bürgertum des 19. Jahrhunderts gierte nach Pflanzenneuheiten aus fernen Ländern, große Exotengärtnereien bedienten diese Nachfrage. [LÜCKE_3] Üppigverspielte Farne und Palmen waren der letzte Schrei; für eine exklusive Orchidee gaben Liebhaber schon mal ein Vermögen aus. Denn wer Zimmerpflanzen sammelte, konnte sich auch den damit verbundenen finanziellen und zeitlichen Aufwand leisten .\n\nVon den 1920er-Jahren an änderten sich jedoch die Vorlieben: [LÜCKE_4] Erst mit der Flower-Power- Bewegung, also ab den 1960er-Jahren, kehrten die Pflanzen zurück in die Wohnräume und eroberten nun auch die Bürokomplexe, in denen immer mehr Menschen die meiste Zeit ihres Tages verbrachten. [LÜCKE_5] Arbeitgeber versuchten daher, mit Pflanzen gegenzusteuern, zumal immer wieder Studien auf den Zusammenhang von Zimmerpflanzen und Luftqualität in geschlossenen Räumen hinwiesen.\n\nMit der Zeit wandelte sich auch das Image der floralen Dekoration: Lange war diese ein exklusives Hobby für gesellschaftliche Eliten, doch heute sind Zimmerpflanzen eine Selbstverständlichkeit. Der Grund dafür liegt darin, dass sie viel leichter zugänglich geworden sind: [LÜCKE_6] Supermärkte verkaufen Orchideen, das Statussymbol der Gründerzeit schlechthin, heute für zehn bis 15 Euro pro Stück. Mittlerweile hat sich jedoch ein Gegentrend entwickelt: Besonders begehrt sind exklusivere und teurere Pflanzen. Es zeigt sich also deutlich, dass auch Zimmerpflanzen der Mode unterliegen.",
+    "example": {
+      "key": "z",
+      "text": ""
+    },
+    "exampleText": "",
+    "options": [
+      {
+        "key": "a",
+        "text": "Technisierte Anbaumethoden erlauben nämlich längst ihre Produktion in großem Stil und zu kleinem Preis."
+      },
+      {
+        "key": "b",
+        "text": "So wurden in China schon vor über 2500 Jahren Topfpflanzen bei Gartenausstellungen gezeigt."
+      },
+      {
+        "key": "c",
+        "text": "In sozialen Netzwerken wird vom Großstadtdschungel geschwärmt, denn Zimmerpflanzen wieder im Trend."
+      },
+      {
+        "key": "d",
+        "text": "Erstaunlicherweise kamen die Pflanzen völlig unbeschadet an ihrem Bestimmungsort an."
+      },
+      {
+        "key": "e",
+        "text": "Dort schlugen klingelnde Telefone, Druckerschwärze und Zigarettenrauch vielen aufs Gemüt."
+      },
+      {
+        "key": "f",
+        "text": "Diese stellten ihre Zitrusbäumchen und Rosmarinsträucher allerdings noch nicht in ihren Wohnräumen, sondern in Orangerien, also repräsentativen Gewächshäusern, zur Schau."
+      },
+      {
+        "key": "g",
+        "text": "Dekoratives Ziergrün wurde nun aus den Wohnungen verbannt, weil es nicht mehr dem Zeitgeist entsprach."
+      },
+      {
+        "key": "h",
+        "text": "Ausgefallenes Zimmergrün wurde von diesen gesammelt wie Bücher oder Gemälde und im Salon zur Schau gestellt."
+      }
+    ],
+    "correctAnswers": {
+      "1": "d",
+      "2": "f",
+      "3": "h",
+      "4": "g",
+      "5": "e",
+      "6": "a"
+    },
+    "explanations": {
+      "1": "Passender Satz: D",
+      "2": "Passender Satz: F",
+      "3": "Passender Satz: H",
+      "4": "Passender Satz: G",
+      "5": "Passender Satz: E",
+      "6": "Passender Satz: A"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-15",
+    "themeTitle": "Ein Meilenstein in der Erforschung des alten Ägypten",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Am 27. September 1822 musste Francois Champollion eine demütigende Niederlage hinnehmen. [BEISPIEL_0] Doch kaum hatte er geendet, fielen die Gelehrten über ihn her, nannten ihn einen Scharlatan und Plagiator und fanden überhaupt, dass sich der gerade einmal 31-jährige Philologe zu viel herausnehme.\n\nAber Champollion wollte nicht klein beigeben. Wenige Tage später bündelte er seine Erkenntnisse in einem Brief an den Ständigen Sekretär der Akademie. [LÜCKE_1]\n\nDie Suche nach ihm begann damit, dass am 15. Juli 1799 der französische Pionieroffizier Bouchard, der zum Gefolge Napoleons gehörte, bei Schanzarbeiten nahe Rosette im Nildelta das Fragment eine Steintafel fand. [LÜCKE_2] Die Wissenschaftler, die Napoleons Expedition begleiteten, konnten weder die Hieroglyphen noch die zweite Schrift, die demotische Schreibschrift, lesen. Wohl aber den dritten Teil: Er war in Griechisch geschrieben.\n\nZunächst brachte der Stein seinen Entdeckern wenig Glück. 1801, nach dem Scheitern des militärischen Unternehmens, geriet er in die Beute, die die Briten nach London schafften. [LÜCKE_3] Doch Abschriften ermöglichten es ausgerechnet einem Franzosen, den Ruhm der Entschlüsselung einzustreichen.\n\nJean-Francois Champollion wurde 1790 in Figeac geboren. Bereits als Schüler konnte er neben Latein und Griechisch Hebräisch, Arabisch, Syrisch und Aramäisch. Mit 17 lernte er Koptisch und Persisch und war mit 19 stellvertretender Professor für Geschichte des Altertums an der Akademie von Grenoble. [LÜCKE_4] „Je tiens l'affaire!“ - „Ich hab's raus!\" soll er gerufen haben. Die Hieroglyphen stellen keine Bilderschrift dar - wie er lange angenommen hatte - sondern eine Mischung aus ideographischen und phonetischen Zeichen. Damit hatte Champollion die Hieroglyphen im Grundsatz entziffert: vielleicht das älteste und sicherlich am längsten gebrauchte Schriftsystem der Welt.\n\nAls Grundlage diente ihm die Inschrift auf dem Stein von Rosette. Der griechische Text stellte klar, dass man es mit einer Dankesadresse eines Priesterkollegiums an König Ptolemaios V. zu tun hatte. Champollion zählte 486 griechische Wörter gegenüber 1419 Hieroglyphen. Daraus folgerte er, dass es sich nicht um eine reine Bilderschrift handeln konnte. Er erkannte, dass manche Zeichen ideografische Bedeutung hatten, das heißt, einen ganzen Begriff vertraten. [LÜCKE_5] Daneben gab es Deutzeichen, die anzeigten, ob ein Wort aus dem Bereich des Hauses, der Tiere oder der Menschen stammte. Wie in der zeitgleichen Keilschrift Mesopotamiens gab es nur Konsonanten. Die Zeichen konnten von rechts nach links, von links nach rechts und von oben nach unten geschrieben werden. Bald konnte Champollion die Namen von Ptolemaios und seiner Schwester Kleopatra lesen. [LÜCKE_6]\n\nAllmählich vermochte Champollion ein System zu erkennen. Als er 1828/29 Ägypten besuchte, konnte er befriedigt feststellen, dass sein Alphabet richtig war. Es konnte mit Erfolg bei den ägyptischen Denkmälern der Römer- und Ptolemäerzeit und bei sämtlichen Inschriften von Tempeln, Palästen und Gräbern der Pharaonenzeit angewendet werden.",
+    "example": {
+      "key": "z",
+      "text": "Vor der berühmten Academie des Inscriptions et Belles-Lettres in Paris stellte er seine Forschungen zur Entschlüsselung der ägyptischen Hieroglyphen vor."
+    },
+    "exampleText": "Vor der berühmten Academie des Inscriptions et Belles-Lettres in Paris stellte er seine Forschungen zur Entschlüsselung der ägyptischen Hieroglyphen vor.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Dieses trug eine Inschrift in drei Sprachen."
+      },
+      {
+        "key": "b",
+        "text": "Andere dagegen hatten phonetische Bedeutung, bildeten also Dinge ab, meinten aber nur den Lautwert."
+      },
+      {
+        "key": "c",
+        "text": "Dort wurde das gute Stück ausgestellt."
+      },
+      {
+        "key": "d",
+        "text": "Ihren Namen erhielt die Dynastie von einem seiner Vorgänger, Ptolemaios I."
+      },
+      {
+        "key": "e",
+        "text": "Damit wurde eines der Rätsel um die berühmte ägyptische Königin gelöst."
+      },
+      {
+        "key": "f",
+        "text": "Weitere Namen aus der altägyptischen Spätzeit wie Alexander, Tiberius und Trajan folgten."
+      },
+      {
+        "key": "g",
+        "text": "Heute gilt dieses Schreiben als entscheidender Wendepunkt der Ägyptologie, wurde doch damit der Schlüssel zur altägyptischen Zivilisation gefunden."
+      },
+      {
+        "key": "h",
+        "text": "Im Alter von 31 Jahren gelang ihm der Durchbruch zur Entschlüsselung."
+      }
+    ],
+    "correctAnswers": {
+      "1": "g",
+      "2": "a",
+      "3": "c",
+      "4": "h",
+      "5": "b",
+      "6": "f"
+    },
+    "explanations": {
+      "1": "Passender Satz: G",
+      "2": "Passender Satz: A",
+      "3": "Passender Satz: C",
+      "4": "Passender Satz: H",
+      "5": "Passender Satz: B",
+      "6": "Passender Satz: F"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-16",
+    "themeTitle": "Höhlenforschung : Expeditionen ins Erdinnere",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Der Abstieg in der Unterwelt ist ihre Leidenschaft: Höhlenforscher dringen tief im Hohlräume die Erdkruste vor. [BEISPIEL_0] Die Öffentlichkeit nimmt davon kaum etwas wahr, weil die Arbeit der Höhlenforscher oder - wie der Fachbegriff gehört – „Speläologen \" findet wortwörtlich in Verborgenen statt.\n\nDoch was bewegt Höhlenforscher, nicht bloß sogenannte Schauhöhlen als Touristen zu besuchen, sondern sich fernab von Tageslicht und Wärme durch gewundene Gänge in die Tiefen der Erde voranzutasten? „Einmal ist es natürlich die Schönheit der Welt unter Tage\", sagt Stefan Zänker vom Landesverband für Höhlen- und Karstforschung Hessen e. V., der in Fulda ansässig ist: „Man raubt eine neue ewig lange Zeit durch ein dunkles Loch und kommt dann plötzlich in einen Raum, wo herrliche Tropfsteine hängen, die noch ganz weiß, weil unberührt sind.\"\n\n[LÜCKE_1] Denn Höhlen sind nicht nur eine Welt aus Gestein und Wasser: Knapp 750 Arten umfasst die Liste der Höhlentiere in Deutschland. Neben Höhlengästen wie Fledermäusen gibt es auch echte Höhlenspezialisten, die ihr ganzes Leben dort verbringen. Viele dieser Tiere sind sehr hell oder sogar weiß: [LÜCKE_2] Dafür haben die Höhlenbewohner meist einen guten Geruchs- und Tastsinn.\n\nDeutschland ist ein höhlenreiches Land. Rund 11.000 Höhlen sind katastermäßig erfasst. Dennoch gibt es den Beruf des Höhlenforschers nicht, und Höhlenforschung ist in Deutschland ehrenamtlich. Das habe zwei Gründe, erklärt Stefan Zänker. Zum einen liege dies an der Finanzierung. Es gebe niemanden, der so etwas bezahlen würde, und wahrscheinlich auch nicht könnte, weil viel Zeit in dieser Profession stecke. [LÜCKE_3] Dazu gehören unter anderem Archäologie, Biologie, Geographie, Geologie, Hydrologie, Klimatologie oder Paläontologie.\n\nMan definiert eine Höhle als mindestens fünf Meter langen, von Menschen begehbaren Hohlraum, der natürlich entstanden und von festem Gestein umgeben ist. [LÜCKE_4]Wer Höhle erforschen wolle, müsse nicht nur körperlich fit sein, auch alpinistische Qualifikationen seien von Vorteil, betont Zänker. Außerdem brauche man unbedingt eine spezielle Ausbildung. [LÜCKE_5] Zu dieser gehören ein Helm gegen Steinschlag, an dem die Stirnlampe befestigt ist, verschiedene Kletter- und Steighilfen ebenso wie reißfeste, wasserdichte und wärmende Spezialkleidung in Form eines Overalls. [LÜCKE_6]\n\nNicht zuletzt sind zahlreiche Sicherheitsmaßnamen das A und O. Denn so faszinierend die unerforschte Welt in der Tiefe auch ist: Die Gefahren einer solchen Expedition sind nicht zu unterschätzen.",
+    "example": {
+      "key": "z",
+      "text": "Dort suchen sie nach unbekannten Schächten, Hallen und Schluchten und vermessen und kartographieren neue Teile der Höhle."
+    },
+    "exampleText": "Dort suchen sie nach unbekannten Schächten, Hallen und Schluchten und vermessen und kartographieren neue Teile der Höhle.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Als zusätzliches Motiv der Höhlenforscher sind aber auch Selbstbestätigung, Neugier und die Lust am Nervenkitzel zu nennen."
+      },
+      {
+        "key": "b",
+        "text": "Dabei lerne man zum Beispiel die Verwendung der notwendigen Ausrüstung:"
+      },
+      {
+        "key": "c",
+        "text": "Daneben sei es natürlich auch wichtig, Unbekanntes zu entdecken, wie zum Beispiel spezielle Lebewesen."
+      },
+      {
+        "key": "d",
+        "text": "Diese Begriffsbestimmung lässt nur erahnen, welche ausgedehnten Systeme von Gängen, Schluchten, ja sogar Wasserläufen und Seen sich dahinter verbergen."
+      },
+      {
+        "key": "e",
+        "text": "Denn Farbpigmente werden mangels UV-Strahlung nicht gebildet, auch ihr Sehsinn ist meist unterentwickelt."
+      },
+      {
+        "key": "f",
+        "text": "Für Höhlen, in denen sich Seen und überflutete Gänge befinden, ist außerdem eine Taucherausrüstung notwendig."
+      },
+      {
+        "key": "g",
+        "text": "Zu den Höhlenbewohnern gehören zahlreiche Tierarten, die an diese besondere Umgebung angepasst sind."
+      },
+      {
+        "key": "h",
+        "text": "Zum anderen sei Höhlenforschung eine interdisziplinäre Wissenschaft, die viele Fächer zusammenführe."
+      }
+    ],
+    "correctAnswers": {
+      "1": "c",
+      "2": "e",
+      "3": "h",
+      "4": "d",
+      "5": "b",
+      "6": "f"
+    },
+    "explanations": {
+      "1": "Passender Satz: C",
+      "2": "Passender Satz: E",
+      "3": "Passender Satz: H",
+      "4": "Passender Satz: D",
+      "5": "Passender Satz: B",
+      "6": "Passender Satz: F"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-17",
+    "themeTitle": "Die besondere Begabung der Gesichtserkennung",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Flink, Professionell, unbemerkt. Auf den Bildern einer Überwachungskamera lässt ein Dieb Schmuck in seiner Tasche verschwinden. „Fast wie ein Magier“, beschreibt Josh Davis, Psychologe an der englischen University of Greenwich, die Szene. Ein Polizist einer Sondereinheit des Scotland Yard, der Londoner Polizei, sieht die Bilder und erkennt den Täter sofort: [BEISPIEL_0] Tagelang habe der Beamte weitere Überwachungsvideos durchforstet, erzählt Davis, und dem Unbekannten mehr als 40 Diebstähle zugeordnet. Schließlich wird der Täter gefasst. Der Polizist, der den Dieb auf mehr als 40 Überwachungsvideos erkannte, wird als Super-Recogniser bezeichnet. [LÜCKE_1] Dass es Leute gibt, die ein Gesicht nicht vergessen oder auf noch so verschwommenen Fotos Personen wiedererkennen, weiß die Wissenschaft erst seit wenigen Jahren. Die Forschung steckt zwar noch in den Kinderschuhen. [LÜCKE_2]\n\nDie Wissenschaftler stolperten eher zufällig über diese besondere Fähigkeit von Menschen. Eigentlich untersuchten sie die sogenannte Prosopagnosie, Gesichtsblindheit. [LÜCKE_3] Im Extremfall erkennen sie sogar Familienmitglieder nicht. Während der Forschungsarbeit wurden die Wissenschaftler von Menschen kontaktiert, die das Gegenteil von sich behaupteten, nämlich dass sie sich besonders gut Gesichter merken könnten. Einige dieser Personen testeten die Forscher daraufhin: Alle Testpersonen schnitten bei Gesichtserkennungstests deutlich besser ab als der Durchschnitt.\n\n„Die meisten Super-Recogniser sind sich ihrer seltenen Begabung gar nicht bewusst\", sagt Davis. „Sie merken z. B., dass sie besonders gut Schauspieler in kleinen Nebenrollen wiedererkennen können, oder berichten von peinlichen Schlüsselerlebnissen, etwa, dass sie auf der Straße jemanden wiedererkannten, der sich überhaupt nicht an sie erinnerte.“ [LÜCKE_4] Davis schätzt den Anteil auf unter ein Prozent der Bevölkerung.\n\nDoch was macht einen Super-Recogniser aus? Sarah Bate, Psychologin an der britischen Bournemounth Universität, hält es für gut möglich, dass diese Menschen durchaus unterschiedlichen Stärken haben, wenn es um das Erkennen von Gesichtern geht. So können sich einige sehr gut an Gesichter erinnern, selbst nach flüchtigen Begegnungen. [LÜCKE_5] Und manche können am besten Personen in einer großen Menschenmenge ausfindig machen.\n\nVor einigen Jahren gründete die Londoner Polizei eine eigene Einheit von Super-Recognisern. Die Polizisten sind den besten Computerprogrammen zur Gesichtserkennung noch weit voraus: Bei 1000 Bildern, auf denen die Beamten Verdächtige identifizieren, erkenne die Software derzeit nur einen.\n\nDie besonderen Begabungen der Super-Recogniser sind weitgehend unerforscht. [LÜCKE_6] Auch haben sie nach dem derzeitigen Wissensstand weder etwas mit einem guten Gedächtnis noch mit einem hohen Intelligenzquotienten zu tun, sondern mit jenem Hirnareal, das Gesichter verarbeitet. Genaueres ist aber noch nicht bekannt. Hier wird die Wissenschaft hoffentlich noch spannende Erkenntnisse erlangen.",
+    "example": {
+      "key": "z",
+      "text": "Er hat ihn zuvor in einer anderen Aufzeichnung eines Diebstahls gesehen."
+    },
+    "exampleText": "Er hat ihn zuvor in einer anderen Aufzeichnung eines Diebstahls gesehen.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Andere hingegen sind besonders gut darin, Gesichter zuzuordnen, wenn sie mehrere Fotos vor sich haben."
+      },
+      {
+        "key": "b",
+        "text": "Bei diesem Verfahren werden die charakteristischen Merkmale der Gesichtszüge anhand eines digitalisierten Bildes bestimmt."
+      },
+      {
+        "key": "c",
+        "text": "Betroffene sind nicht dazu in der Lage, Menschen anhand ihres Gesichts zu identifizieren."
+      },
+      {
+        "key": "d",
+        "text": "Doch schon jetzt eröffnet sie viele Perspektiven - in der Psychologie und in der kriminalistischen Praxis."
+      },
+      {
+        "key": "e",
+        "text": "Man vermutet, dass sie genetisch weitergegeben werden."
+      },
+      {
+        "key": "f",
+        "text": "So lokalisiert die Erkennungssoftware das Gesicht und berechnet seine charakteristischen Eigenschaften."
+      },
+      {
+        "key": "g",
+        "text": "So nennt man Menschen, die sich außerordentlich gut Gesichter merken können."
+      },
+      {
+        "key": "h",
+        "text": "Wie viele Menschen man wirklich als Super-Recogniser bezeichnen könne, sei unklar."
+      }
+    ],
+    "correctAnswers": {
+      "1": "g",
+      "2": "d",
+      "3": "c",
+      "4": "h",
+      "5": "a",
+      "6": "e"
+    },
+    "explanations": {
+      "1": "Passender Satz: G",
+      "2": "Passender Satz: D",
+      "3": "Passender Satz: C",
+      "4": "Passender Satz: H",
+      "5": "Passender Satz: A",
+      "6": "Passender Satz: E"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-18",
+    "themeTitle": "Die Sprache der Tiere",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Unsere Umwelt ist voll von tierischen Lauten. [BEISPIEL_0] Morgens kräht der Hahn, abends quaken Frösche im Gartenteich und nachts laufen Wildschweine grunzend durchs Unterholz. Die Forschung hat bestätigt: Tiere produzieren nicht grundlos Laute. Wie wir Menschen nutzen sie sie zur Verständigung. Die tierische Kommunikation dient dabei ganz unterschiedlichen Zwecken: [LÜCKE_1] Ihre Laute nutzen Tiere aber auch, um ihre aktuelle Stimmung kundzutun. Je sozialer Tiere leben, desto häufiger und vielfältiger äußern sie sich.\n\n„Kommunikation ist lebensnotwendig. Alle Tiere kommunizieren auf die eine oder andere Weise miteinander\", sagt Oliver Krüger, Professor für Verhaltensbiologie an der Uni Bielefeld. Laute sind aus dem Reich der Tiere also nicht wegzudenken. Einige Tierarten erweisen sich in Sachen Klangsprache sogar als außergewöhnlich talentiert: Vögel, vor allem die Männchen, sind wahre Gesangsvirtuosen. [LÜCKE_2] So geben sich Delfine Namen, Fledermäuse haben einen ausgeklügelten Sprachcode, die Kapuzineräffchen sogar eine Syntax.\n\nDie Wissenschaft ergründet die sprachliche Welt der Tiere Schritt für Schritt. [LÜCKE_3] Sicher ist: Eine so ausgefeilte Lautsprache wie beim Menschen wurde bisher bei keiner anderen Art gefunden. Was die meisten Tiere jedoch mit dem Menschen gemeinsam haben, ist Folgendes: Auch sie können nicht von Geburt an sprechen. [LÜCKE_4] Diese richtig einzusetzen, müssen sie erst noch lernen. Erst mit der Zeit sind sie dazu in der Lage, Laute bestimmten Situationen zuzuordnen.\n\nDoch nicht alle Tierarten verwenden akustische Signale für die Kommunikation. [LÜCKE_5] Wölfe stellen beispielsweise das Fell auf, um eindrucksvoller auszusehen und Artgenossen zu imponieren. Wenn sie dagegen Unterwürfigkeit demonstrieren möchten, machen sie sich klein und ziehen den Schwanz ein. Eidechsen hingegen verständigen sich miteinander, indem sie mehr als 6000 verschiedene Körperhaltungen einnehmen.\n\nDie Tierwelt kennt jedoch noch weitere raffinierte Möglichkeiten der Kommunikation: Elefanten etwa senden tiefe Infraschall-Laute aus. Als Infraschall bezeichnet man Töne, die unterhalb des Hörbereichs des menschlichen Ohres liegen. [LÜCKE_6] Elefanten nutzen sie, um sich über mehrere Kilometer hinweg miteinander zu unterhalten. Was Kommunikation über weite Strecken betrifft, haben sie – ebenso wie einige andere Tierarten - uns Menschen also durchaus etwas voraus: Während wir in diesem Fall zum Telefon greifen müssen, führen sie Ferngespräche ganz ohne technische Hilfsmittel.",
+    "example": {
+      "key": "z",
+      "text": "Wer aufmerksam hinhört, kann sie überall wahrnehmen:"
+    },
+    "exampleText": "Wer aufmerksam hinhört, kann sie überall wahrnehmen:",
+    "options": [
+      {
+        "key": "a",
+        "text": "Daneben verwenden Tiere auch Düfte, Körperhaltung und sogar elektrische Signale zum Austausch von Informationen."
+      },
+      {
+        "key": "b",
+        "text": "Der Großteil kommt mit einer Grundausstattung an Lautäußerungen zur Welt, die genetisch weitergegeben wird."
+      },
+      {
+        "key": "c",
+        "text": "Diese Töne sind also so tief, dass unser Ohr sie gar nicht wahrnehmen kann."
+      },
+      {
+        "key": "d",
+        "text": "Doch auch andere Arten verfügen über erstaunliche Fähigkeiten."
+      },
+      {
+        "key": "e",
+        "text": "Folglich könne man ihre Lautäußerungen nicht als Sprache bezeichnen."
+      },
+      {
+        "key": "f",
+        "text": "Forscher haben nämlich herausgefunden, dass Elefanten auch Fremdsprachen lernen können."
+      },
+      {
+        "key": "g",
+        "text": "Mal soll ein Partner angelockt, mal das Revier verteidigt oder Artgenossen vor Feinden gewarnt werden."
+      },
+      {
+        "key": "h",
+        "text": "Ob diese Art der tierischen Kommunikation jedoch eine wirkliche Sprache ist, darüber streiten Forscher noch."
+      }
+    ],
+    "correctAnswers": {
+      "1": "g",
+      "2": "d",
+      "3": "h",
+      "4": "b",
+      "5": "a",
+      "6": "c"
+    },
+    "explanations": {
+      "1": "Passender Satz: G",
+      "2": "Passender Satz: D",
+      "3": "Passender Satz: H",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: A",
+      "6": "Passender Satz: C"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-19",
+    "themeTitle": "Polaroid – die Geschichte der Kultkamera",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Ihre Erfindung ist nicht zuletzt einem Kind zu verdanken: Die Rede ist von der Sofortbildkamera. 1943 war der US amerikanische Physiker und Unternehmer Edwin Herbert Land mit seiner Familie im Urlaub und machte Fotos. Seine dreijährige Tochter fragte ihn: „Papa, warum kann ich die Fotos nicht sofort sehen?“ Sie wünschte sich, diese direkt in den Händen halten zu können, statt sie erst entwickeln lassen zu müssen. Edwin H. Land hat zeit seines Lebens fast so viele Patente angemeldet wie der berühmte Erfinder Thomas Alva Edison. Um den Wunsch seiner Tochter zu erfüllen, suchte er nach einer Lösung und tüftelte an einer Sofortbildkamera. [LÜCKE_1] Da er bei diesen jedoch auf taube Ohren stieß, nahm er das Ganze selbst in die Hand.\n\nAm 21. Februar 1947 war es dann so weit. Land stellte der Welt eine Erfindung vor, die die Fotografie revolutionieren sollte: eine Kamera, die quasi auf Knopfdruck Fotos produzieren konnte. [LÜCKE_2] Die Presse sprach von einer Sensation, und die neue Technik begeisterte auch die Konsumenten. Nur anderthalb Jahre später lief die Polaroid-Kamera in Serie vom Band und verkaufte sich bald millionenfach. Von 1948 an ging die Verkaufskurve des Produkts steil nach oben, und dieser Erfolg setzte sich noch über Jahrzehnte fort. [LÜCKE_3] Zu verwundern braucht dies nicht, denn Sofortbildkameras hatten einige Vorteile: Erstens boten sie die Möglichkeit, gemeinsam mit anderen ein Foto sofort nach der Aufnahme zu betrachten. Zweitens gewährleisteten sie auch den Schutz der Privatsphäre: [LÜCKE_4] Nicht nur Privatpersonen, sondern auch Geheimdienste, die Polizei oder auch Künstler wie Andy Warhol nutzten die Kamera daher gerne. In den 1980er und 1990er Jahren erlebte die Firma Polaroid schließlich einen Höhenflug.\n\nDoch im neuen Jahrtausend begann ihr Abstieg. [LÜCKE_5] Sofortbildkameras waren nicht mehr gefragt, da nun ohne Entwicklungszeit und Papier, mit nur einem Klick qualitativ viel hochwertigere Fotos auf kleinen Bildschirmen angezeigt werden konnten, die sich noch dazu beliebig oft vervielfältigen ließen. Polaroid ging 2001 pleite, kam zurück, war 2008 wieder insolvent - und schaffte 2015 erneut die Wende, als ein Großinvestor einstieg.\n\nSeit einigen Jahren erleben Sofortbildkameras wieder eine Renaissance. [LÜCKE_6] Denn vor allem der digitalen Bilderflut überdrüssige Teenager interessieren sich dafür- und so bleibt die Sofortbildkamera auch im Selfie-Zeitalter beliebt.",
+    "example": {
+      "key": "z",
+      "text": ""
+    },
+    "exampleText": "",
+    "options": [
+      {
+        "key": "a",
+        "text": "Sie entwickelte nämlich dank einer chemischen Reaktion innerhalb von 60 Sekunden das gerade erst geschossene Bild."
+      },
+      {
+        "key": "b",
+        "text": "Man musste nicht befürchten, dass die eigenen Aufnahmen von neugierigen Labor-Mitarbeitern oder Fotoladen-Angestellten beäugt werden könnten."
+      },
+      {
+        "key": "c",
+        "text": "Heute sind sie vor allem wegen ihres Retrocharakters beliebt, werden aber nicht nur von Nostalgikern geschätzt"
+      },
+      {
+        "key": "d",
+        "text": "Erfinder Edwin Land verstand sich außerdem auf perfekt inszenierte Werbekampagnen und Produktvorstellungen."
+      },
+      {
+        "key": "e",
+        "text": "Er stieg 1980 mit einem geschätzten Privatvermögen von 150 Millionen US-Dollar als Firmenchef aus, den Niedergang seiner Firma erlebte er nicht mehr ."
+      },
+      {
+        "key": "f",
+        "text": "Diese bahnbrechende Idee präsentierte er schon bald verschiedenen Banken und Investoren."
+      },
+      {
+        "key": "g",
+        "text": "Denn zu dieser Zeit eroberte die Digitalfotografie nach und nach den Markt."
+      },
+      {
+        "key": "h",
+        "text": "Anfang der sechziger Jahre wurden in den USA schon doppelt so viele Polaroid-Kameras wie Kleinbildkameras verkauft."
+      }
+    ],
+    "correctAnswers": {
+      "1": "f",
+      "2": "a",
+      "3": "h",
+      "4": "b",
+      "5": "g",
+      "6": "c"
+    },
+    "explanations": {
+      "1": "Passender Satz: F",
+      "2": "Passender Satz: A",
+      "3": "Passender Satz: H",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: G",
+      "6": "Passender Satz: C"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-20",
+    "themeTitle": "Die Geschichte des Supermarkts",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Mit dem Einkaufswagen durch prall gefüllte Regalreihen fahren, nach Lust und Laune zugreifen und am Ende an der Kasse bezahlen: Das ist für uns heute selbstverständlich. Doch bis in die 1960er-Jahre hinein war das Prinzip der Selbstbedienung in Deutschland nahezu unbekannt. Die Idee dazu kam aus den USA und verbreitete sich nach ein paar Anlaufschwierigkeiten auch in Deutschland.\n\nLange Zeit war der Lebensmittelkauf eine umständliche Angelegenheit. Die Kunden mussten verschiedene Geschäfte aufsuchen, die gewünschten Produkte wurden einzeln aus den Regalen geholt, von Hand abgewogen, verpackt und abgerechnet. Der Einkauf dauerte wesentlich länger als heute, war dafür aber auch ein soziales Ereignis: [LÜCKE_1] 1938 eröffnete schließlich Herbert Eklöh, ein gelernter Drogist, in Osnabrück den ersten Selbstbedienungsladen in Deutschland, einen Vorläufer des heutigen Supermarkts. Wie solche Geschäfte funktionierten, hatte er sich zuvor in den USA abgeschaut. [LÜCKE_2] Das Konzept des heutigen Supermarktes etablierte dort die King-Kullen-Kette. Es zeichnete sich dadurch aus, dass ein komplettes Angebot an Lebensmitteln unter einem Dach vorhanden war und die Kunden die Waren selbst den Regalen entnehmen konnten.\n\nIn Deutschland reagierten sowohl Kundschaft als auch Konkurrenz anfangs ausgesprochen skeptisch. Zum einen befürchteten die Händler, durch das neue Konzept den engen Kontakt zu den Kunden zu verlieren. [LÜCKE_3] So hatte Supermarkt-Pionier Eklöh mit dem frühen Selbstbedienungsgeschäft von 1938 anfangs keinen Erfolg.\n\n1957 wagte er jedoch einen neuen Anlauf und eröffnete den ersten großen Supermarkt in Köln, wiederum nach amerikanischem Vorbild und mit einer für damalige Verhältnisse riesigen Verkaufsfläche von 1.700 Quadratmetern. Dieser fand sofort viel Anklang: Die Kundenzahl stieg schon bald rasant - ebenso wie die Zahl der Supermärkte in Deutschland. Ein Grund für das Wachstum: [LÜCKE_4] Der Massenkonsum begann, und der klassische Lebensmittel-Einzelhandel verlor an Bedeutung. Im Schatten der Kaufhäuser und Supermärkte konnten sich nur größere Fachgeschäfte halten. Heute sind Läden, bei denen der Inhaber selbst hinter der Kasse steht, eher ein Fall für Nostalgiker.\n\nProblematisch war es allerdings zunächst, dass die Preise in den Supermärkten relativ hoch waren. Das änderte sich 1962, als die Brüder Karl und Theo Albrecht ihren ersten Discounter eröffneten. Ihr Geschäftsmodell lautete: einfach und günstig. [LÜCKE_5] Das Konzept der Discounter gilt als deutsche Besonderheit und wird weltweit exportiert. Seit Anfang der 1970er-Jahre die ersten Supermärkte die Innenstädte verließen und auf die grüne Wiese gingen, erfolgten lange keine größeren Umbrüche mehr. [LÜCKE_6] Bestellt wird online, geliefert bis an die Wohnungstür. Und auch diesmal setzte sich der Trend zuerst in den USA durch.",
+    "example": {
+      "key": "z",
+      "text": ""
+    },
+    "exampleText": "",
+    "options": [
+      {
+        "key": "a",
+        "text": "Das kleine Lebensmittelgeschäft um die Ecke, auch liebevoll Tante-Emma-Laden genannt, war ein Ort des Austauschs, wo man einen netten Plausch hielt."
+      },
+      {
+        "key": "b",
+        "text": "Die nächste echte Revolution bahnte sich erst mit dem Lebensmitteleinkauf im Internet an."
+      },
+      {
+        "key": "c",
+        "text": "Durch den Wohlstand in der Zeit des Wirtschaftswunders konnten sich die Menschen mehr leisten."
+      },
+      {
+        "key": "d",
+        "text": "Große Handelsketten mit zahlreichen Niederlassungen gab es dort schon seit Mitte des 19. Jahrhunderts."
+      },
+      {
+        "key": "e",
+        "text": "Grund dafür war die Preisbindung, die es den Herstellern erlaubte, die Verkaufspreise für ihre Produkte festzulegen."
+      },
+      {
+        "key": "f",
+        "text": "Schon damals setzen die Händler bewusst verkaufspsychologische Mittel wie Farben, Düfte oder Musik ein, um die Kunden zum Kaufen animieren."
+      },
+      {
+        "key": "g",
+        "text": "Statt einer riesigen Produktpalette hatten sie nur 300 Artikel im Angebot, die sie zum Dauerniedrigpreis verkauften."
+      },
+      {
+        "key": "h",
+        "text": "Zum anderen mussten die Kunden den Umgang mit dem Einkaufswagen erst lernen und beluden ihn zunächst nur zögerlich."
+      }
+    ],
+    "correctAnswers": {
+      "1": "a",
+      "2": "d",
+      "3": "h",
+      "4": "c",
+      "5": "g",
+      "6": "b"
+    },
+    "explanations": {
+      "1": "Passender Satz: A",
+      "2": "Passender Satz: D",
+      "3": "Passender Satz: H",
+      "4": "Passender Satz: C",
+      "5": "Passender Satz: G",
+      "6": "Passender Satz: B"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-21",
+    "themeTitle": "Die Auswirkungen von Lärm",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Lärm stellt eine der signifikantesten Umweltbelastungen unserer Zeit dar. Seine Auswirkungen reichen weit über das unangenehme Gefühl hinaus, das er verursacht. Lärm kann die menschliche Gesundheit auf verschiedene Weise negativ beeinflussen. So haben Studien gezeigt, dass chronischer Lärm zu Stress führt, der wiederum verschiedene psychische und physische Erkrankungen auslösen kann. [LÜCKE_1] Darüber hinaus erhöht Lärm das Risiko von Herz-Kreislauf-Erkrankungen und Bluthochdruck. Der Organismus reagiert auf Lärm mit vegetativen Funktionsänderungen, z. B. der Beschleunigung der Herzfrequenz, einer Verengung der peripheren Blutgefäße mit Blutdrucksteigerung oder einer vermehrten Freisetzung von Stresshormonen. Kurzfristiger Lärmstress ist jedoch ungefährlich und beeinflusst die Gesundheit nicht. [LÜCKE_2]\n\nAber nicht nur Menschen sind von Lärm betroffen, sondern auch Tiere. Insbesondere in städtischen Gebieten kann Lärm bei ihnen zu erheblichem Stress führen. Viele Tierarten sind auf akustische Kommunikation angewiesen, sei es bei der Paarung, der Reviermarkierung oder der Nahrungssuche. [LÜCKE_3] In der Folge ändern Vögel unter Umständen ihre Gesänge oder verlassen ihre Nistplätze. Ständiger Verkehrslärm hemmt außerdem das Immunsystem von Jungvögeln und beeinträchtigt offenbar auch ihre Sangeskunst: Zu diesem Ergebnis kommt eine Studie des Max-Planck-Instituts für Ornithologie. Auch für Meerestiere zählt Lärmbelastung zu den gefährlichsten Bedrohungen. [LÜCKE_4] Unterwasserlärm entsteht durch Aktivitäten wie Schifffahrt, seismische Untersuchungen oder Ölförderung.\n\nEs sind Maßnahmen auf verschiedenen Ebenen notwendig, um Lärm zu vermeiden oder zu vermindern. Der Straßenverkehr ist die am häufigsten genannte Ursache für Lärmbelastung. [LÜCKE_5] Es ist eine wesentliche Aufgabe der Städte- und Verkehrsplanung, dies in Zukunft zu berücksichtigen. Wichtig sind auch Tempolimits, die zwar nur lokal wirken, aber effizient und schnell realisierbar sind.\n\nEs ist auch wichtig, die Öffentlichkeit für die Auswirkungen von Lärm zu sensibilisieren und Aufklärungskampagnen durchzuführen. Durch die Vermittlung von Wissen können wir motiviert werden, unser Verhalten anzupassen und Maßnahmen zur Lärmminderung zu ergreifen. Auf individueller Ebene kann man sich selbst vor Lärmexposition schützen. [LÜCKE_6] Darüber hinaus sollten wir unsere Wohn- und Arbeitsumgebungen so gestalten, dass Lärmquellen minimiert werden. Dies kann beispielsweise durch die Installation von Schallschutzfenstern, Schalldämmung von Wänden und die Verwendung von leisen Geräten erreicht werden. Denn Schutz vor Lärm ist unerlässlich für unser Wohlbefinden.",
+    "example": {
+      "key": "z",
+      "text": ""
+    },
+    "exampleText": "",
+    "options": [
+      {
+        "key": "a",
+        "text": "Beispielsweise kann Lärm zu Schlafstörungen führen, die Auswirkungen auf die Konzentrationsfähigkeit, das Gedächtnis und die allgemeine Leistungsfähigkeit haben können."
+      },
+      {
+        "key": "b",
+        "text": "Denn bei Meeressäugern werden durch Lärm Orientierungsprobleme, Stress und Störungen des Nahrungs- und Paarungsverhaltens ausgelöst."
+      },
+      {
+        "key": "c",
+        "text": "Diese europaweiten Regelungen zielen auf Lärmreduktion in Wohngebieten ab."
+      },
+      {
+        "key": "d",
+        "text": "Diese könnte durch die räumliche Trennung von stark befahrenen Verkehrswegen und Wohngebieten von vornherein vermieden werden."
+      },
+      {
+        "key": "e",
+        "text": "Länger einwirkender Lärm kann dagegen eine chronische Schädigung des Herz-Kreislauf-Systems zur Folge haben."
+      },
+      {
+        "key": "f",
+        "text": "Lärm kann sich dabei als Störfaktor erweisen, was bei den Tieren zu Verhaltensänderungen führen kann."
+      },
+      {
+        "key": "g",
+        "text": "So kann das Tragen von Gehörschutz in lauten Umgebungen wie Baustellen oder Konzerten das Risiko von Hörschäden verringern."
+      },
+      {
+        "key": "h",
+        "text": "Zudem ist für viele Fische die Schallwahrnehmung wichtig, um Fressfeinden zu entgehen."
+      }
+    ],
+    "correctAnswers": {
+      "1": "a",
+      "2": "e",
+      "3": "f",
+      "4": "b",
+      "5": "d",
+      "6": "g"
+    },
+    "explanations": {
+      "1": "Passender Satz: A",
+      "2": "Passender Satz: E",
+      "3": "Passender Satz: F",
+      "4": "Passender Satz: B",
+      "5": "Passender Satz: D",
+      "6": "Passender Satz: G"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-22",
+    "themeTitle": "Schreiben oder tippen – über die Vorteile der Handschrift",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Wohl nur eine Minderheit schreibt heute noch ausschließlich mit der Hand. Doch diese jahrtausende- alte Kulturtechnik ist keineswegs veraltet. Im Gegenteil: Neuere Studien belegen, dass das Schreiben mit der Hand Kreativität und Konzentration fördert. Kein Wunder, denn dabei sind zwölf Hirnareale aktiv, mehr als 30 Muskeln und 17 Gelenke arbeiten zusammen.\n\nDas Schreiben mit der Hand begann um 3300 v. Chr., als in Mesopotamien eine frühe Form der sumerischen Keilschrift entstand. [LÜCKE_1] Sie bestand zunächst aus Bildzeichen, die in Lehm geritzt wurden, und war lange weit verbreitet. Zweifellos ist die Schrift eine der größten kulturellen Errungenschaften der Menschheit: [LÜCKE_2] Doch heute löst sich die Schrift immer mehr von ihrer physischen Grundlage: Wir schreiben vieles nur noch auf unseren Smartphones und Computern und greifen immer seltener zum Stift. Tatsächlich spricht auf den ersten Blick jedoch so manches für moderne Schreibmedien: [LÜCKE_3] Außerdem können Texte am Computer problemlos verändert werden. Doch der schnellste und einfachste Weg ist nicht immer der beste. Dies zeigt auch eine Studie des Psychologen und Hirnforschers Professor Markus Kiefer. [LÜCKE_4] Eine Gruppe arbeitete bei diesem Experiment mit Papier und Bleistift, die zweite nutzte einen Tablet-Computer mit virtueller Tastatur, die dritte einen Tablet-Computer mit einem digitalen Stift. Die Kinder lernten spielerisch, 16 Buchstaben zu erkennen und kurze Wörter zu lesen und zu schreiben. Die Stift-und-Papier-Gruppe schnitt beim Erkennen von Buchstaben am besten ab.\n\n„Das Schreiben mit Stift und Papier hat die meisten Vorteile“, fasst Professor Kiefer seine Studien- ergebnisse zusammen. [LÜCKE_5] „Handbewegungen helfen uns, die Welt zu begreifen“, ergänzt er. Denn wenn man mit der Hand schreibe, würden nicht nur visuelle, sondern auch motorische Bereiche des Gehirns aktiviert, und es werde eine motorische Gedächtnisspur im Gehirn angelegt. Diese helfe den Kindern, Buchstaben zu erkennen, aber auch, andere Informationen zu behalten und zu verarbeiten. „Schreiben mit der Hand fördert die kognitive Entwicklung“, so Professor Kiefer.\n\nDie Vorteile beschränken sich aber nicht auf das Schreibenlernen: Amerikanischen Studien zufolge schnitten Studenten, die bei Vorlesungen per Hand mitschrieben, bei Verständnistests deutlich besser ab als ihre Kommilitonen, die einen Laptop nutzten. [LÜCKE_6] Dies wirkt sich offenbar positiv auf das Verständnis aus. Doch auch praktische Gründe sprechen dafür, das Schreiben mit Stift und Papier nicht aufzugeben: Es ist im Vergleich zu digitalen Schreibgeräten preisgünstiger, technisch weniger störanfällig, wartungsarm - und immer und überall möglich.",
+    "example": {
+      "key": "z",
+      "text": ""
+    },
+    "exampleText": "",
+    "options": [
+      {
+        "key": "a",
+        "text": "Wenn sie sich reine Fakten merken sollten, zeigten sich also zwischen den beiden Gruppen von Studenten keine Unterschiede."
+      },
+      {
+        "key": "b",
+        "text": "Unter anderem betont er, dass Inhalte besser im Gedächtnis bleiben, wenn sie mit der Hand geschrieben werden."
+      },
+      {
+        "key": "c",
+        "text": "So fällt es Kindern leichter, das Tippen auf der Tastatur zu lernen als das Schreiben mit der Hand."
+      },
+      {
+        "key": "d",
+        "text": "Ihr ist zu verdanken, dass Wissen konserviert und Ideen unabhängig von Zeit und Raum weitergegeben werden konnten."
+      },
+      {
+        "key": "e",
+        "text": "Er untersuchte, welchen Einfluss analoge und digitale Schreibwerkzeuge auf die Lese- und Schreibkompetenz von Vorschulkindern haben."
+      },
+      {
+        "key": "f",
+        "text": "Einzelne Buchstaben auf Papier mit der Hand zu verbinden sei für viele Kinder derart mühsam, dass es zu Schreibblockaden führe."
+      },
+      {
+        "key": "g",
+        "text": "Diese ist – neben den ägyptischen Hieroglyphen – die heute älteste bekannte Schrift."
+      },
+      {
+        "key": "h",
+        "text": "Denn die geringere Schreibgeschwindigkeit beim handschriftlichen Notieren zwang sie, sich dabei schon aktiv mit dem Lerninhalt auseinanderzusetzen."
+      }
+    ],
+    "correctAnswers": {
+      "1": "g",
+      "2": "d",
+      "3": "c",
+      "4": "e",
+      "5": "b",
+      "6": "h"
+    },
+    "explanations": {
+      "1": "Passender Satz: G",
+      "2": "Passender Satz: D",
+      "3": "Passender Satz: C",
+      "4": "Passender Satz: E",
+      "5": "Passender Satz: B",
+      "6": "Passender Satz: H"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-23",
+    "themeTitle": "Keramik für Millionen",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Die Erfindung der Töpferscheibe machte Keramik zum Massengut. Schon in Sumer gab es Wegwerfgeschirr.\n\nAm Anbeginn aller Tage, als die Götter noch arbeiten mussten, stritten sich die himmlischen Wesen Mesopotamiens über die Frage: Wer buckelt sich und beackert die Felder? Keiner hatte Lust dazu. Schließlich entschied man, einen Lakaien ins Leben zu rufen. Zu diesem Zweck nahm der Obergott Enki einen Klumpen Lehm, beschmierte ihn mit Blut und schuf so Widimmu, den ersten Menschen.\n\nDie Geschichte aus dem rund 4000 Jahre alten Atrachasis-Epos hat in vielen Kulturen Parallelen. Auch im Koran, in der Bibel oder im Popol Vuh der Maya treten lehmknetende Schöpfergötter auf, die eine der wichtigsten Errungenschaften der Technikgeschichte nutzen: die Töpferei.\n\n[BEISPIEL_0] Schon vor fast 30.000 Jahren schuf ein Urkünstler die üppige „Venus von Dolni Vestonice\". Zur Herstellung des Fruchtbarkeitsidols nahm er Lösslehm zur Hand und vermischte ihn mit Knochenmehl, um Schrumpfungsrisse beim Brennen zu verhindern.\n\nDie ersten Becher und Bottiche kamen dagegen erst mit der Sesshaftwerdung in Gebrauch. Im Dorf Jarmo bei Kirkuk, wo im 7. Jahrtausend Urfarmer lebten, fanden die Archäologen wulstige Gefäße. Sie gehören zur frühesten Keramik überhaupt.\n\nWas für eine Neuerung! [LÜCKE_1] Nun kamen plötzlich die Mesopotamier, formten den feinen kalkreichen und eisenhaltigen Mergel ihrer Heimat zu Schüsseln und aßen daraus Suppe und Getreidebrei.\n\nErstaunlicher noch: Schon die Leute aus Jarmo erhitzten die Öfen auf 850 bis 1050 Grad. [LÜCKE_2] Tauglich und widerstandsfähig sollte die Tonware sein, aber auch schön. Die Handwerker der Hassuna-Kultur in Nordmesopotamien stellten elegante dünnwandige Behälter aus rotem Lehm her. Andere Töpfer verzierten ihre Pötte mit Fischgrätenmustern. Erste Tier- und Menschendarstellungen als Dekor kamen um 5000 auf. Etwa zur selben Zeit ersann ein genialer Keramikpionier die „Tournette\". [LÜCKE_3]\n\nDer Durchbruch zur Massenware folgte dann um 3500. Erstmals wurde ein Rad auf eine senkrechte Achse gesteckt und in Schwung versetzt: Fertig war die schnell rotierende Töpferscheibe. [LÜCKE_4] Einer gab Anschwung und drehte die Scheibe, der andere gestaltete den frischen glitschigen Ton.\n\nDie Erfindung der wirbelnden Werkbank kam gerade recht. Der Wunsch nach Gebrauchskeramik in den prosperierenden Stadtstaaten Sumers war riesig. [LÜCKE_5] Sogar Erntesicheln und Siebe wurden aus Lehm gebrannt - und auch die glasierten Ziegel fürs Baugewerbe.\n\n[LÜCKE_6] Im Schutt der Stadt Uruk fanden die Archäologen unzählige zerbrochene, grobe Schüsseln, die schnell und flüchtig hergestellt wurden, die „Glockentöpfe\". An ihren Innenseiten prangen oft noch die Fingerabdrücke der Handwerker. Auffallend ist die stets gleiche Größe der Behälter: Sie fassen etwa 0,8 Liter.\n\nDie Forscher vermuten, dass die sumerischen Arbeiter in den kleinen Näpfen ihre tägliche Getreideration erhielten und sie nach kurzem Gebrauch fortwarfen.",
+    "example": {
+      "key": "z",
+      "text": "Die ldee, Skulpturen und kleine Idole aus Ton zu formen, reicht weit zurück."
+    },
+    "exampleText": "Die ldee, Skulpturen und kleine Idole aus Ton zu formen, reicht weit zurück.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Der Name steht für eine Arbeitsplatte, auf der man das Werkstück hin und her wenden kann."
+      },
+      {
+        "key": "b",
+        "text": "Jahrmillionen lang hatte der Mensch aus der hohlen Hand getrunken und Wasser in Tierhäuten erhitzt."
+      },
+      {
+        "key": "c",
+        "text": "Ob Bier, Getreide, saure Gurken oder kandierte Früchte: Alles kam in Tonbehälter."
+      },
+      {
+        "key": "d",
+        "text": "Selbst das Wegwerfgeschirr gab es schon."
+      },
+      {
+        "key": "e",
+        "text": "Die ältesten Tongefäße der Welt stammen aus dem östlichen Sibirien Amur-Gebiet."
+      },
+      {
+        "key": "f",
+        "text": "Experimente ergaben, dass sie die Brennkammern über drei Stunden lang mit Palmblättern oder Strauchwerk befeuern mussten, um solche Temperaturen zu erzeugen."
+      },
+      {
+        "key": "g",
+        "text": "Oft gingen die Keramikmacher zu zweit ans Werk. h"
+      },
+      {
+        "key": "h",
+        "text": "Im Laufe der Jahrhunderte geriet diese traditionelle Fertigungskunst jedoch zunehmend in Vergessenheit."
+      }
+    ],
+    "correctAnswers": {
+      "1": "b",
+      "2": "f",
+      "3": "a",
+      "4": "g",
+      "5": "c",
+      "6": "d"
+    },
+    "explanations": {
+      "1": "Passender Satz: B",
+      "2": "Passender Satz: F",
+      "3": "Passender Satz: A",
+      "4": "Passender Satz: G",
+      "5": "Passender Satz: C",
+      "6": "Passender Satz: D"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-24",
+    "themeTitle": "Für eine neue Sprache ist es nie zu spät",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Arno Baum ist 62 Jahre alt, kaufmännischer Angestellter und lebt in München. Sein neuestes Projekt: Griechisch lernen. „Ich habe Freunde in Griechenland und will an den Gesprächen besser teilnehmen können“, erzählt er. In Arno Baums fortgeschrittenem Alter ist es gewiss eher ungewöhnlich, noch eine neue Fremdsprache zu erlernen. Denn oft heißt es: Wer eine Fremdsprache lernen will, sollte möglichst jung sein, und Erwachsene täten sich damit deutlich schwerer als Kinder.\n\n„Das Alter eines Menschen ist tatsächlich ein wichtiger Faktor“, bestätigt Bildungsforscher Ingo Weißhaupt. Er hat unter anderem untersucht, wovon es abhängt, wie gut Immigranten die Sprache ihres Gastland lernen. [LÜCKE_1] Die Linguistik sei lange sogar von einer kritischen Altersschwelle ausgegangen, berichtet Weißhaupt. Es bestand die Annahme, man könne eine Zweitsprache nur bis zu einem gewissen Alter so gut lernen, dass die Erstsprache nicht durchscheine. Demnach könnten nur Kinder oder Jugendliche, die den Erwerb einer Zweitsprache bis zu einem bestimmten Zeitpunkt beginnen, ein muttersprachliches Niveau erreichen. [LÜCKE_2] Begründet wurde diese These damit, dass die Plastizität, also die Wandelbarkeit des Gehirns, mit der Zeit abnimmt, und zwar besonders nach der Pubertät, wenn es seine natürliche neurologische Reife erreicht. Diese Annahme ist zwar nach wie vor umstritten – doch was die Aussprache betrifft, gilt als belegt.\n\nIn diese Richtung deutet zum Beispiel eine Studie aus dem Jahr 2006, die von einer Forschungsgruppe um Patricia Kuhl von der University of Washington durchgeführt wurde. [LÜCKE_3] Dazu spielten sie den Säuglingen im Alter zwischen sechs und zwölf Monaten Silben vor, die die Konsonanten „ l “ und „ r “ enthielten. Das Ergebnis: Die amerikanischen Babys konnten die Silben im Alter von zehn bis zwölf Monaten besser unterscheiden als noch mit sechs bis acht Monaten. [LÜCKE_4] Dieses Ergebnis mag zunächst überraschen. Wie kam es also zustande? Die Wissenschaftler haben dafür folgende Erklärung gefunden: [LÜCKE_5] aber nicht lange: Im Verlauf des ersten Lebensjahres verlieren zum Beispiel Kinder, die nur Japanisch hören, die Fähigkeit, die Konsonanten „ r “ und „ l “ zu unterscheiden – denn der Laut „ r “ kommt im Japanischen nicht vor. Dies braucht jedoch Erwachsene vom Sprachenlernen nicht abzuhalten. Denn eine perfekte Aussprache muss nicht unbedingt das Ziel sein, wenn man in einer Sprache ein gutes Niveau erreichen möchte. Davon zeigt sich Bildungsforscher Ingo Weißhaupt überzeugt. [LÜCKE_6] Eine individuelle Sprachfärbung könne sogar sympathisch klingen und die eigene Geschichte und Herkunft signalisieren.\n\nDer 62-jährige Arno Baum traut sich derzeit zwar noch nicht, Griechisch zu sprechen. Doch er hat ein konkretes Ziel vor Augen: Im nächsten Urlaub will er mit seinen griechischen Freunden ein richtiges Gespräch führen können.",
+    "example": {
+      "key": "z",
+      "text": ""
+    },
+    "exampleText": "",
+    "options": [
+      {
+        "key": "a",
+        "text": "Bei den japanischen Babys war es hingegen genau umgekehrt – je älter sie waren, umso schwerer fiel es ihnen."
+      },
+      {
+        "key": "b",
+        "text": "Die Wissenschaftler untersuchten, wie gut japanische und US-amerikanische Babys Laute voneinander unterscheiden können."
+      },
+      {
+        "key": "c",
+        "text": "Erst wenn er zu Nachteilen am Arbeitsplatz führe, werde er zu einem Problem."
+      },
+      {
+        "key": "d",
+        "text": "In der Regel stehe ein Akzent dem Sprachverständnis nicht im Weg."
+      },
+      {
+        "key": "e",
+        "text": "Oft wurde vermutet, dass diese Phase spätestens mit der Pubertät endet."
+      },
+      {
+        "key": "f",
+        "text": "Säuglinge sind grundsätzlich in der Lage aller Sprachen zu unterscheiden,"
+      },
+      {
+        "key": "g",
+        "text": "Wer als Kind einwandert, lernt diese mühelos, lautet eines seiner Ergebnisse."
+      },
+      {
+        "key": "h",
+        "text": "Wer erwartet, im Alltag von einer Sprache zu profitieren, ist entsprechend motiviert, diese zu erlernen."
+      }
+    ],
+    "correctAnswers": {
+      "1": "g",
+      "2": "e",
+      "3": "b",
+      "4": "a",
+      "5": "f",
+      "6": "d"
+    },
+    "explanations": {
+      "1": "Passender Satz: G",
+      "2": "Passender Satz: E",
+      "3": "Passender Satz: B",
+      "4": "Passender Satz: A",
+      "5": "Passender Satz: F",
+      "6": "Passender Satz: D"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-25",
+    "themeTitle": "Wochenendschlaf – mehr Schaden als Nutzen?",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "„Dann schlafe ich eben am Wochenende länger!\" Diesen Satz hat wahrscheinlich jeder Berufstätige schon einmal gesagt oder zumindest gedacht. Denn wer morgens früh zur Arbeit gehen muss, bekommt an Werktagen selten genug Schlaf. Doch Schlafmangel erhöht auf Dauer das Risiko für Erkrankungen. [LÜCKE_1] Unter anderem sorgen Wachstumshormone für die Reparatur von Zell- schäden. Das Immunsystem nutzt diese Ruhepause, um den Kampf gegen Erreger zu intensivieren. [LÜCKE_2] Zwar sind manche sogar stolz darauf, mit weniger als dieser empfohlenen Schlafmenge auszukommen, und denken, dass sie so ihre Leistungsfähigkeit unter Beweis stellen. Doch es steht außer Frage, dass Schlafmangel schädlich ist. Studien belegen, dass dieser nicht nur die Konzentration und geistige Leistungsfähigkeit beeinträchtigt, sondern auch den Stoffwechsel und das Herz-Kreislauf- System. Zu wenig Schlaf vermindert außerdem den Lernerfolg. Wer vor einer Prüfung bis in den Morgen paukt, müht sich womöglich vergebens: [LÜCKE_3]\n\nDen meisten Menschen gelingt es im Alltag allerdings kaum, ausreichend zu schlafen. Schon am frühen Morgen klingelt der Wecker, und wenn man nach der Arbeit wenigstens noch ein wenig Zeit mit Familie, Hobbys oder Freunden verbringen möchte, führt dies fast zwangsläufig zu einem Schlafdefizit. Meist schafft man es erst am Wochenende, den fehlenden Schlaf durch langes Ausschlafen nachzuholen. [LÜCKE_4] Das haben Professor Christopher Depner von der University of Colorado und seine Kollegen untersucht. Für ihre Studie teilten er und sein Team 36 gesunde junge Frauen und Männer in drei verschiedene Gruppen ein. [LÜCKE_5] Die dritte Gruppe folgte dem typischen Wochenrhythmus von Berufstätigen: Montag bis Freitag nur fünf Stunden Schlaf, dann zwei Tage lang beliebig langes Ausschlafen.\n\nBei allen Versuchspersonen kontrollierten die Forscher nach zwei Wochen unter anderem das Körpergewicht, die Kalorienzufuhr und die Essensmenge, aber auch den Spiegel des Schlafhormons Melatonin. Die Ergebnisse fielen ernüchternd aus: [LÜCKE_6] Und das ist noch nicht alles: Wenig Schlaf führe zum Beispiel sogar dazu, dass man nach dem Abendessen mehr Süßigkeiten und Snacks esse, erklärt Professor Depner. „Das belegt, dass das Ausschlafen am Wochenende offenbar keine effektive Gegenmaßnahme gegen die Auswirkungen des chronischen Schlafmangels ist\", stellt er fest. Das bedeutet: Wer seinem Körper etwas Gutes tun möchte, sollte versuchen, täglich mindestens sieben Stunden Schlaf zu bekommen.",
+    "example": {
+      "key": "z",
+      "text": ""
+    },
+    "exampleText": "",
+    "options": [
+      {
+        "key": "a",
+        "text": "So zeigte die Studie, dass unregelmäßige Schlafzeiten für den Körper zusätzlichen Stress bedeuten und die innere Uhr aus dem Takt bringen."
+      },
+      {
+        "key": "b",
+        "text": "Die erste durfte neun Stunden pro Nacht schlafen, die zweite nur maximal fünf Stunden."
+      },
+      {
+        "key": "c",
+        "text": "Aber kann man auf diese Weise die schädlichen Effekte des werktäglichen Schlafmangels tatsächlich ausgleichen?"
+      },
+      {
+        "key": "d",
+        "text": "Denn das Gehirn braucht Schlaf, um Gelerntes abzuspeichern und zu verfestigen."
+      },
+      {
+        "key": "e",
+        "text": "Es gibt also einige Gründe, warum Wissenschaftler zu mindestens sieben Stunden Schlaf pro Nacht raten."
+      },
+      {
+        "key": "f",
+        "text": "Während man schläft, laufen nämlich viele Prozesse ab, die für die Regeneration von Körper und Geist entscheidend sind."
+      },
+      {
+        "key": "g",
+        "text": "Außerdem ist es erwiesen, dass viele Menschen im Winter einen erheblich höheren Schlafbedarf haben als im Sommer."
+      },
+      {
+        "key": "h",
+        "text": "Experten empfehlen dagegen, die letzte größere Mahlzeit etwa drei Stunden vor dem Schlafengehen einzunehmen."
+      }
+    ],
+    "correctAnswers": {
+      "1": "f",
+      "2": "e",
+      "3": "d",
+      "4": "c",
+      "5": "b",
+      "6": "a"
+    },
+    "explanations": {
+      "1": "Passender Satz: F",
+      "2": "Passender Satz: E",
+      "3": "Passender Satz: D",
+      "4": "Passender Satz: C",
+      "5": "Passender Satz: B",
+      "6": "Passender Satz: A"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-26",
+    "themeTitle": "Die digitale Transformation der Arbeitswelt durch KI",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Im Zeitalter der Industrie 4.0 erleben wir eine technologische Revolution, die sämtliche Berufszweige grundlegend verändert. [BEISPIEL_0] Künstliche Intelligenz (KI) ist längst kein rein akademisches Forschungsthema mehr, sondern fester Bestandteil betrieblicher Abläufe. Erste Versuche, Maschinen logisches Denken beizubringen, gab es bereits in den 1950er Jahren. Damals beschränkten sich die Anwendungen jedoch auf einfache mathematische Probleme und Spiele wie Schach. [LÜCKE_1] Erst durch die Verfügbarkeit riesiger Datenmengen (Big Data) und moderner Prozessoren konnte die KI ihren Siegeszug antreten.\n\nIn der modernen Softwareentwicklung fungiert die KI heute oft als Assistent für Programmierer. Sie schreibt Code-Fragmente, erkennt Fehler in Echtzeit und optimiert Datenbankstrukturen. Dennoch gibt es Vorbehalte in der Belegschaft. Viele Angestellte fürchten, dass ihre Expertise durch Algorithmen ersetzt werden könnte. [LÜCKE_2] Für spezialisierte IT-Fachkräfte bedeutet dies, dass sie sich ständig weiterbilden müssen, um mit der rasanten Entwicklung Schritt zu halten.\n\nEin weiterer wichtiger Aspekt ist die Ethik in der IT. Wenn Algorithmen darüber entscheiden, wer einen Kredit bekommt oder wer zu einem Vorstellungsgespräch eingeladen wird, müssen diese Prozesse transparent sein. [LÜCKE_3] Diese wurde von der EU-Kommission ins Leben gerufen, um Leitlinien für eine vertrauenswürdige KI zu etablieren. Ziel ist es, Diskriminierung durch voreingenommene Daten zu verhindern.\n\nAuch die Hardware-Industrie profitiert von diesem Boom. Rechenzentren weltweit rüsten auf, um die nötige Performance für komplexe neuronale Netze bereitzustellen. [LÜCKE_4] Trotz der Effizienz- gewinne durch KI steigt der Stromverbrauch der globalen IT-Infrastruktur massiv an, was neue Fragen zur ökologischen Nachhaltigkeit aufwirft. Die Implementierung von KI-Systemen in mittelständischen Unternehmen verläuft oft schleppend. Es fehlt häufig an Fachkräften, die die Brücke zwischen theoretischer Informatik und praktischer Anwendung schlagen können. [LÜCKE_5] Zudem schrecken hohe Investitionskosten und rechtliche Unsicherheiten viele Unternehmer noch ab. Dennoch ist der Trend unumkehrbar. [LÜCKE_6] Wer heute nicht in digitale Kompetenzen investiert, wird langfristig den Anschluss an den Weltmarkt verlieren. Experten raten dazu, KI als Werkzeug und nicht als Ersatz für menschliche Kreativität zu betrachten.",
+    "example": {
+      "key": "z",
+      "text": "Distanzen spielen für uns keine Rolle mehr."
+    },
+    "exampleText": "Distanzen spielen für uns keine Rolle mehr.",
+    "options": [
+      {
+        "key": "a",
+        "text": "Um diesen Mangel zu beheben, setzen viele Firmen nun auf interne Schulungsprogramme und Kooperationen mit Hochschulen."
+      },
+      {
+        "key": "b",
+        "text": "Dagegen war die Rechenleistung damaliger Computer viel zu gering für komplexe Simulationen."
+      },
+      {
+        "key": "c",
+        "text": "Eine solche staatliche Regulierung gab es in den Anfängen der Digitalisierung kaum."
+      },
+      {
+        "key": "d",
+        "text": "Die erste ethische Instanz in diesem Bereich war die sogenannte „High-Level Expert Group“."
+      },
+      {
+        "key": "e",
+        "text": "Parallel dazu führt dieser enorme Leistungsbedarf zu einem kritischen Blick auf die Energiebilanz."
+      },
+      {
+        "key": "f",
+        "text": "Für einfache Routinetätigkeiten mag das zutreffen, doch komplexe Problemlösungen bleiben menschliche Domäne."
+      },
+      {
+        "key": "g",
+        "text": "In der Folgezeit wurde die Automatisierung vor allem in der industriellen Fertigung vorangetrieben."
+      },
+      {
+        "key": "h",
+        "text": "Letztlich entscheiden die Innovationskraft und die Anpassungsfähigkeit über den Erfolg eines Standorts."
+      }
+    ],
+    "correctAnswers": {
+      "1": "b",
+      "2": "f",
+      "3": "d",
+      "4": "e",
+      "5": "a",
+      "6": "h"
+    },
+    "explanations": {
+      "1": "Passender Satz: B",
+      "2": "Passender Satz: F",
+      "3": "Passender Satz: D",
+      "4": "Passender Satz: E",
+      "5": "Passender Satz: A",
+      "6": "Passender Satz: H"
+    }
+  },
+  {
+    "id": "telc-c1-lv1-27",
+    "themeTitle": "Die Geschichte der Jeans",
+    "difficulty": "C1 Hochschule",
+    "readingTime": "ca. 20 Min",
+    "instructions": "Lesen Sie den folgenden Text. Welche der Sätze a–h gehören in die Lücken 1–6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze können nicht zugeordnet werden.",
+    "text": "Kein anderes Kleidungsstück hat sich so lange und erfolgreich in der Mode behauptet wie die Jeans. Erfunden und verkauft wurden die ersten Jeanshosen aus Baumwolle schon in der Zeit des Goldrausches in den USA. [LÜCKE_1] Bauern, Bergarbeiter, Tagelöhner – Hunderttausende packten daher ihre Habseligkeiten und zogen in den kaum bewohnten Westen des Landes, um als Goldgräber ihr Glück zu suchen.\n\nLevi Strauss, ein aus Deutschland in die USA eingewanderter Händler, witterte damals das Geschäft seines Lebens. [LÜCKE_2] Zunächst ließ er Arbeitshosen aus braunen Zeltplanen fertigen, die schon bald zum Verkaufsschlager wurden. Er experimentierte aber weiter und stieß 1873 auf den Baumwollstoff Denim aus Frankreich. Dieser wurde blau gefärbt - und damit war die Blue Jeans geboren. Am 20. Mai 1873 ließ Levi Strauss sich diese Hose patentieren und seitdem trat sie ihren Siegeszug an. [LÜCKE_3] In den folgenden Jahren wurden Jeans überall in den USA zu einem gefragten Kleidungsstück. Schon bald wollte jeder die ebenso lässigen wie praktischen Hosen tragen. In den 1930er Jahren präsentierte die Zeitschrift „Vogue\" das erste Modell für Damen. Nach dem Zweiten Weltkrieg brachten US- Soldaten die Jeans schließlich nach Europa.\n\n[LÜCKE_4] Denn in den 1950er Jahren trugen berühmte Schauspieler wie James Dean oder Marlon Brando Jeans, was zu ihrer Beliebtheit bei deutschen Jugendlichen beitrug. Außerdem konnten sie sich mit diesem Kleidungsstück bewusst von der Modewelt der Erwachsenen absetzen. [LÜCKE_5] Selbst Schulverweise und Restaurantverbote nahmen Jugendliche in Kauf, um sie tragen zu können. In Ostdeutschland war die Hose lange ebenso verpönt wie in Westdeutschland. Schließlich wurde aber doch eine eigene ostdeutsche Variante produziert.\n\nWurden Jeans in den 1950er und in den 1960er Jahren nur von Trendsettern getragen, etablierten sie sich Anfang der 1970er Jahre endgültig in Westdeutschland. Heute gibt es sie in allerlei Schnitten, Formen und Farben. [LÜCKE_6] So stört sich in vielen Unternehmen oder Behörden niemand mehr daran, wenn jemand in Jeans zur Arbeit erscheint. Zweifellos ist die Jeanshose also einer der erfolgreichsten amerikanischen Exportschlager - erfunden von einem Deutschen aus Oberfranken.",
+    "example": {
+      "key": "z",
+      "text": ""
+    },
+    "exampleText": "",
+    "options": [
+      {
+        "key": "a",
+        "text": "Es dauerte dann nicht mehr lange, bis sich auch in Westdeutschland vor allem Jugendliche um die Hosen aus dem fernen Amerika rissen."
+      },
+      {
+        "key": "b",
+        "text": "Seit ein Abenteurer im Jahr 1848 in Kalifornien ein Goldklümpchen entdeckt hatte, berichteten Zeitungen beinahe täglich von neuen Funden."
+      },
+      {
+        "key": "c",
+        "text": "Seine damals gegründete Firma ist auch heute noch einer der größten Jeans-Hersteller der Welt."
+      },
+      {
+        "key": "d",
+        "text": "Denn die Jeans galt damals als Symbol des Protests gegen Tradition und Autorität."
+      },
+      {
+        "key": "e",
+        "text": "Jeans sind zu einem vielseitigen Kleidungsstück geworden, das mittlerweile sogar als bürotauglich gilt."
+      },
+      {
+        "key": "f",
+        "text": "Der gebürtige Franke hatte nämlich erkannt, dass die Minenarbeiter für die Suche nach Gold strapazierfähige Hosen brauchten."
+      },
+      {
+        "key": "g",
+        "text": "Währenddessen betrieb einer seiner Brüder in Kalifornien Geschäfte für Haushaltswaren wie etwa Hosenträger, Zahnbürsten oder Nähzeug."
+      },
+      {
+        "key": "h",
+        "text": "Schon wenige Monate später verzeichnete er zehntausende Verkäufe von Hosen, die aus Jeansstoff gefertigt worden waren."
+      }
+    ],
+    "correctAnswers": {
+      "1": "b",
+      "2": "f",
+      "3": "h",
+      "4": "a",
+      "5": "d",
+      "6": "e"
+    },
+    "explanations": {
+      "1": "Passender Satz: B",
+      "2": "Passender Satz: F",
+      "3": "Passender Satz: H",
+      "4": "Passender Satz: A",
+      "5": "Passender Satz: D",
+      "6": "Passender Satz: E"
+    }
+  }
+]
