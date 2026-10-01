@@ -15,22 +15,19 @@ export function AuthProvider({ children }) {
   async function checkAuth() {
     const token = localStorage.getItem('telc_token');
     if (!token) {
-      // Default to student demo if no token
-      try {
-        const data = await api.demoLogin('student');
-        localStorage.setItem('telc_token', data.token);
-        setUser(data.user);
-      } catch (e) {
-        console.error('Demo auth fallback error:', e);
-      } finally {
-        setLoading(false);
-      }
+      setUser(null);
+      setLoading(false);
       return;
     }
 
     try {
       const data = await api.getMe();
-      setUser(data.user);
+      if (data.user?.role !== 'admin' && data.user?.status !== 'active') {
+        localStorage.removeItem('telc_token');
+        setUser(null);
+      } else {
+        setUser(data.user);
+      }
     } catch (err) {
       console.warn('Session expired or invalid token:', err);
       localStorage.removeItem('telc_token');
@@ -57,25 +54,11 @@ export function AuthProvider({ children }) {
     setError(null);
     try {
       const data = await api.register(userData);
-      localStorage.setItem('telc_token', data.token);
-      setUser(data.user);
+      // Account created with status pending; requires admin activation before login
       return data;
     } catch (err) {
       setError(err.message);
       throw err;
-    }
-  }
-
-  async function switchDemoRole(role) {
-    setLoading(true);
-    try {
-      const data = await api.demoLogin(role);
-      localStorage.setItem('telc_token', data.token);
-      setUser(data.user);
-    } catch (err) {
-      console.error('Failed to switch demo role:', err);
-    } finally {
-      setLoading(false);
     }
   }
 
@@ -91,7 +74,6 @@ export function AuthProvider({ children }) {
     login,
     register,
     logout,
-    switchDemoRole,
     refreshUser: checkAuth
   };
 

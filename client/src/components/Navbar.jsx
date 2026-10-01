@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
 import {
   GraduationCap,
   ShieldCheck,
-  UserCheck,
   LogOut,
   Sparkles,
   BookOpen,
   Layers,
   FileCheck2,
-  Settings,
-  ChevronDown
+  Settings
 } from 'lucide-react';
 
 export function Navbar({ currentView, setCurrentView, onOpenAuth }) {
-  const { user, logout, switchDemoRole } = useAuth();
-  const [roleMenuOpen, setRoleMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
@@ -150,68 +147,24 @@ export function Navbar({ currentView, setCurrentView, onOpenAuth }) {
             </nav>
           )}
 
-          {/* User Status / Quick Switcher */}
+          {/* User Status */}
           <div className="flex items-center gap-3">
-            {/* Fast Demo Role Switcher */}
-            <div className="relative">
-              <button
-                onClick={() => setRoleMenuOpen(!roleMenuOpen)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-xs font-medium text-slate-700 transition"
-                title="Rolle schnell wechseln für Testzwecke"
-              >
-                {user?.role === 'admin' ? (
-                  <ShieldCheck className="w-3.5 h-3.5 text-indigo-600" />
-                ) : (
-                  <UserCheck className="w-3.5 h-3.5 text-blue-600" />
-                )}
-                <span>Rolle: <strong className="capitalize">{user?.role === 'admin' ? 'Admin' : 'Student'}</strong></span>
-                <ChevronDown className="w-3 h-3 text-slate-500" />
-              </button>
-
-              {roleMenuOpen && (
-                <div className="absolute right-0 mt-2 w-56 rounded-xl bg-white shadow-xl border border-slate-200 py-2 z-50 text-xs">
-                  <div className="px-3 py-1.5 text-slate-400 font-semibold uppercase tracking-wider text-[10px]">
-                    Schnellansicht wechseln
-                  </div>
-                  <button
-                    onClick={() => {
-                      switchDemoRole('admin');
-                      setCurrentView('admin-students');
-                      setRoleMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-2 hover:bg-slate-50 flex items-center gap-2 text-slate-700"
-                  >
-                    <ShieldCheck className="w-4 h-4 text-indigo-600" />
-                    <div>
-                      <div className="font-semibold text-indigo-900">Administrator</div>
-                      <div className="text-[10px] text-slate-500">Studenten aktivieren & Bögen hochladen</div>
-                    </div>
-                  </button>
-                  <button
-                    onClick={() => {
-                      switchDemoRole('student');
-                      setCurrentView('dashboard');
-                      setRoleMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-2 hover:bg-slate-50 flex items-center gap-2 text-slate-700"
-                  >
-                    <UserCheck className="w-4 h-4 text-emerald-600" />
-                    <div>
-                      <div className="font-semibold text-emerald-900">Student (Aktiv)</div>
-                      <div className="text-[10px] text-slate-500">Voller Zugriff auf alle Teile</div>
-                    </div>
-                  </button>
-                </div>
-              )}
-            </div>
 
             {user ? (
               <div className="flex items-center gap-2">
                 <div className="text-right hidden sm:block">
                   <div className="text-xs font-bold text-slate-800 flex items-center gap-1.5 justify-end">
                     {user.name}
-                    {user.role === 'student' && (
-                      <span className={`inline-block w-2 h-2 rounded-full ${user.status === 'active' ? 'bg-emerald-500' : 'bg-amber-500 animate-pulse'}`} />
+                    {user.role === 'admin' ? (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-bold">
+                        <ShieldCheck className="w-3 h-3 text-indigo-600" />
+                        Admin
+                      </span>
+                    ) : (
+                      <span
+                        className={`inline-block w-2 h-2 rounded-full ${user.status === 'active' ? 'bg-emerald-500' : 'bg-amber-500 animate-pulse'}`}
+                        title={user.status === 'active' ? 'Freigeschaltet' : 'Wartet auf Freischaltung'}
+                      />
                     )}
                   </div>
                   <div className="text-[10px] text-slate-500 font-medium">

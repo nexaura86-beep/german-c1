@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 export function LoginPage() {
-  const { login, register, switchDemoRole } = useAuth();
+  const { login, register } = useAuth();
   const [isRegister, setIsRegister] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -61,12 +61,6 @@ export function LoginPage() {
     } finally {
       setLoading(false);
     }
-  }
-
-  function handleQuickLogin(role) {
-    setErrorMsg('');
-    setSuccessMsg('');
-    switchDemoRole(role);
   }
 
   return (
@@ -138,55 +132,14 @@ export function LoginPage() {
           )}
 
           {successMsg && (
-            <div className="mb-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-700 font-medium flex items-start gap-2">
+            <div className="mb-4 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-              <span>{successMsg}</span>
+              <div>
+                <p className="font-bold">Konto erfolgreich angelegt!</p>
+                <p className="mt-0.5 text-emerald-700">{successMsg}</p>
+              </div>
             </div>
           )}
-
-          {/* Quick Demo Access Bar */}
-          <div className="mb-6 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80">
-            <div className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500 mb-2 flex items-center justify-between">
-              <span>⚡ Schnell-Login (1-Klick)</span>
-              <span className="text-slate-400 font-normal">Zum direkten Testen</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('admin')}
-                className="py-2 px-2.5 rounded-xl text-left bg-white border border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50/50 text-indigo-950 transition group shadow-2xs"
-                title="admin@telc.de / admin123"
-              >
-                <div className="flex items-center gap-1.5 font-bold text-[11px] text-indigo-700">
-                  <ShieldCheck className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
-                  <span>Prüfungsleiter (Admin)</span>
-                </div>
-                <div className="text-[10px] text-slate-400 mt-0.5 truncate">admin@telc.de</div>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleQuickLogin('student')}
-                className="py-2 px-2.5 rounded-xl text-left bg-white border border-blue-200 hover:border-blue-400 hover:bg-blue-50/50 text-blue-950 transition group shadow-2xs"
-                title="student@uni.de / student123"
-              >
-                <div className="flex items-center gap-1.5 font-bold text-[11px] text-blue-700">
-                  <GraduationCap className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                  <span>Student (Prüfung)</span>
-                </div>
-                <div className="text-[10px] text-slate-400 mt-0.5 truncate">student@uni.de</div>
-              </button>
-            </div>
-          </div>
-
-          <div className="relative my-4">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-slate-200" />
-            </div>
-            <div className="relative flex justify-center text-[11px]">
-              <span className="bg-white px-2 text-slate-400 font-medium">Oder mit Zugangsdaten</span>
-            </div>
-          </div>
 
           {/* Form */}
           <form onSubmit={handleFormSubmit} className="space-y-4">

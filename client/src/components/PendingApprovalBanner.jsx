@@ -1,10 +1,7 @@
 import React from 'react';
-import { AlertCircle, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
-import { useAuth } from '../context/AuthContext.jsx';
+import { Clock, ShieldAlert } from 'lucide-react';
 
-export function PendingApprovalBanner({ onSwitchToAdmin }) {
-  const { switchDemoRole } = useAuth();
-
+export function PendingApprovalBanner() {
   return (
     <div className="bg-gradient-to-r from-amber-500 via-amber-600 to-orange-500 text-white p-4 sm:p-5 rounded-2xl shadow-lg mb-8 border border-amber-400/40">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -15,30 +12,23 @@ export function PendingApprovalBanner({ onSwitchToAdmin }) {
           <div>
             <div className="flex items-center gap-2">
               <h3 className="text-base font-bold text-white">
-                Dein Studentenkonto wartet auf Administrator-Freischaltung
+                Ihr Studentenkonto wartet auf Administrator-Freischaltung
               </h3>
               <span className="px-2 py-0.5 rounded-full bg-white/20 text-xs font-semibold uppercase">
                 Status: Ausstehend
               </span>
             </div>
             <p className="text-xs sm:text-sm text-amber-100 mt-1 leading-relaxed max-w-2xl">
-              Gemäß telc Prüfungsrichtlinien muss der Administrator dein Konto freischalten, bevor Prüfungsversuche gewertet werden. Du kannst Prüfungen im Vorschaumodus ansehen oder als Administrator wechseln, um das Konto sofort zu aktivieren.
+              Gemäß telc Prüfungsrichtlinien muss der Administrator Ihr Konto in der Benutzerverwaltung freischalten, bevor Übungen und Prüfungsversuche gewertet werden können. Bitte wenden Sie sich an die Prüfungsleitung (z. B. admin@telc.de).
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
-          <button
-            onClick={() => {
-              switchDemoRole('admin');
-              if (onSwitchToAdmin) onSwitchToAdmin();
-            }}
-            className="px-4 py-2 bg-white hover:bg-amber-50 text-amber-900 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition flex items-center gap-2"
-          >
-            <ShieldCheck className="w-4 h-4 text-amber-600" />
-            Als Admin freischalten
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          <div className="px-3.5 py-2 bg-white/15 rounded-xl text-xs font-bold text-white border border-white/20 flex items-center gap-1.5">
+            <ShieldAlert className="w-4 h-4 text-amber-200" />
+            Wartet auf Admin-Freigabe
+          </div>
         </div>
       </div>
     </div>

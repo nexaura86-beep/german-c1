@@ -74,19 +74,10 @@ app.post('/api/auth/register', (req, res) => {
     };
 
     db.addUser(newUser);
-    const token = generateToken(newUser);
 
     return res.status(201).json({
-      message: 'Registrierung erfolgreich! Ihr Konto wartet auf Freischaltung durch die Prüfungsleitung.',
-      token,
-      user: {
-        id: newUser.id,
-        name: newUser.name,
-        email: newUser.email,
-        role: newUser.role,
-        status: newUser.status,
-        targetExamDate: newUser.targetExamDate
-      }
+      message: 'Registrierung erfolgreich! Ihr Konto wurde erstellt und muss nun vom Administrator freigeschaltet werden, bevor Sie sich anmelden können.',
+      requiresActivation: true
     });
   } catch (err) {
     console.error('Register error:', err);
@@ -103,12 +94,20 @@ app.post('/api/auth/login', (req, res) => {
 
     const user = db.getUserByEmail(email);
     if (!user) {
-      return res.status(401).json({ error: 'Ungültige Anmeldedaten' });
+      return res.status(401).json({ error: 'Ungültige Anmeldedaten (E-Mail oder Passwort falsch)' });
     }
 
     const validPassword = bcrypt.compareSync(password, user.passwordHash);
     if (!validPassword) {
-      return res.status(401).json({ error: 'Ungültige Anmeldedaten' });
+      return res.status(401).json({ error: 'Ungültige Anmeldedaten (E-Mail oder Passwort falsch)' });
+    }
+
+    // Check if account has been activated by admin
+    if (user.role !== 'admin' && user.status !== 'active') {
+      return res.status(403).json({
+        error: 'Ihr Konto wurde noch nicht vom Administrator freigeschaltet. Bitte warten Sie auf die Freischaltung durch die Prüfungsleitung.',
+        isPending: true
+      });
     }
 
     const token = generateToken(user);
@@ -127,26 +126,6 @@ app.post('/api/auth/login', (req, res) => {
     console.error('Login error:', err);
     res.status(500).json({ error: 'Interner Serverfehler beim Login' });
   }
-});
-
-app.post('/api/auth/demo-login', (req, res) => {
-  const { role } = req.body;
-  const targetEmail = role === 'admin' ? 'admin@telc.de' : 'student@uni.de';
-  const user = db.getUserByEmail(targetEmail);
-  if (!user) return res.status(404).json({ error: 'Demo-Benutzer nicht gefunden' });
-
-  const token = generateToken(user);
-  return res.json({
-    token,
-    user: {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      role: user.role,
-      status: user.status,
-      targetExamDate: user.targetExamDate
-    }
-  });
 });
 
 app.get('/api/auth/me', authMiddleware, (req, res) => {
@@ -252,6 +231,23 @@ app.patch('/api/admin/users/:id/toggle-status', authMiddleware, requireAdmin, (r
   });
 });
 
+app.patch('/api/admin/users/:id/status', authMiddleware, requireAdmin, (req, res) => {
+  const user = db.getUserById(req.params.id);
+  if (!user) return res.status(404).json({ error: 'Benutzer nicht gefunden' });
+  if (user.role === 'admin') {
+    return res.status(400).json({ error: 'Admin-Status kann nicht geändert werden' });
+  }
+
+  const newStatus = req.body.status === 'pending' ? 'pending' : 'active';
+  const updated = db.updateUser(user.id, { status: newStatus });
+  const { passwordHash, ...safeUser } = updated;
+
+  res.json({
+    message: `Konto von ${user.name} ist nun ${newStatus === 'active' ? 'aktiviert' : 'deaktiviert'}.`,
+    user: safeUser
+  });
+});
+
 app.delete('/api/admin/users/:id', authMiddleware, requireAdmin, (req, res) => {
   const user = db.getUserById(req.params.id);
   if (!user) return res.status(404).json({ error: 'Benutzer nicht gefunden' });
@@ -301,13 +297,13 @@ app.delete('/api/admin/topics/:section/:subteil/:topicId', authMiddleware, requi
 // ==========================================
 
 // Get all sections with their respective sub-teile and available themes/topics
-app.get('/api/topics', authMiddleware, (req, res) => {
+app.get('/api/topics', authMiddleware, requireActiveUser, (req, res) => {
   const data = db.getTopicsData();
   res.json({ topicsData: data });
 });
 
 // Get a specific topic for exercise
-app.get('/api/topics/:section/:subteil/:topicId', authMiddleware, (req, res) => {
+app.get('/api/topics/:section/:subteil/:topicId', authMiddleware, requireActiveUser, (req, res) => {
   const { section, subteil, topicId } = req.params;
   const data = db.getTopicsData();
 
@@ -326,7 +322,7 @@ app.get('/api/topics/:section/:subteil/:topicId', authMiddleware, (req, res) => 
 });
 
 // INSTANT SCORECARD EVALUATION (Does not require persistence; gives instant scorecard)
-app.post('/api/evaluate-instant', authMiddleware, (req, res) => {
+app.post('/api/evaluate-instant', authMiddleware, requireActiveUser, (req, res) => {
   try {
     const { section, subteil, topicId, userAnswers, topicData } = req.body;
 

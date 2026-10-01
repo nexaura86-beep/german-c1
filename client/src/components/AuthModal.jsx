@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
-import { X, Lock, Mail, User, Calendar, ShieldCheck, GraduationCap, CheckCircle2 } from 'lucide-react';
+import { X, Lock, Mail, User, Calendar, GraduationCap, CheckCircle2 } from 'lucide-react';
 
 export function AuthModal({ isOpen, onClose }) {
-  const { login, register, switchDemoRole } = useAuth();
+  const { login, register } = useAuth();
   const [isRegister, setIsRegister] = useState(false);
-  const [roleMode, setRoleMode] = useState('student'); // 'student' or 'admin'
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,11 +39,6 @@ export function AuthModal({ isOpen, onClose }) {
     } finally {
       setLoading(false);
     }
-  }
-
-  function handleDemoQuick(role) {
-    switchDemoRole(role);
-    onClose();
   }
 
   return (
@@ -89,30 +83,6 @@ export function AuthModal({ isOpen, onClose }) {
             </div>
           )}
 
-          {/* Quick Demo Access Bar */}
-          <div className="mb-5 p-3 rounded-xl bg-slate-50 border border-slate-200">
-            <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">
-              ⚡ Schnell-Login (Demo ohne Passwort)
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => handleDemoQuick('admin')}
-                className="px-3 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-800 rounded-lg text-xs font-bold border border-indigo-200 flex items-center justify-center gap-1.5 transition"
-              >
-                <ShieldCheck className="w-3.5 h-3.5 text-indigo-600" />
-                Als Admin
-              </button>
-              <button
-                type="button"
-                onClick={() => handleDemoQuick('student')}
-                className="px-3 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 rounded-lg text-xs font-bold border border-emerald-200 flex items-center justify-center gap-1.5 transition"
-              >
-                <GraduationCap className="w-3.5 h-3.5 text-emerald-600" />
-                Als Student
-              </button>
-            </div>
-          </div>
 
           <form onSubmit={handleSubmit} className="space-y-3.5">
             {isRegister && (
