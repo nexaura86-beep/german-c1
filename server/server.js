@@ -163,6 +163,78 @@ app.get('/api/admin/users', authMiddleware, requireAdmin, (req, res) => {
   res.json({ users });
 });
 
+// Admin creates new user with specific role and privilege
+app.post('/api/admin/users', authMiddleware, requireAdmin, (req, res) => {
+  try {
+    const { name, email, password, role, status, targetExamDate } = req.body;
+    if (!name || !email || !password) {
+      return res.status(400).json({ error: 'Name, E-Mail und Passwort sind erforderlich' });
+    }
+
+    const existing = db.getUserByEmail(email);
+    if (existing) {
+      return res.status(400).json({ error: 'Diese E-Mail-Adresse ist bereits registriert' });
+    }
+
+    const assignedRole = role === 'admin' ? 'admin' : 'student';
+    const assignedStatus = status === 'pending' ? 'pending' : 'active';
+
+    const newUser = {
+      id: `${assignedRole}-${uuidv4().substring(0, 8)}`,
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      passwordHash: bcrypt.hashSync(password, 10),
+      role: assignedRole,
+      status: assignedStatus,
+      targetExamDate: targetExamDate || null,
+      createdAt: new Date().toISOString()
+    };
+
+    db.addUser(newUser);
+    const { passwordHash, ...safeUser } = newUser;
+
+    res.status(201).json({
+      message: `Benutzer ${safeUser.name} (${safeUser.role === 'admin' ? 'Administrator' : 'Student'}) erfolgreich angelegt!`,
+      user: safeUser
+    });
+  } catch (err) {
+    console.error('Error creating user by admin:', err);
+    res.status(500).json({ error: 'Fehler beim Anlegen des Benutzers' });
+  }
+});
+
+// Admin changes user role / privilege (e.g. promotes to admin or changes to student)
+app.patch('/api/admin/users/:id/role', authMiddleware, requireAdmin, (req, res) => {
+  try {
+    const user = db.getUserById(req.params.id);
+    if (!user) return res.status(404).json({ error: 'Benutzer nicht gefunden' });
+
+    const { role } = req.body;
+    if (!role || !['admin', 'student'].includes(role)) {
+      return res.status(400).json({ error: 'Ungültige Rolle. Erlaubt sind "admin" oder "student".' });
+    }
+
+    // Guard: Prevent demoting the last admin
+    if (user.role === 'admin' && role === 'student') {
+      const adminCount = db.getUsers().filter(u => u.role === 'admin').length;
+      if (adminCount <= 1) {
+        return res.status(400).json({ error: 'Der letzte Administrator kann nicht herabgestuft werden.' });
+      }
+    }
+
+    const updated = db.updateUser(user.id, { role });
+    const { passwordHash, ...safeUser } = updated;
+
+    res.json({
+      message: `Berechtigung für ${user.name} erfolgreich auf "${role === 'admin' ? 'Administrator' : 'Student'}" aktualisiert!`,
+      user: safeUser
+    });
+  } catch (err) {
+    console.error('Error updating user role:', err);
+    res.status(500).json({ error: 'Fehler beim Aktualisieren der Berechtigung' });
+  }
+});
+
 app.patch('/api/admin/users/:id/toggle-status', authMiddleware, requireAdmin, (req, res) => {
   const user = db.getUserById(req.params.id);
   if (!user) return res.status(404).json({ error: 'Benutzer nicht gefunden' });
@@ -183,7 +255,15 @@ app.patch('/api/admin/users/:id/toggle-status', authMiddleware, requireAdmin, (r
 app.delete('/api/admin/users/:id', authMiddleware, requireAdmin, (req, res) => {
   const user = db.getUserById(req.params.id);
   if (!user) return res.status(404).json({ error: 'Benutzer nicht gefunden' });
-  if (user.role === 'admin') return res.status(400).json({ error: 'Administrator kann nicht gelöscht werden' });
+  if (user.id === req.user.id) {
+    return res.status(400).json({ error: 'Sie können Ihr eigenes Administratorkonto nicht löschen' });
+  }
+  if (user.role === 'admin') {
+    const adminCount = db.getUsers().filter(u => u.role === 'admin').length;
+    if (adminCount <= 1) {
+      return res.status(400).json({ error: 'Der einzige verbleibende Administrator kann nicht gelöscht werden' });
+    }
+  }
 
   db.deleteUser(user.id);
   res.json({ message: 'Benutzer erfolgreich gelöscht' });

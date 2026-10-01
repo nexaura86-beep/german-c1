@@ -49,7 +49,7 @@ export function Navbar({ currentView, setCurrentView, onOpenAuth }) {
                         : 'text-slate-600 hover:text-slate-900'
                     }`}
                   >
-                    👥 Studentenverwaltung
+                    👥 Benutzerverwaltung
                   </button>
                   <button
                     onClick={() => setCurrentView('admin-digitizer')}
@@ -60,7 +60,7 @@ export function Navbar({ currentView, setCurrentView, onOpenAuth }) {
                     }`}
                   >
                     <Sparkles className="w-4 h-4 text-indigo-600" />
-                    KI-Bogen Digitalisierung
+                    KI-Digitalisierung
                   </button>
                   <button
                     onClick={() => setCurrentView('admin-exams')}
@@ -71,6 +71,16 @@ export function Navbar({ currentView, setCurrentView, onOpenAuth }) {
                     }`}
                   >
                     📚 Prüfungskatalog
+                  </button>
+                  <button
+                    onClick={() => setCurrentView('dashboard')}
+                    className={`px-3 py-1.5 rounded-lg text-sm font-semibold transition ${
+                      currentView === 'dashboard'
+                        ? 'bg-white text-blue-700 shadow-sm'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    🎓 Prüfungsportal
                   </button>
                 </>
               ) : (

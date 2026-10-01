@@ -41,6 +41,18 @@ export function AdminDashboard({ initialTab = 'students' }) {
   const [digitizedExamPreview, setDigitizedExamPreview] = useState(null);
   const [statusMessage, setStatusMessage] = useState(null);
 
+  // User Management State (Add user & privileges)
+  const [showAddUserModal, setShowAddUserModal] = useState(false);
+  const [newUserData, setNewUserData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    role: 'student',
+    status: 'active',
+    targetExamDate: ''
+  });
+  const [addingUser, setAddingUser] = useState(false);
+
   useEffect(() => {
     loadAllAdminData();
   }, []);
@@ -62,6 +74,41 @@ export function AdminDashboard({ initialTab = 'students' }) {
       console.error('Failed to load admin data:', err);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function handleCreateUser(e) {
+    e.preventDefault();
+    setAddingUser(true);
+    try {
+      const res = await api.createUser(newUserData);
+      setUsers(prev => [...prev, res.user]);
+      setShowAddUserModal(false);
+      setNewUserData({
+        name: '',
+        email: '',
+        password: '',
+        role: 'student',
+        status: 'active',
+        targetExamDate: ''
+      });
+      setStatusMessage({ type: 'success', text: res.message });
+      setTimeout(() => setStatusMessage(null), 3500);
+    } catch (err) {
+      alert(`Fehler beim Anlegen: ${err.message}`);
+    } finally {
+      setAddingUser(false);
+    }
+  }
+
+  async function handleUpdateRole(userId, newRole) {
+    try {
+      const res = await api.updateUserRole(userId, newRole);
+      setUsers(prev => prev.map(u => u.id === userId ? { ...u, role: newRole } : u));
+      setStatusMessage({ type: 'success', text: res.message });
+      setTimeout(() => setStatusMessage(null), 3500);
+    } catch (err) {
+      alert(`Fehler beim Ändern der Berechtigung: ${err.message}`);
     }
   }
 
@@ -202,7 +249,7 @@ export function AdminDashboard({ initialTab = 'students' }) {
           }`}
         >
           <Users className="w-4 h-4" />
-          Studentenverwaltung ({users.filter(u => u.role === 'student').length})
+          Benutzer- & Rechteverwaltung ({users.length})
         </button>
         <button
           onClick={() => setActiveTab('editor')}
@@ -242,61 +289,74 @@ export function AdminDashboard({ initialTab = 'students' }) {
         </button>
       </div>
 
-      {/* TAB 1: STUDENT MANAGEMENT & ACTIVATION (Requested by User) */}
+      {/* TAB 1: USER & PRIVILEGE MANAGEMENT */}
       {activeTab === 'students' && (
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200">
+        <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm space-y-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
             <div>
-              <h2 className="text-lg font-bold text-slate-900">Registrierte Studentenkonten</h2>
+              <h2 className="text-lg font-bold text-slate-900">Benutzer- & Rechteverwaltung</h2>
               <p className="text-xs text-slate-500">
-                Aktivieren Sie neue Konten, damit Studenten vollen Prüfungszugriff erhalten.
+                Verwalten Sie Konten, legen Sie neue Benutzer an und vergeben Sie Administrator- oder Studenten-Berechtigungen.
               </p>
             </div>
+            <button
+              onClick={() => setShowAddUserModal(true)}
+              className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white text-xs font-bold rounded-xl shadow-md transition flex items-center gap-2 self-start sm:self-auto cursor-pointer"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Neuen Benutzer anlegen</span>
+            </button>
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs text-slate-600">
               <thead className="bg-slate-50 text-slate-500 font-bold uppercase tracking-wider text-[10px] border-b border-slate-200">
                 <tr>
-                  <th className="py-3 px-4">Student</th>
+                  <th className="py-3 px-4">Benutzer</th>
                   <th className="py-3 px-4">E-Mail</th>
-                  <th className="py-3 px-4">Prüfungstermin</th>
+                  <th className="py-3 px-4">Berechtigung / Rolle</th>
                   <th className="py-3 px-4">Konto-Status</th>
-                  <th className="py-3 px-4 text-right">Aktion (Freischaltung)</th>
+                  <th className="py-3 px-4 text-right">Aktionen</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 font-medium">
                 {users.map(u => {
-                  const isStudent = u.role === 'student';
                   const isActive = u.status === 'active';
+                  const isAdmin = u.role === 'admin';
 
                   return (
                     <tr key={u.id} className="hover:bg-slate-50/80 transition">
-                      <td className="py-3.5 px-4 font-bold text-slate-900 flex items-center gap-2">
-                        <div className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black ${
-                          u.role === 'admin' ? 'bg-indigo-100 text-indigo-700' : 'bg-blue-100 text-blue-700'
+                      <td className="py-3.5 px-4 font-bold text-slate-900 flex items-center gap-2.5">
+                        <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black shadow-2xs ${
+                          isAdmin ? 'bg-indigo-600 text-white' : 'bg-blue-100 text-blue-700'
                         }`}>
                           {u.name.substring(0, 2).toUpperCase()}
                         </div>
                         <div>
-                          <div>{u.name}</div>
-                          <div className="text-[10px] text-slate-400 capitalize">{u.role}</div>
+                          <div className="font-bold text-slate-900 text-xs sm:text-sm">{u.name}</div>
+                          <div className="text-[10px] text-slate-400">ID: {u.id}</div>
                         </div>
                       </td>
                       <td className="py-3.5 px-4 text-slate-700 font-mono text-[11px]">{u.email}</td>
                       <td className="py-3.5 px-4">
-                        {u.targetExamDate ? (
-                          <span className="font-semibold text-slate-700">{new Date(u.targetExamDate).toLocaleDateString('de-DE')}</span>
-                        ) : (
-                          <span className="text-slate-400 italic">Nicht festgelegt</span>
-                        )}
+                        <div className="flex items-center gap-2">
+                          <select
+                            value={u.role}
+                            onChange={(e) => handleUpdateRole(u.id, e.target.value)}
+                            className={`text-xs font-bold px-2.5 py-1.5 rounded-xl border transition cursor-pointer ${
+                              isAdmin
+                                ? 'bg-indigo-50 border-indigo-300 text-indigo-700 focus:ring-2 focus:ring-indigo-400'
+                                : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                            }`}
+                            title="Berechtigung / Rolle ändern"
+                          >
+                            <option value="student">🎓 Student (Standard)</option>
+                            <option value="admin">👑 Administrator (Volle Rechte)</option>
+                          </select>
+                        </div>
                       </td>
                       <td className="py-3.5 px-4">
-                        {u.role === 'admin' ? (
-                          <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
-                            Administrator
-                          </span>
-                        ) : isActive ? (
+                        {isActive ? (
                           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
                             <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
                             Aktiviert
@@ -304,32 +364,31 @@ export function AdminDashboard({ initialTab = 'students' }) {
                         ) : (
                           <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200 animate-pulse">
                             <AlertCircle className="w-3.5 h-3.5 text-amber-600" />
-                            Wartet auf Aktivierung
+                            Wartet auf Freischaltung
                           </span>
                         )}
                       </td>
                       <td className="py-3.5 px-4 text-right">
-                        {isStudent && (
-                          <div className="flex items-center justify-end gap-2">
-                            <button
-                              onClick={() => handleToggleStatus(u.id)}
-                              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 shadow-sm ${
-                                isActive
-                                  ? 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                                  : 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-emerald-500/20'
-                              }`}
-                            >
-                              {isActive ? 'Konto sperren' : '✓ Jetzt Freischalten'}
-                            </button>
-                            <button
-                              onClick={() => handleDeleteUser(u.id)}
-                              className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition"
-                              title="Benutzer löschen"
-                            >
-                              <Trash2 className="w-4 h-4" />
-                            </button>
-                          </div>
-                        )}
+                        <div className="flex items-center justify-end gap-2">
+                          <button
+                            onClick={() => handleToggleStatus(u.id)}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 shadow-sm cursor-pointer ${
+                              isActive
+                                ? 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                                : 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-emerald-500/20'
+                            }`}
+                            title={isActive ? 'Konto sperren' : 'Konto freischalten'}
+                          >
+                            {isActive ? 'Sperren' : '✓ Freischalten'}
+                          </button>
+                          <button
+                            onClick={() => handleDeleteUser(u.id)}
+                            className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition cursor-pointer"
+                            title="Benutzer löschen"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   );
@@ -337,6 +396,138 @@ export function AdminDashboard({ initialTab = 'students' }) {
               </tbody>
             </table>
           </div>
+
+          {/* Add User Modal */}
+          {showAddUserModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fadeIn">
+              <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-lg overflow-hidden relative">
+                
+                <div className="bg-gradient-to-r from-indigo-900 to-slate-900 p-6 text-white relative">
+                  <button
+                    onClick={() => setShowAddUserModal(false)}
+                    className="absolute top-4 right-4 p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition cursor-pointer"
+                  >
+                    ✕
+                  </button>
+                  <div className="flex items-center gap-2 mb-1">
+                    <ShieldCheck className="w-5 h-5 text-indigo-400" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-indigo-300">
+                      Benutzerverwaltung
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-black">Neuen Benutzer anlegen & Rechte vergeben</h3>
+                  <p className="text-xs text-slate-300 mt-0.5">
+                    Erstellen Sie einen Zugang für Studenten oder weisen Sie Administrator-Rechte zu.
+                  </p>
+                </div>
+
+                <form onSubmit={handleCreateUser} className="p-6 space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                      Vollständiger Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={newUserData.name}
+                      onChange={(e) => setNewUserData({ ...newUserData, name: e.target.value })}
+                      placeholder="z. B. Max Mustermann"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                      E-Mail-Adresse *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={newUserData.email}
+                      onChange={(e) => setNewUserData({ ...newUserData, email: e.target.value })}
+                      placeholder="benutzer@uni.de"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                      Passwort *
+                    </label>
+                    <input
+                      type="password"
+                      required
+                      value={newUserData.password}
+                      onChange={(e) => setNewUserData({ ...newUserData, password: e.target.value })}
+                      placeholder="Sicheres Passwort eingeben"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                        Berechtigung / Rolle *
+                      </label>
+                      <select
+                        value={newUserData.role}
+                        onChange={(e) => setNewUserData({ ...newUserData, role: e.target.value })}
+                        className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      >
+                        <option value="student">🎓 Student (Prüfungszugriff)</option>
+                        <option value="admin">👑 Administrator (Admin-Rechte)</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                        Konto-Status *
+                      </label>
+                      <select
+                        value={newUserData.status}
+                        onChange={(e) => setNewUserData({ ...newUserData, status: e.target.value })}
+                        className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      >
+                        <option value="active">✓ Aktiviert (Sofortiger Zugriff)</option>
+                        <option value="pending">⏳ Wartet auf Freischaltung</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                      Geplanter Prüfungstermin (optional)
+                    </label>
+                    <input
+                      type="date"
+                      value={newUserData.targetExamDate}
+                      onChange={(e) => setNewUserData({ ...newUserData, targetExamDate: e.target.value })}
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+                    <button
+                      type="button"
+                      onClick={() => setShowAddUserModal(false)}
+                      className="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer"
+                    >
+                      Abbrechen
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={addingUser}
+                      className="px-5 py-2 rounded-xl text-xs font-bold bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white shadow-md transition disabled:opacity-50 cursor-pointer"
+                    >
+                      {addingUser ? 'Wird angelegt...' : 'Benutzer anlegen'}
+                    </button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          )}
+
         </div>
       )}
 

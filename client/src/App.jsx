@@ -9,6 +9,7 @@ import { SprachbausteineRunner } from './components/exam/SprachbausteineRunner.j
 import { HoerverstehenRunner } from './components/exam/HoerverstehenRunner.jsx';
 import { SchriftlicherAusdruckRunner } from './components/exam/SchriftlicherAusdruckRunner.jsx';
 import { MuendlicherAusdruckRunner } from './components/exam/MuendlicherAusdruckRunner.jsx';
+import { LoginPage } from './components/LoginPage.jsx';
 import { Loader2 } from 'lucide-react';
 
 export function App() {
@@ -56,6 +57,11 @@ export function App() {
         </div>
       </div>
     );
+  }
+
+  // Enforce Login Page if user is not authenticated
+  if (!user) {
+    return <LoginPage />;
   }
 
   return (

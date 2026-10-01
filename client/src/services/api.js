@@ -58,6 +58,28 @@ export const api = {
     return data.users;
   },
 
+  createUser: async (userData) => {
+    const res = await fetch(`${BASE_URL}/admin/users`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify(userData)
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Erstellen des Benutzers');
+    return data;
+  },
+
+  updateUserRole: async (userId, role) => {
+    const res = await fetch(`${BASE_URL}/admin/users/${userId}/role`, {
+      method: 'PATCH',
+      headers: getHeaders(),
+      body: JSON.stringify({ role })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Ändern der Berechtigung');
+    return data;
+  },
+
   toggleUserStatus: async (userId) => {
     const res = await fetch(`${BASE_URL}/admin/users/${userId}/toggle-status`, {
       method: 'PATCH',
