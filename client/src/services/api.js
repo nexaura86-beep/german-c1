@@ -100,6 +100,48 @@ export const api = {
     return data;
   },
 
+  getExams: async () => {
+    const res = await fetch(`${BASE_URL}/admin/exams`, { headers: getHeaders() });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Laden der Prüfungen');
+    return data.exams || [];
+  },
+
+  saveExam: async (examData) => {
+    const res = await fetch(`${BASE_URL}/admin/exams`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify(examData)
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Speichern der Prüfung');
+    return data;
+  },
+
+  deleteExam: async (examId) => {
+    const res = await fetch(`${BASE_URL}/admin/exams/${examId}`, {
+      method: 'DELETE',
+      headers: getHeaders()
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Löschen der Prüfung');
+    return data;
+  },
+
+  getAllSubmissions: async () => {
+    const res = await fetch(`${BASE_URL}/admin/submissions`, { headers: getHeaders() });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Laden der Abgaben');
+    return data.submissions || [];
+  },
+
+  getAdminStats: async () => {
+    const res = await fetch(`${BASE_URL}/admin/stats`, { headers: getHeaders() });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Laden der Statistiken');
+    return data;
+  },
+
   digitizePaper: async (formData) => {
     const token = localStorage.getItem('telc_token');
     const res = await fetch(`${BASE_URL}/admin/digitize-paper`, {

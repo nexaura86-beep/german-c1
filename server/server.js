@@ -292,6 +292,47 @@ app.delete('/api/admin/topics/:section/:subteil/:topicId', authMiddleware, requi
   }
 });
 
+// Admin Exam Sets & Submissions Endpoints
+app.get('/api/admin/exams', authMiddleware, requireAdmin, (req, res) => {
+  const exams = db.getExams();
+  res.json({ exams });
+});
+
+app.post('/api/admin/exams', authMiddleware, requireAdmin, (req, res) => {
+  const exam = req.body;
+  if (!exam || !exam.id) {
+    return res.status(400).json({ error: 'Ungültige Prüfungsdaten' });
+  }
+  db.saveExam(exam);
+  res.status(201).json({ message: 'Prüfungssatz erfolgreich gespeichert', exam });
+});
+
+app.delete('/api/admin/exams/:id', authMiddleware, requireAdmin, (req, res) => {
+  db.deleteExam(req.params.id);
+  res.json({ message: 'Prüfungssatz erfolgreich gelöscht' });
+});
+
+app.get('/api/admin/submissions', authMiddleware, requireAdmin, (req, res) => {
+  const submissions = db.getSubmissions();
+  res.json({ submissions });
+});
+
+app.get('/api/admin/stats', authMiddleware, requireAdmin, (req, res) => {
+  const users = db.getUsers();
+  const exams = db.getExams();
+  const submissions = db.getSubmissions();
+  const activeStudents = users.filter(u => u.role === 'student' && u.status === 'active').length;
+  const pendingStudents = users.filter(u => u.role === 'student' && u.status === 'pending').length;
+
+  res.json({
+    totalUsers: users.length,
+    activeStudents,
+    pendingStudents,
+    totalExams: exams.length,
+    totalSubmissions: submissions.length
+  });
+});
+
 // ==========================================
 // 3. TOPIC SELECTION & PRACTICE PORTAL
 // ==========================================

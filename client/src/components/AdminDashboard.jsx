@@ -19,7 +19,8 @@ import {
   GraduationCap,
   Layers,
   Save,
-  Edit3
+  Edit3,
+  RefreshCw
 } from 'lucide-react';
 import { TopicQuestionCrudEditor } from './admin/TopicQuestionCrudEditor.jsx';
 
@@ -53,23 +54,53 @@ export function AdminDashboard({ initialTab = 'students' }) {
   });
   const [addingUser, setAddingUser] = useState(false);
 
+  const [isRefreshingUsers, setIsRefreshingUsers] = useState(false);
+
   useEffect(() => {
     loadAllAdminData();
+    // Live polling every 5 seconds so newly registered users pop up in real-time
+    const interval = setInterval(() => {
+      loadUsers(true);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
+
+  async function loadUsers(silent = false) {
+    if (!silent) setIsRefreshingUsers(true);
+    try {
+      const usersList = await api.getUsers();
+      if (Array.isArray(usersList)) {
+        setUsers(usersList);
+      }
+    } catch (err) {
+      if (!silent) console.error('Failed to load users:', err);
+    } finally {
+      if (!silent) setIsRefreshingUsers(false);
+    }
+  }
 
   async function loadAllAdminData() {
     setLoading(true);
     try {
-      const [usersList, examsList, subsList, statsData] = await Promise.all([
+      const [usersRes, examsRes, subsRes, statsRes] = await Promise.allSettled([
         api.getUsers(),
         api.getExams(),
         api.getAllSubmissions(),
         api.getAdminStats()
       ]);
-      setUsers(usersList);
-      setExams(examsList);
-      setSubmissions(subsList);
-      setStats(statsData);
+
+      if (usersRes.status === 'fulfilled' && Array.isArray(usersRes.value)) {
+        setUsers(usersRes.value);
+      }
+      if (examsRes.status === 'fulfilled' && Array.isArray(examsRes.value)) {
+        setExams(examsRes.value);
+      }
+      if (subsRes.status === 'fulfilled' && Array.isArray(subsRes.value)) {
+        setSubmissions(subsRes.value);
+      }
+      if (statsRes.status === 'fulfilled' && statsRes.value) {
+        setStats(statsRes.value);
+      }
     } catch (err) {
       console.error('Failed to load admin data:', err);
     } finally {
@@ -243,7 +274,7 @@ export function AdminDashboard({ initialTab = 'students' }) {
       {/* Tab Navigation */}
       <div className="flex items-center gap-2 border-b border-slate-200 pb-3">
         <button
-          onClick={() => setActiveTab('students')}
+          onClick={() => { setActiveTab('students'); loadUsers(); }}
           className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 ${
             activeTab === 'students' ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white text-slate-600 hover:bg-slate-100'
           }`}
@@ -299,13 +330,24 @@ export function AdminDashboard({ initialTab = 'students' }) {
                 Verwalten Sie Konten, legen Sie neue Benutzer an und vergeben Sie Administrator- oder Studenten-Berechtigungen.
               </p>
             </div>
-            <button
-              onClick={() => setShowAddUserModal(true)}
-              className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white text-xs font-bold rounded-xl shadow-md transition flex items-center gap-2 self-start sm:self-auto cursor-pointer"
-            >
-              <Plus className="w-4 h-4" />
-              <span>Neuen Benutzer anlegen</span>
-            </button>
+            <div className="flex items-center gap-2 self-start sm:self-auto">
+              <button
+                onClick={() => loadUsers(false)}
+                disabled={isRefreshingUsers}
+                className="px-3.5 py-2.5 bg-slate-100 hover:bg-slate-200 active:scale-95 text-slate-700 text-xs font-bold rounded-xl border border-slate-200 transition flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+                title="Benutzerliste neu laden"
+              >
+                <RefreshCw className={`w-3.5 h-3.5 ${isRefreshingUsers ? 'animate-spin text-indigo-600' : 'text-slate-500'}`} />
+                <span>{isRefreshingUsers ? 'Lädt...' : 'Aktualisieren'}</span>
+              </button>
+              <button
+                onClick={() => setShowAddUserModal(true)}
+                className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white text-xs font-bold rounded-xl shadow-md transition flex items-center gap-2 cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Neuen Benutzer anlegen</span>
+              </button>
+            </div>
           </div>
 
           <div className="overflow-x-auto">

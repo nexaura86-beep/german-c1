@@ -71,17 +71,19 @@ export const db = {
   },
   
   // Users
-  getUsers: () => db.read().users,
-  getUserById: (id) => db.read().users.find(u => u.id === id),
-  getUserByEmail: (email) => db.read().users.find(u => u.email.toLowerCase() === email.toLowerCase()),
+  getUsers: () => db.read().users || [],
+  getUserById: (id) => (db.read().users || []).find(u => u.id === id),
+  getUserByEmail: (email) => (db.read().users || []).find(u => u.email.toLowerCase() === email.toLowerCase()),
   addUser: (user) => {
     const data = db.read();
+    if (!data.users) data.users = [];
     data.users.push(user);
     db.write(data);
     return user;
   },
   updateUser: (id, updates) => {
     const data = db.read();
+    if (!data.users) data.users = [];
     const idx = data.users.findIndex(u => u.id === id);
     if (idx !== -1) {
       data.users[idx] = { ...data.users[idx], ...updates };
@@ -92,8 +94,42 @@ export const db = {
   },
   deleteUser: (id) => {
     const data = db.read();
+    if (!data.users) data.users = [];
     data.users = data.users.filter(u => u.id !== id);
     db.write(data);
+  },
+
+  // Exams
+  getExams: () => db.read().exams || [],
+  getExamById: (id) => (db.read().exams || []).find(e => e.id === id),
+  saveExam: (exam) => {
+    const data = db.read();
+    if (!data.exams) data.exams = [];
+    const existingIndex = data.exams.findIndex(e => e.id === exam.id);
+    if (existingIndex !== -1) {
+      data.exams[existingIndex] = exam;
+    } else {
+      data.exams.push(exam);
+    }
+    db.write(data);
+    return exam;
+  },
+  deleteExam: (id) => {
+    const data = db.read();
+    if (data.exams) {
+      data.exams = data.exams.filter(e => e.id !== id);
+      db.write(data);
+    }
+  },
+
+  // Submissions
+  getSubmissions: () => db.read().submissions || [],
+  addSubmission: (submission) => {
+    const data = db.read();
+    if (!data.submissions) data.submissions = [];
+    data.submissions.push(submission);
+    db.write(data);
+    return submission;
   },
 
   // Topics Data
