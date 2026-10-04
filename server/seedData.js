@@ -1,3 +1,28 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function loadJsonSafe(relPath, fallback = []) {
+  try {
+    const fullPath = path.join(__dirname, relPath);
+    if (fs.existsSync(fullPath)) {
+      return JSON.parse(fs.readFileSync(fullPath, 'utf8'));
+    }
+  } catch (e) {
+    console.error('Failed to load JSON from ' + relPath, e);
+  }
+  return fallback;
+}
+
+const extraLv1 = loadJsonSafe('data/lv1_topics.json');
+const extraLv2 = loadJsonSafe('data/lv2_topics.json');
+const extraLv3 = loadJsonSafe('data/lv3_topics.json');
+const extraSb = loadJsonSafe('data/sb_topics.json');
+const extraHv2 = loadJsonSafe('data/hv2_topics.json');
+
 export const seedTopics = {
   leseverstehen: {
     title: "Leseverstehen",
@@ -55,7 +80,8 @@ Es dauerte nochmals fast 100 Jahre, bis Babbages Vorstellungen umgesetzt und das
             "5": "Satz h fasst zusammen, dass die Maschine wegen Geldmangels ein theoretisches Konstrukt blieb.",
             "6": "Satz d leitet über zu Konrad Zuses programmierbarem Rechner Z3 ('Dann war der erste Rechner, der programmgesteuert funktionierte, reif.')."
           }
-        }
+        },
+        ...extraLv1
       ]
     },
     teil2: {
@@ -119,7 +145,8 @@ Es dauerte nochmals fast 100 Jahre, bis Babbages Vorstellungen umgesetzt und das
             "11": "In Absatz d: 'So besteht die Gefahr, dass es zu Konflikten kommt...'",
             "12": "In Absatz e: 'Schon die demographische Entwicklung lässt vermuten, dass das Studium im Alter immer wichtiger werden wird...'"
           }
-        }
+        },
+        ...extraLv2
       ]
     },
     teil3: {
@@ -181,7 +208,8 @@ Aus linguistischer Perspektive hat das Projekt in Altenholz gezeigt, dass das En
               explanation: "Richtig: 'Sprachbad' im Kindergarten fasst das Eintauchen in die Sprache (Immersion) im Kita-Alltag am treffendsten zusammen."
             }
           ]
-        }
+        },
+        ...extraLv3
       ]
     }
   },
@@ -240,7 +268,8 @@ Aber allen Prognosen [45]: Der Rekord für das längste Leben ist seit zwölf Ja
             { id: "45", options: [{ key: "a", text: "zu trotz" }, { key: "b", text: "zu Trotz" }, { key: "c", text: "zum Trotz" }, { key: "d", text: "zumtrotz" }], correctAnswer: "c", explanation: "Feste Redewendung: 'allen Prognosen zum Trotz'" },
             { id: "46", options: [{ key: "a", text: "Damals" }, { key: "b", text: "Danach" }, { key: "c", text: "Dennoch" }, { key: "d", text: "Deshalb" }], correctAnswer: "a", explanation: "Zeitadverb: 'Damals starb die Französin Jeanne Calment...'" }
           ]
-        }
+        },
+        ...extraSb
       ]
     }
   },
@@ -421,7 +450,8 @@ Woran liegt der Mangel an Begeisterung? An der Tradition nach Gauß: alles hunde
               explanation: "Richtig ist c: Unser technischer Fortschritt hängt von Mathe ab, weshalb Investitionen nötig sind."
             }
           ]
-        }
+        },
+        ...extraHv2
       ]
     },
     teil3: {

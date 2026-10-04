@@ -1,0 +1,2691 @@
+# -*- coding: utf-8 -*-
+"""
+Digitizes all 19 topics of Hören Teil 2 from the uploaded exam booklet.
+"""
+import json
+import os
+
+topics = [
+    # 1. ASTRONAUT
+    {
+        "id": "hv2-astronaut",
+        "themeTitle": "Astronaut – Thomas Reiter im All",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Willkommen zu unserer Wissenschaftssendung. Unser heutiger Gast ist der deutsche ESA-Astronaut Thomas Reiter, der Monate auf der Raumstation MIR und der ISS verbracht hat. Herr Reiter, wie bereiten Sie sich auf Ihren nächsten Raumflug vor?
+Thomas Reiter: Nun, die Vorbereitung ist natürlich anstrengend und intensiv. Aber da ich bereits zwei Langzeitmissionen absolviert habe, weiß ich ganz genau, wie sich die Schwerelosigkeit anfühlt und wie man sich beim Raumflug körperlich und psychisch fühlt.
+Moderator: Wie war denn das Miteinander bei Ihrem ersten Flug?
+Thomas Reiter: Wir hatten eine sehr harmonische Crew. Es gab weder Streit noch Reibereien. Wir waren uns von unserer Wesensart und Arbeitsweise her sehr ähnlich, was für das enge Zusammenleben auf engstem Raum entscheidend ist.
+Moderator: Wie läuft der Alltag an Bord ab?
+Thomas Reiter: Die Tage sind minutiös getaktet. Jeder Astronaut bekommt abends detaillierte Informationen und Pläne zu seiner Arbeit und seinen Experimenten am nächsten Tag.
+Moderator: Und die Lagebesprechungen mit der Bodenkontrolle?
+Thomas Reiter: Die täglichen Arbeitsbesprechungen finden morgens statt und behandeln ausführlich die Geschehnisse und Herausforderungen des Tages.
+Moderator: Was raten Sie jungen Leuten, die davon träumen, Astronaut zu werden?
+Thomas Reiter: Man braucht vor allem Ausdauer. Wer Astronaut werden will, muss sich auf mehrjährige, extrem anspruchsvolle Trainings einstellen.
+Moderator: Welchen Stellenwert hat die Raumfahrt für unsere Gesellschaft?
+Thomas Reiter: Raumfahrt ist nicht bloß Technik. Die Erforschung des Kosmos gehört wie Wissenschaft, Musik und Kunst zur menschlichen Kultur. Für mich persönlich ist die Raumfahrt eine elementare Grundlage für den Fortschritt der Menschheit.
+Moderator: Welche Träume haben Sie für die Zukunft der Raumfahrt?
+Thomas Reiter: Ich wünsche mir sehnlichst, dass die Internationale Raumstation ISS eines Tages die Erdumlaufbahn verlässt und zum Mars fliegt.
+Moderator: Und sollte der Weltraum auch touristisch erschlossen werden?
+Thomas Reiter: Ich finde, der Weltraum sollte nicht nur einigen wenigen Forschern vorbehalten sein. Die Raumfahrt sollte für jeden zugänglich sein.
+Moderator: Bedeutet ein erfolgreich beendetes Astronauten-Training automatisch einen Flug ins All?
+Thomas Reiter: Leider nein. Wer das harte Training absolviert hat, muss sich in der Endauswahl noch gegen einen anderen Kandidaten behaupten.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Thomas Reiter",
+                "options": [
+                    {"key": "a", "text": "freut sich über alle Maßen auf den nächsten Flug."},
+                    {"key": "b", "text": "hält die Vorbereitungszeit für zu lang."},
+                    {"key": "c", "text": "weiß, wie er sich beim Raumflug fühlen wird."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Thomas Reiter berichtet, dass er durch frühere Flüge bereits genau weiß, wie man sich im All fühlt."
+            },
+            {
+                "id": "56",
+                "question": "Bei seinem ersten Raumflug",
+                "options": [
+                    {"key": "a", "text": "hatte Thomas Reiter Streit mit den Kollegen."},
+                    {"key": "b", "text": "hatten immer mal wieder alle zur gleichen Zeit schlechte Laune."},
+                    {"key": "c", "text": "waren sich Thomas Reiter und seine Kollegen von der Art her ähnlich."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Die Astronauten waren sich von der Art und Wesensweise her sehr ähnlich."
+            },
+            {
+                "id": "57",
+                "question": "Jeder Astronaut",
+                "options": [
+                    {"key": "a", "text": "beginnt schon am Abend mit der Forschungsarbeit des kommenden Tages."},
+                    {"key": "b", "text": "bekommt abends Informationen zu seiner Arbeit am nächsten Tag."},
+                    {"key": "c", "text": "organisiert abends seine Arbeit für den kommenden Tag."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Jeder Astronaut erhält abends die Unterlagen und Pläne für den nächsten Tag."
+            },
+            {
+                "id": "58",
+                "question": "Arbeitsbesprechungen",
+                "options": [
+                    {"key": "a", "text": "behandeln die Geschehnisse des Tages."},
+                    {"key": "b", "text": "gibt es am Nachmittag."},
+                    {"key": "c", "text": "gibt es nicht jeden Tag."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die Besprechungen behandeln die Geschehnisse und Abläufe des jeweiligen Tages."
+            },
+            {
+                "id": "59",
+                "question": "Wer Astronaut werden will,",
+                "options": [
+                    {"key": "a", "text": "muss sich auf mehrjährige Trainings einstellen."},
+                    {"key": "b", "text": "muss vorher einen Flugschein gemacht haben."},
+                    {"key": "c", "text": "sollte gut alleine arbeiten können."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Anwärter müssen sich auf jahrelange, anspruchsvolle Ausbildungen einstellen."
+            },
+            {
+                "id": "60",
+                "question": "Die Raumfahrt",
+                "options": [
+                    {"key": "a", "text": "dient in erster Linie dem Zweck, neue Lebensräume zu erschließen."},
+                    {"key": "b", "text": "gehört wie anderes auch zur menschlichen Kultur."},
+                    {"key": "c", "text": "ist schon jetzt wichtig bei der Nutzung neuer Energieformen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Das Bestreben nach Erkenntnis im All gehört zur menschlichen Kultur."
+            },
+            {
+                "id": "61",
+                "question": "Für Thomas Reiter ist Raumfahrt",
+                "options": [
+                    {"key": "a", "text": "eine Grundlage für den Fortschritt der Menschheit."},
+                    {"key": "b", "text": "viel wichtiger als Erkundungsreisen in früheren Zeiten."},
+                    {"key": "c", "text": "Vorbedingung für eine hochentwickelte Gesellschaft."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Er sieht die Raumfahrt als fundamentale Grundlage für den Fortschritt der Menschheit."
+            },
+            {
+                "id": "62",
+                "question": "Thomas Reiter",
+                "options": [
+                    {"key": "a", "text": "bezweifelt, dass die Technologien für weiterführende Raumfahrt bald entwickelt werden."},
+                    {"key": "b", "text": "wünscht sich, dass die Internationale Raumstation ISS zum Mars fliegt."},
+                    {"key": "c", "text": "erwartet, dass es in absehbarer Zukunft auch Raumfahrt zu anderen Planeten geben wird."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Er äußert den Wunsch, dass die ISS zum Mars fliegen möge."
+            },
+            {
+                "id": "63",
+                "question": "Raumfahrt",
+                "options": [
+                    {"key": "a", "text": "sollte aus Umweltschutzgründen nicht touristisch genutzt werden."},
+                    {"key": "b", "text": "sollte erfahrenen Astronauten vorbehalten sein."},
+                    {"key": "c", "text": "sollte für jeden zugänglich sein."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Reiter betont, dass der Weltraum für jeden Menschen erreichbar sein sollte."
+            },
+            {
+                "id": "64",
+                "question": "Wer das Astronauten-Training absolviert hat,",
+                "options": [
+                    {"key": "a", "text": "kommt danach auch zum Einsatz."},
+                    {"key": "b", "text": "muss sich noch gegen einen anderen Kandidaten behaupten."},
+                    {"key": "c", "text": "wird erst einmal Ersatzmann."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Selbst nach dem Training muss man sich gegen den zweiten Kandidaten durchsetzen."
+            }
+        ]
+    },
+
+    # 2. PFLANZEN
+    {
+        "id": "hv2-pflanzen",
+        "themeTitle": "Pflanzen – Die Kommunikation der Pflanzen",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Pflanzen galten lange Zeit als stumme Organismen. Doch die moderne Forschung beweist das Gegenteil: Pflanzen kommunizieren intensiv miteinander. Zu Gast ist Biologin Frau Dr. Sellinger. Wer hat die Erforschung pflanzlicher Geräusche begonnen?
+Frau Sellinger: Bereits vor Jahrzehnten war es der Botaniker John Milburn, der als Erster versuchte, Pflanzengeräusche mit akustischen Verstärkern hörbar zu machen.
+Moderator: Woran forscht Ihr eigenes Team heute?
+Frau Sellinger: Wir erforschen die Signale und Schwingungen im Inneren von Pflanzen, um Rückschlüsse auf Wasserversorgung und Stresszustände zu ziehen.
+Moderator: Was verstehen Sie unter dem Begriff 'Wasserfluss'?
+Frau Sellinger: Damit bezeichnen wir das kontinuierliche Aufsteigen des Wassers im Leitungssystem des Baumes.
+Moderator: Welchen Hauptzweck verfolgt die pflanzliche Kommunikation?
+Frau Sellinger: Die Kommunikation der Pflanzen verfolgt evolutionär primär das Ziel der Arterhaltung und Verteidigung.
+Moderator: Wie wehrt sich beispielsweise die Tabakpflanze?
+Frau Sellinger: Die Tabakpflanze bekämpft Schädlinge, indem sie Duftstoffe aussendet und damit schädlingsfressende Insekten anlockt, die die Raupen vertilgen.
+Moderator: Können Pflanzen auch benachbarte Pflanzen warnen?
+Frau Sellinger: Ja, über luftübertragene Botenstoffe können Pflanzen ihre Artgenossen rechtzeitig vor Schädlingen warnen.
+Moderator: Gilt das auch für Nutzpflanzen auf unseren Feldern?
+Frau Sellinger: Nein, durch menschliche Züchtung besitzen von Menschen angebaute Pflanzen kaum mehr natürliche kommunikative Fähigkeiten.
+Moderator: Haben diese Pflanzenstoffe eine Wirkung auf Menschen?
+Frau Sellinger: Pflanzen setzen Aerosole und Terpene frei, die das menschliche Immunsystem wahrscheinlich auch nachhaltig stärken.
+Moderator: Dazu gibt es doch Untersuchungen in Japan?
+Frau Sellinger: Japanische Forscher suchen intensiv nach wissenschaftlichen Belegen für die wohltuende Wirkung von Pflanzen und Wäldern auf die menschliche Gesundheit.
+Moderator: Was verraten uns Bäume über unsere Umwelt?
+Frau Sellinger: Die über Bäume gewonnenen Jahresring- und Leitfähigkeitsdaten geben verlässlichen Aufschluss über den Klimawandel vergangener und künftiger Jahrzehnte.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "John Milburn",
+                "options": [
+                    {"key": "a", "text": "gründete das Institut für Waldökologie."},
+                    {"key": "b", "text": "leitete ursprünglich das laufende Forschungsprojekt."},
+                    {"key": "c", "text": "versuchte als erster, Pflanzengeräusche zu hören."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Milburn versuchte als Erster, Geräusche von Pflanzen wahrzunehmen."
+            },
+            {
+                "id": "56",
+                "question": "Frau Sellinger und ihr Team",
+                "options": [
+                    {"key": "a", "text": "arbeiten am Einsatz von Ultraschall in der biologischen Forschung."},
+                    {"key": "b", "text": "erforschen die Signale im Inneren von Pflanzen."},
+                    {"key": "c", "text": "forschen in der Entwicklung bioakustischer Messinstrumente."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Das Team erforscht Signale und Impulse im Inneren von Pflanzen."
+            },
+            {
+                "id": "57",
+                "question": "Als „Wasserfluss“ bezeichnet Frau Sellinger",
+                "options": [
+                    {"key": "a", "text": "Das Aufsteigen des Wassers im Baum."},
+                    {"key": "b", "text": "das Verdunsten von Wasser bei Trockenheit."},
+                    {"key": "c", "text": "die Bewegung von Wassertropfen auf den Blättern."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Frau Sellinger meint damit das Aufsteigen des Wassers im Gefäßsystem des Baumes."
+            },
+            {
+                "id": "58",
+                "question": "Die Kommunikation der Pflanzen",
+                "options": [
+                    {"key": "a", "text": "erfolgt in erster Linie über optische und akustische Signale."},
+                    {"key": "b", "text": "verfolgt primär das Ziel der Arterhaltung."},
+                    {"key": "c", "text": "verfügt über vielfältigere Elemente als die menschliche Kommunikation."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Die Pflanzenkommunikation dient vor allem der Arterhaltung."
+            },
+            {
+                "id": "59",
+                "question": "Die Tabakpflanze bekämpft Schädlinge, indem sie",
+                "options": [
+                    {"key": "a", "text": "die Schädlingsraupen durch Duftstoffe betäubt."},
+                    {"key": "b", "text": "schädlingsfressende Insekten anlockt."},
+                    {"key": "c", "text": "unbekannte Abwehrmechanismen aktiviert."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie lockt Nützlinge an, die die schädlichen Raupen fressen."
+            },
+            {
+                "id": "60",
+                "question": "Pflanzen",
+                "options": [
+                    {"key": "a", "text": "können ihre Artgenossen vor Schädlingen warnen."},
+                    {"key": "b", "text": "können Pilzinfektionen durch eigene Abwehrmechanismen bekämpfen."},
+                    {"key": "c", "text": "vernetzen sich über elektrische Impulse."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Pflanzen warnen Artgenossen chemisch vor Schädlingsbefall."
+            },
+            {
+                "id": "61",
+                "question": "Von Menschen angebaute Pflanzen",
+                "options": [
+                    {"key": "a", "text": "besitzen kaum mehr natürliche kommunikative Fähigkeiten."},
+                    {"key": "b", "text": "entwickeln mit der Zeit neue Abwehrgene."},
+                    {"key": "c", "text": "haben ein eigenes Informationsnetz gebildet."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Kultivierte Nutzpflanzen haben diese Fähigkeiten weitgehend verloren."
+            },
+            {
+                "id": "62",
+                "question": "Pflanzen setzen Stoffe frei, die",
+                "options": [
+                    {"key": "a", "text": "das menschliche Immunsystem wahrscheinlich auch stärken."},
+                    {"key": "b", "text": "die natürliche Abwehr überwiegend negativ beeinflussen."},
+                    {"key": "c", "text": "vor allem Allergien auslösen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die freigesetzten Stoffe wirken stärkend auf das Immunsystem des Menschen."
+            },
+            {
+                "id": "63",
+                "question": "Die erwähnten japanischen Forscher",
+                "options": [
+                    {"key": "a", "text": "erforschen die Auswirkungen einer natürlichen Umgebung auf Kinder."},
+                    {"key": "b", "text": "haben viel von europäischen Wissenschaftlern gelernt."},
+                    {"key": "c", "text": "suchen nach wissenschaftlichen Belegen für die wohltuende Wirkung von Pflanzen."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Sie suchen wissenschaftliche Belege für die positive Wirkung des Waldes auf den Körper."
+            },
+            {
+                "id": "64",
+                "question": "Die über Bäume gewonnenen Informationen",
+                "options": [
+                    {"key": "a", "text": "bringen neue Erkenntnisse über den Prozess der Photosynthese."},
+                    {"key": "b", "text": "geben Aufschluss über den Klimawandel."},
+                    {"key": "c", "text": "tragen zu einem verringerten Ausstoß von Schadstoffen in die Luft bei."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Die Baumdaten liefern wertvolle Erkenntnisse über den Klimawandel."
+            }
+        ]
+    },
+
+    # 3. DRÖHNEN
+    {
+        "id": "hv2-drohnen",
+        "themeTitle": "Dröhnen – Die moderne Welt der Drohnen",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Flugdrohnen revolutionieren Industrie, Rettungsdienste und Wissenschaft. Zu Gast im Studio ist Ingenieur Frank Becker. Herr Becker, was tun Sie beruflich?
+Herr Becker: Ich beschäftige mich beruflich intensiv mit den neuesten Entwicklungen im Bereich moderner Drohnensysteme.
+Moderator: Was bezeichnet das Wort 'Drohne' heute?
+Herr Becker: Ursprünglich rein militärisch, umfasst der Begriff Drohnen heute sowohl militärische als auch zivile und gewerbliche Flugobjekte.
+Moderator: Wie weit reicht die Technik historisch zurück?
+Herr Becker: Schon Nikola Tesla erfand Ende des 19. Jahrhunderts ferngesteuerte Gefährte, die den heutigen Drohnen in ihrer Steuerungslogik verblüffend ähneln.
+Moderator: Welche Bauform hat sich durchgesetzt?
+Herr Becker: Vor allem der Quadrocopter: Dank vier computergesteuerter Rotoren ist er besonders stabil in der Luft und außerordentlich leicht zu dirigieren.
+Moderator: Wie helfen Drohnen im Katastrophenfall?
+Herr Becker: Drohnen verringern das Gefahrenpotenzial für Rettungskräfte spürbar, indem sie giftige Gase oder instabile Trümmer vorab erkunden.
+Moderator: Und bei Naturkatastrophen?
+Herr Becker: Mithilfe von Drohnen können Einsätze nach extremen Naturereignissen wie Überschwemmungen oder Erdbeben wesentlich präziser geplant werden.
+Moderator: Was leisten Drohnen im Vergleich zu Satelliten?
+Herr Becker: Satellitenbilder scheitern oft an dichter Bewölkung. Drohnenaufnahmen dagegen fliegen unter der Wolkendecke und werden nicht durch Wolken gestört.
+Moderator: Auch Ärzte ohne Grenzen setzt Drohnen ein...
+Herr Becker: Richtig. Die Hilfsorganisation brauchte ein neues, geländegängiges Transportmittel für medizinische Produkte und Laborproben in abgelegenen Gebieten.
+Moderator: Und in den Vereinigten Staaten?
+Herr Becker: In den USA werden schon heute lebensrettende Medikamente und Defibrillatoren per Drohne binnen Minuten zugestellt.
+Moderator: Welche rechtlichen Vorgaben gelten?
+Herr Becker: Unbemannte Flüge dürfen nicht willkürlich filmen – die Nutzung von Drohnen muss in vollem Umfang auch dem Datenschutzgesetz entsprechen.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Der Studiogast",
+                "options": [
+                    {"key": "a", "text": "beschäftigt sich beruflich mit den neuesten Entwicklungen im Bereich Drohnen."},
+                    {"key": "b", "text": "entwickelt mit großer Begeisterung sogenannte „fliegende Augen“."},
+                    {"key": "c", "text": "findet Drohnen manchmal auch furchterregend."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Der Gast ist beruflich mit Drohnenentwicklungen befasst."
+            },
+            {
+                "id": "56",
+                "question": "Der Begriff „Drohnen“",
+                "options": [
+                    {"key": "a", "text": "steht heute gleichbedeutend für „militärisches Übungszeit“."},
+                    {"key": "b", "text": "umfasst militärische und nicht-militärische Flugobjekte."},
+                    {"key": "c", "text": "wurde zuerst von den Vereinten Nationen eingeführt."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Der Begriff umfasst heute militärische wie auch zivile Fluggeräte."
+            },
+            {
+                "id": "57",
+                "question": "Nikola Tesla",
+                "options": [
+                    {"key": "a", "text": "entwickelte ein Gerät, das den heutigen Drohnen ähnelt."},
+                    {"key": "b", "text": "gründete ein Unternehmen, das Elektroautos produziert."},
+                    {"key": "c", "text": "ließ den ersten elektrischen Automotor patentieren."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Tesla entwickelte frühe ferngesteuerte Geräte, die heutigen Drohnen ähneln."
+            },
+            {
+                "id": "58",
+                "question": "Ein Quadrocopter",
+                "options": [
+                    {"key": "a", "text": "besitzt in der Regel zwei bis vier Propeller."},
+                    {"key": "b", "text": "ist besonders stabil und leicht zu dirigieren."},
+                    {"key": "c", "text": "wird von der Windkraft angetrieben."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Quadrocopter zeichnen sich durch Stabilität und einfache Steuerung aus."
+            },
+            {
+                "id": "59",
+                "question": "Drohnen",
+                "options": [
+                    {"key": "a", "text": "brauchen eine ausreichende Infrastruktur am Boden."},
+                    {"key": "b", "text": "müssen noch etwas sparsamer werden."},
+                    {"key": "c", "text": "verringern das Gefahrenpotenzial für Rettungskräfte."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Rettungskräfte müssen sich seltener selbst in akute Lebensgefahr begeben."
+            },
+            {
+                "id": "60",
+                "question": "Mithilfe von Drohnen",
+                "options": [
+                    {"key": "a", "text": "können Einsätze nach extremen Naturereignissen besser geplant werden."},
+                    {"key": "b", "text": "lassen sich Vulkanausbrüche vorhersagen."},
+                    {"key": "c", "text": "werden Helfer in die Einsatzgebiete transportiert."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Rettungseinsätze lassen sich durch Lagebilder aus der Luft viel besser planen."
+            },
+            {
+                "id": "61",
+                "question": "Im Vergleich zu Satelliten",
+                "options": [
+                    {"key": "a", "text": "haben Drohnenkameras eine schwächere Auflösung."},
+                    {"key": "b", "text": "können Drohnen nur aus einer einzigen Perspektive aufnehmen."},
+                    {"key": "c", "text": "werden Drohnenaufnahmen nicht durch Wolken gestört."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Weil sie unter den Wolken fliegen, stört dichte Bewölkung Drohnenaufnahmen nicht."
+            },
+            {
+                "id": "62",
+                "question": "Die Organisation Ärzte ohne Grenzen",
+                "options": [
+                    {"key": "a", "text": "brauchte ein neues Transportmittel für medizinische Produkte."},
+                    {"key": "b", "text": "suchte nach alternativen Diagnosetests."},
+                    {"key": "c", "text": "unterstützte auch den Bau besserer Straßen in Papua-Neuguinea."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die Organisation benötigte ein neues Transportmittel für Medikamente und Proben."
+            },
+            {
+                "id": "63",
+                "question": "In den USA",
+                "options": [
+                    {"key": "a", "text": "drängen auch illegale Anbieter auf den Drohnenmarkt."},
+                    {"key": "b", "text": "gibt es bereits zahlreiche Anbieter für Frachtdrohnen."},
+                    {"key": "c", "text": "werden schon Medikamente per Drohne zugestellt."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: In den USA erfolgt die Zustellung von Medikamenten bereits regulär per Drohne."
+            },
+            {
+                "id": "64",
+                "question": "Die Nutzung von Drohnen",
+                "options": [
+                    {"key": "a", "text": "ist weltweit über Lizenzverträge geregelt."},
+                    {"key": "b", "text": "muss auch dem Datenschutzgesetz entsprechen."},
+                    {"key": "c", "text": "wird durch ein eigenes Gesetz reguliert."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Bei Foto- und Videoaufnahmen sind Datenschutzgesetze strikt zu beachten."
+            }
+        ]
+    },
+
+    # 4. FISCHER UNTERNEHMEN
+    {
+        "id": "hv2-fischer-unternehmen",
+        "themeTitle": "Fischer Unternehmen – Unternehmerin für Wohnkultur",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Frau Fischer ist Gründerin eines erfolgreichen E-Commerce-Unternehmens für Möbel und Wohnaccessoires. Frau Fischer, wie kaufen Kunden bei Ihnen ein?
+Frau Fischer: Unser Kundenverhalten zeigt deutlich: Frauen kaufen deutlich weniger gezielt ein als Männer – sie lassen sich gerne inspirieren und stöbern durch Sortimente.
+Moderator: Möchten Sie Ihre Zielgruppe auf Männer ausweiten?
+Frau Fischer: Nein, wir konzentrieren uns auch weiterhin klar auf Frauen als unsere Kernkundinnen.
+Moderator: Wie treffen Sie die Auswahl für neue Trends?
+Frau Fischer: Nicht durch trockene Algorithmen – zukünftige Trends setzt bei uns Frau Fischer mit ihrem feinen persönlichen Gespür für Mode und Ästhetik.
+Moderator: Wie sieht Ihre Personalführung aus?
+Frau Fischer: Bei uns herrscht Vertrauen: Ich lasse meinen Mitarbeitern weitreichende Freiräume zum eigenen kreativen Gestalten.
+Moderator: Was ist Ihr umsatzstärkstes Segment?
+Frau Fischer: Unser Unternehmen erzielt den größten Umsatz nicht mit Großmöbeln, sondern mit stilvollen Dekoartikeln.
+Moderator: Sie haben auch ein exklusives Clubmodell eingeführt...
+Frau Fischer: Ja, das Clubmodell spart Lagerkosten durch direkte Herstellerlieferung und kann so spürbar günstigere Preise gewährleisten.
+Moderator: Wo sehen Sie Ihr Unternehmen in einigen Jahren?
+Frau Fischer: Ich will weiterhin schöne, bezahlbare Produkte an möglichst viele Menschen verkaufen.
+Moderator: Und was bieten Sie vor Ort in Ihren Showrooms?
+Frau Fischer: Die Unternehmerin möchte ihren Kunden völlig neuartige Einkaufserlebnisse mit Sinnesreizen und Inspiration bieten.
+Moderator: Welche Philosophie steht hinter Ihren Entwürfen?
+Frau Fischer: Unser Unternehmen verkauft nicht nur Neuwaren, sondern wir verkaufen auch sorgfältig aufbereitete gebrauchte Möbel im Vintage-Segment.
+Moderator: Woher stammt Ihr starker Ehrgeiz?
+Frau Fischer: In ihrer Jugend litt Frau Fischer sehr unter den harten Erwartungen ihrer Großmutter, woraus ihr Wunsch nach Unabhängigkeit entstand.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Frau Fischer behauptet, dass Frauen",
+                "options": [
+                    {"key": "a", "text": "das Einkaufen als Belastung empfinden."},
+                    {"key": "b", "text": "gern das gleiche Produkt zweimal kaufen."},
+                    {"key": "c", "text": "weniger gezielt einkaufen als Männer."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Frauen lassen sich laut Fischer inspirieren und kaufen weniger zielgerichtet ein."
+            },
+            {
+                "id": "56",
+                "question": "Die Unternehmerin",
+                "options": [
+                    {"key": "a", "text": "konzentriert sich weiterhin auf Frauen als Kundinnen."},
+                    {"key": "b", "text": "möchte mit ihren Produkten in Zukunft mehr Männer ansprechen."},
+                    {"key": "c", "text": "plant, demnächst ihre Bandbreite an Produkten zu erweitern."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Der Fokus bleibt unverändert auf der weiblichen Kundschaft."
+            },
+            {
+                "id": "57",
+                "question": "Zukünftige Trends",
+                "options": [
+                    {"key": "a", "text": "errechnet das Unternehmen durch Datenanalysen."},
+                    {"key": "b", "text": "setzt Frau Fischer mit ihrem Gespür für Mode."},
+                    {"key": "c", "text": "werden durch zahlreiche Mitarbeiter aufgespürt."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Frau Fischer vertraut auf ihr eigenes Stilempfinden bei Trends."
+            },
+            {
+                "id": "58",
+                "question": "Frau Fischer",
+                "options": [
+                    {"key": "a", "text": "begleitet bei Werbeaktionen jeden Schritt bis ins Detail."},
+                    {"key": "b", "text": "hat überwiegend Angestellte, die jünger als 30 Jahre sind."},
+                    {"key": "c", "text": "lässt ihren Mitarbeitern Freiräume zum Gestalten."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Sie gewährt ihren Angestellten kreative Freiheiten."
+            },
+            {
+                "id": "59",
+                "question": "Das Unternehmen",
+                "options": [
+                    {"key": "a", "text": "bietet kostenlose Beratungsdienstleistungen an."},
+                    {"key": "b", "text": "erzielt den größten Umsatz mit Dekoartikeln."},
+                    {"key": "c", "text": "ist ausschließlich auf Möbel spezialisiert."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Der Hauptumsatz wird durch Dekorationsartikel erwirtschaftet."
+            },
+            {
+                "id": "60",
+                "question": "Das Clubmodell",
+                "options": [
+                    {"key": "a", "text": "ist noch nicht so rentabel wie der Online-Shop."},
+                    {"key": "b", "text": "soll nur einen erlesenen Kundenkreis ansprechen."},
+                    {"key": "c", "text": "spart Lagerkosten und kann so günstigere Preise gewährleisten."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Geringere Lagerkosten ermöglichen Preisvorteile für Kunden."
+            },
+            {
+                "id": "61",
+                "question": "Frau Fischer",
+                "options": [
+                    {"key": "a", "text": "bereitet das Unternehmen auf den Börsengang vor."},
+                    {"key": "b", "text": "möchte den Schwerpunkt auf funktionale Produkte verlagern."},
+                    {"key": "c", "text": "will weiterhin schöne Produkte an möglichst viele Menschen verkaufen."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Ihr Ziel ist es, ästhetische Produkte für breite Bevölkerungsschichten anzubieten."
+            },
+            {
+                "id": "62",
+                "question": "Die Unternehmerin",
+                "options": [
+                    {"key": "a", "text": "möchte den Kunden neuartige Einkaufserlebnisse bieten."},
+                    {"key": "b", "text": "setzt auf die Macht des Verbalen."},
+                    {"key": "c", "text": "steht technischen Neuerungen skeptisch gegenüber."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie möchte durch neue Konzepte besondere Einkaufserlebnisse schaffen."
+            },
+            {
+                "id": "63",
+                "question": "Das Unternehmen",
+                "options": [
+                    {"key": "a", "text": "entwickelt vor allem recycelbare Produkte."},
+                    {"key": "b", "text": "legt Wert auf die Beständigkeit der Produkte."},
+                    {"key": "c", "text": "verkauft auch gebrauchte Möbel."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Zum Sortiment gehören auch gebrauchte Vintage-Möbelstücke."
+            },
+            {
+                "id": "64",
+                "question": "In ihrer Jugend",
+                "options": [
+                    {"key": "a", "text": "entwickelte Frau Fischer die Zielstrebigkeit, Geld zu verdienen."},
+                    {"key": "b", "text": "litt Frau Fischer sehr unter ihrer Großmutter."},
+                    {"key": "c", "text": "wollte Frau Fischer schon ein Unternehmen gründen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie litt als Jugendliche unter der autoritären Großmutter."
+            }
+        ]
+    },
+
+    # 5. FORSCHUNG IN AFRIKA
+    {
+        "id": "hv2-forschung-in-afrika",
+        "themeTitle": "Forschung in Afrika – Partnerschaftliche Wissenschaft",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Herzlich willkommen zu unserer Diskussionsrunde über wissenschaftliche Zusammenarbeit zwischen europäischen und afrikanischen Universitäten. Unsere Gäste sind Herr Professor Antia und Frau Professor Kirk. Herr Antia, wie beurteilen Sie die bisherigen Forschungsansätze?
+Prof. Antia: Ich bin der festen Überzeugung, dass beide traditionellen Ansätze unzureichend sind, wenn man nicht auf Augenhöhe kooperiert.
+Moderator: Was ist für Sie der Kern echter wissenschaftlicher Zusammenarbeit?
+Prof. Antia: Es geht nicht um Belehrung, sondern ich betone mit Nachdruck die Relevanz des gegenseitigen Lernens voneinander.
+Moderator: Frau Kirk, Sie forschen seit vielen Jahren in Afrika. Was nehmen Sie mit?
+Prof. Kirk: Ich habe aus Afrika in erster Linie viel neues Wissen und völlig neue Denkanstöße mitgenommen.
+Moderator: Wie stehen Sie zu finanziellen Hilfen und Subventionen?
+Prof. Kirk: Reine Subventionen lösen strukturelle Probleme nicht. Ich rufe stets die Nachteile finanzieller Subventionen in Erinnerung, wenn sie lokale Initiativen ersticken.
+Moderator: Welche Erfahrungen haben Sie mit den Menschen vor Ort gemacht?
+Prof. Kirk: Ich bin tief begeistert von dem kreativen Unternehmergeist der Bauern in Afrika, die mit minimalen Mitteln erstaunliche Lösungen finden.
+Moderator: Welche Rolle spielt dabei der Umweltschutz?
+Prof. Kirk: Eine unversehrte Umwelt ist die unverzichtbare Basis für langfristigen wirtschaftlichen Erfolg.
+Moderator: Wo sehen Sie Potenziale für afrikanische Wissenschaftler?
+Prof. Kirk: Afrika besitzt einen immensen Reichtum an Biodiversität; ich sehe für Afrika riesige Chancen im Bereich der modernen Pharmazie und Wirkstoffforschung.
+Moderator: Herr Antia, wie bewerten Sie den ökologischen Fußabdruck von Laboren?
+Prof. Antia: Als Realist akzeptiere ich, dass Spitzenforschung im Einzelfall auch zu Umweltbelastungen führen kann, solange der Gesamtnutzen überwiegt.
+Moderator: Wie muss eine faire Partnerschaft aussehen?
+Prof. Antia: Ich spreche ganz gezielt einzelne Aspekte einer fairen und gleichberechtigten Zusammenarbeit bei Publikationen und Patenten an.
+Moderator: Frau Kirk, was ist Ihr Fazit?
+Prof. Kirk: Vor allem der kontinuierliche Austausch auf Augenhöhe bietet die Chance, dauerhaft konstruktiv und vertrauensvoll zusammenzuarbeiten.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Herr Professor Antia",
+                "options": [
+                    {"key": "a", "text": "hält nichts von einer Mischung verschiedener Ansätze."},
+                    {"key": "b", "text": "ist der Meinung, dass beide Ansätze unzureichend seien."},
+                    {"key": "c", "text": "möchte die Gefahren der Krankheit betonen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Antia hält die bisherigen Ansätze für unzureichend."
+            },
+            {
+                "id": "56",
+                "question": "Herr Professor Antia",
+                "options": [
+                    {"key": "a", "text": "arbeitet auch für die Aids-Hilfe in Bielefeld."},
+                    {"key": "b", "text": "betont die Relevanz des gegenseitigen Lernens."},
+                    {"key": "c", "text": "hält die Zahlen des Robert-Koch-Instituts für zu hoch."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Er betont, wie wichtig es ist, wechselseitig voneinander zu lernen."
+            },
+            {
+                "id": "57",
+                "question": "Frau Professor Kirk",
+                "options": [
+                    {"key": "a", "text": "hat aus Afrika in erster Linie viel neues Wissen mitgenommen."},
+                    {"key": "b", "text": "koordiniert in Afrika seit Jahrzehnten verschiedene Institutionen."},
+                    {"key": "c", "text": "möchte in afrikanischen Ländern Wissen vermitteln."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie betont, vor allem selbst viel Neues gelernt zu haben."
+            },
+            {
+                "id": "58",
+                "question": "Frau Professor Kirk",
+                "options": [
+                    {"key": "a", "text": "hält Subventionen für sinnvoller als Bemühungen vor Ort."},
+                    {"key": "b", "text": "ruft die Nachteile finanzieller Subventionen in Erinnerung."},
+                    {"key": "c", "text": "unterstützt Subventionen für afrikanische Staaten."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie weist mahnend auf unerwünschte Nebenwirkungen von Subventionen hin."
+            },
+            {
+                "id": "59",
+                "question": "Frau Professor Kirk",
+                "options": [
+                    {"key": "a", "text": "beschreibt, dass die Arbeit von Bauern in Afrika oft durch die Regierungen zerstört wird."},
+                    {"key": "b", "text": "ist begeistert von dem kreativen Unternehmergeist der Bauern in Afrika."},
+                    {"key": "c", "text": "unterstützt Bauern in Afrika dabei, mit neuen Kommunikationsmitteln umzugehen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie lobt die Kreativität und den Unternehmergeist der Landbevölkerung."
+            },
+            {
+                "id": "60",
+                "question": "Frau Professor Kirk meint, dass",
+                "options": [
+                    {"key": "a", "text": "eine unversehrte Umwelt wichtig für wirtschaftlichen Erfolg ist."},
+                    {"key": "b", "text": "Umweltschutz wichtiger als wirtschaftliches Streben ist."},
+                    {"key": "c", "text": "wirtschaftlicher Erfolg und der Erhalt der Umwelt nicht zusammenpassen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Eine intakte Umwelt ist die Voraussetzung für ökonomischen Erfolg."
+            },
+            {
+                "id": "61",
+                "question": "Frau Professor Kirk",
+                "options": [
+                    {"key": "a", "text": "berichtet von Heilpflanzen, die es nicht mehr gibt."},
+                    {"key": "b", "text": "betont, dass pflanzliche Mittel Medikamente nicht ersetzen können."},
+                    {"key": "c", "text": "sieht für Afrika Chancen im Bereich der Pharmazie."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: In der pharmazeutischen Forschung liegen große Zukunftschancen für Afrika."
+            },
+            {
+                "id": "62",
+                "question": "Herr Professor Antia",
+                "options": [
+                    {"key": "a", "text": "akzeptiert, dass Forschung im Einzelfall zu Umweltzerstörung führt."},
+                    {"key": "b", "text": "denkt, dass umweltzerstörende Forschung verboten werden sollte."},
+                    {"key": "c", "text": "kritisiert, dass Wissenschaft oft mit Umweltzerstörung einhergeht."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Er akzeptiert, dass bei wissenschaftlicher Arbeit punktuell Eingriffe in die Umwelt nötig sind."
+            },
+            {
+                "id": "63",
+                "question": "Herr Professor Antia",
+                "options": [
+                    {"key": "a", "text": "betont, dass Medikamente in Entwicklungsländern hergestellt werden sollten."},
+                    {"key": "b", "text": "sagt, dass Wissenschaftler in ihrem Heimatland publizieren sollten."},
+                    {"key": "c", "text": "spricht einzelne Aspekte einer fairen Zusammenarbeit an."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Er geht detailliert auf Aspekte einer partnerschaftlichen Kooperation ein."
+            },
+            {
+                "id": "64",
+                "question": "Frau Professor Kirk sagt, dass",
+                "options": [
+                    {"key": "a", "text": "bereits gleiche Forschungsbedingungen vorherrschen."},
+                    {"key": "b", "text": "die wissenschaftliche Zusammenarbeit den Handel nicht beeinflussen kann."},
+                    {"key": "c", "text": "vor allem der Austausch eine Chance bietet, konstruktiv zusammenzuarbeiten."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Der partnerschaftliche Dialog bietet die größte Chance auf konstruktive Zusammenarbeit."
+            }
+        ]
+    },
+
+    # 6. LANDFLUCHT
+    {
+        "id": "hv2-landflucht",
+        "themeTitle": "Landflucht – Urbane Räume im 21. Jahrhundert",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Immer mehr Menschen zieht es weltweit vom Land in die Großstädte. Zu Gast bei uns ist Stadtsoziologin Frau Dr. Molitor. Frau Molitor, worin liegt Ihr Forschungsschwerpunkt?
+Frau Molitor: Ich befasse mich seit vielen Jahren mit der Stadt als gesellschaftlichem und sozialem Lebensumfeld.
+Moderator: Was macht eine Stadt im soziologischen Sinne aus?
+Frau Molitor: Das Wesen einer Stadt ist die Aufteilung und Spezialisierung bestimmter Arbeiten unter den Menschen.
+Moderator: Wie war das in der Antike, beispielsweise in der mesopotamischen Stadt Uruk?
+Frau Molitor: In Uruk, der 'Mutter aller Metropolen', gab es bereits eine hochgradig organisierte und wirksame Verwaltung.
+Moderator: Wie verändert sich der Arbeitsmarkt in modernen Städten?
+Frau Molitor: Früher war Arbeit ortsgebunden; in Zukunft wird Arbeit immer öfter in Randgebiete oder Homeoffice ausgelagert werden.
+Moderator: Gilt das auch für Gewerbe und Fabriken?
+Frau Molitor: Produktionsbetriebe werden unter bestimmten Umständen wie Industrie 4.0 und emissionsfreien Verfahren wieder städtische Standorte wählen.
+Moderator: Wie sieht es mit der Lebensmittelversorgung aus?
+Frau Molitor: Leicht verderbliche Lebensmittel wurden bis zur Mitte des 19. Jahrhunderts vorwiegend direkt in den Städten und im Umland produziert.
+Moderator: Welche demografischen Trends beobachten Sie heute?
+Frau Molitor: In Zukunft nimmt die Zahl der nicht im Familienverband lebenden Personen, also von Singles, in den Städten drastisch zu.
+Moderator: Wie sollten Megaprojekte künftig finanziert werden?
+Frau Molitor: Wir brauchen Bürgerbeteiligung: Bei Großprojekten sollten Bürgerinnen und Bürger auch eigenes Geld über Genossenschaften einbringen können.
+Moderator: Wie sieht das Mobilitätsverhalten in Metropolen aus?
+Frau Molitor: In den Innenstädten werden öffentliche Verkehrsmittel weit häufiger genutzt als private Pkw.
+Moderator: Was ist die dringlichste Aufgabe zukunftsfähiger Verkehrsplanung?
+Frau Molitor: Künftige Aufgabe der Stadtplanung wird sein, die strukturellen Voraussetzungen für Gemeinschafts- und Verleihmodelle von Fahrrädern und E-Fahrzeugen flächendeckend zu etablieren.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Frau Molitor",
+                "options": [
+                    {"key": "a", "text": "untersucht die Gründe für die weltweite Landflucht."},
+                    {"key": "b", "text": "organisiert gerade einen Kongress über Städteentwicklung."},
+                    {"key": "c", "text": "befasst sich mit der Stadt als Lebensumfeld."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Ihr Fachgebiet ist die Stadt als menschlicher Lebensraum."
+            },
+            {
+                "id": "56",
+                "question": "Für den Studiogast gehört zu einer Stadt",
+                "options": [
+                    {"key": "a", "text": "eine zunehmende Öffnung des privaten Raums."},
+                    {"key": "b", "text": "die Selbstversorgung durch ihre Bewohner."},
+                    {"key": "c", "text": "die Aufteilung bestimmter Arbeiten unter den Menschen."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Arbeitsteilung und Spezialisierung charakterisieren die Stadt."
+            },
+            {
+                "id": "57",
+                "question": "In Uruk der „Mutter aller Metropolen“",
+                "options": [
+                    {"key": "a", "text": "war das Bauwesen noch ungeregelt."},
+                    {"key": "b", "text": "gab es bereits eine wirksame Verwaltung."},
+                    {"key": "c", "text": "existierte keine eindeutige Rangordnung."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Bereits in Uruk existierte ein funktionierender Verwaltungsapparat."
+            },
+            {
+                "id": "58",
+                "question": "In Zukunft wird Arbeit",
+                "options": [
+                    {"key": "a", "text": "zunehmend von privaten Arbeitgebern vergeben."},
+                    {"key": "b", "text": "sich stärker auf Dienstleistungen konzentrieren."},
+                    {"key": "c", "text": "immer öfter in Randgebiete ausgelagert werden."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Arbeitsplätze werden vermehrt an die Peripherie verlagert."
+            },
+            {
+                "id": "59",
+                "question": "Produktionsbetriebe werden in Zukunft vermutlich",
+                "options": [
+                    {"key": "a", "text": "vor allem in Industriegebieten angesiedelt sein."},
+                    {"key": "b", "text": "unter bestimmten Umständen städtische Standorte wählen."},
+                    {"key": "c", "text": "kürzere Arbeitszeiten anbieten."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Durch moderne Technologie können Betriebe wieder in Innenstädte zurückkehren."
+            },
+            {
+                "id": "60",
+                "question": "Leicht verderbliche Lebensmittel",
+                "options": [
+                    {"key": "a", "text": "wurden bis zur Mitte des 19. Jahrhunderts vorwiegend in den Städten produziert."},
+                    {"key": "b", "text": "werden zunehmend in städtischen Großbetrieben hergestellt."},
+                    {"key": "c", "text": "werden in Zukunft oft von den Bürgern selbst erzeugt und weiterverkauft."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Bis Mitte des 19. Jahrhunderts wurden solche Waren im Stadtgebiet erzeugt."
+            },
+            {
+                "id": "61",
+                "question": "In Zukunft...",
+                "options": [
+                    {"key": "a", "text": "werden ganze Stadtviertel für Alleinstehende entstehen."},
+                    {"key": "b", "text": "nimmt die Zahl der nicht im Familienverband Lebenden in den Städten zu."},
+                    {"key": "c", "text": "muss sich die Stadtplanung vor allem nach den Bedürfnissen von Familien richten."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Der Anteil von Alleinstehenden in Großstädten steigt weiter an."
+            },
+            {
+                "id": "62",
+                "question": "Bei Großprojekten",
+                "options": [
+                    {"key": "a", "text": "sollten sich Fachleute gegen die Interessen der Politiker durchsetzen können."},
+                    {"key": "b", "text": "sollten Bürgerinnen und Bürger auch eigenes Geld einbringen können."},
+                    {"key": "c", "text": "mangelt es häufig an finanzkräftigen und risikofreudigen Investoren."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Bürger sollen sich finanziell an Projekten beteiligen können."
+            },
+            {
+                "id": "63",
+                "question": "In den Innenstädten",
+                "options": [
+                    {"key": "a", "text": "werden öffentliche Verkehrsmittel weit häufiger genutzt als private Pkw."},
+                    {"key": "b", "text": "müssen bessere Verkehrswege für den privaten Autoverkehr geschaffen werden."},
+                    {"key": "c", "text": "muss man zum Teil schon Straßenzoll für Autos zahlen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Der ÖPNV dominiert die Fortbewegung im Stadtzentrum."
+            },
+            {
+                "id": "64",
+                "question": "Künftige Aufgabe der Stadtplanung wird sein",
+                "options": [
+                    {"key": "a", "text": "vor allem junge Menschen zum Verzicht auf private Pkw zu bewegen."},
+                    {"key": "b", "text": "ein möglichst engmaschiges Netz an Fahrradwegen zu bauen."},
+                    {"key": "c", "text": "die strukturellen Voraussetzungen für Gemeinschafts- und Verleihmodelle zu etablieren."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Die Stadtplanung muss Sharing- und Verleihmodelle infrastrukturell fördern."
+            }
+        ]
+    },
+
+    # 7. RAUMFAHRT-ESA-AZRA
+    {
+        "id": "hv2-raumfahrt-esa-azra",
+        "themeTitle": "Raumfahrt-ESA-Azra – Beruflicher Einstieg bei der ESA",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Azra arbeitet bei der Europäischen Weltraumorganisation ESA. Azra, wie sieht Ihr Alltag in Darmstadt aus?
+Azra: Ich habe großes Glück: Meine Wohnung liegt ganz in der Nähe des Kontrollzentrums, sodass ich nur einen sehr kurzen Weg zu meiner Arbeitsstelle habe.
+Moderator: Ist die ESA eigentlich eine reine EU-Behörde?
+Azra: Nein, die ESA ist eine eigenständige zwischenstaatliche Agentur und nicht nur in Europa vertreten, sondern kooperiert mit Stationen weltweit.
+Moderator: Wie gefällt Ihnen die Arbeit im ESOC-Zentrum?
+Azra: Die Arbeit im Zentrum gefällt mir vor allem wegen der ganz besonderen, internationalen Stimmung und des Teamgeistes dort.
+Moderator: Wie ist das Gemeinschaftsleben der Kollegen?
+Azra: Es ist toll – neben der Arbeit werden von den Kollegen auch zahlreiche gemeinsame Freizeitaktivitäten und Sportgruppen angeboten.
+Moderator: Wann entstand Ihr Berufswunsch?
+Azra: Ich hatte Raumfahrt früher gar nicht auf dem Schirm; ich hörte erst während meines Informatik-Studiums von den konkreten Arbeitsmöglichkeiten bei der ESA.
+Moderator: Konnten Sie das Zentrum vor Ihrer Bewerbung kennenlernen?
+Azra: Ja, vor meiner formellen Bewerbung bekam ich die Gelegenheit, meinen jetzigen Arbeitsplatz bei einem Tag der offenen Tür persönlich zu besuchen.
+Moderator: Wie läuft der Einstieg über das Graduate-Programm?
+Azra: Über das Trainee-Programm wird jedes Jahr eine bestimmte Anzahl von festen Jobs bei der ESA ausgeschrieben.
+Moderator: Welche Voraussetzungen müssen Bewerber mitbringen?
+Azra: Bewerberinnen und Bewerber können sich schon kurz vor dem Studienabschluss bewerben, sofern sie kurz vor dem Diplom oder Master stehen.
+Moderator: Wann finden die Auswahlgespräche statt?
+Azra: Die Vorstellungsgespräche und Interviews erfolgen meistens in den Sommermonaten zwischen Mai und September.
+Moderator: Welche Zukunftspläne haben Sie nach dem Trainee-Jahr?
+Azra: Ich möchte sehr gerne bei der ESA bleiben und schätzungsweise an eine andere ESA-Niederlassung wie ESTEC in den Niederlanden wechseln.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Die junge Frau, Azra,",
+                "options": [
+                    {"key": "a", "text": "hat nur einen kurzen Weg zu ihrer Arbeitsstelle."},
+                    {"key": "b", "text": "reist für die Arbeit häufig ins Ausland."},
+                    {"key": "c", "text": "würde später gerne mal ins All fliegen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Azra wohnt nah am ESA-Zentrum und hat einen kurzen Arbeitsweg."
+            },
+            {
+                "id": "56",
+                "question": "Die ESA, die Europäische Weltraumagentur,",
+                "options": [
+                    {"key": "a", "text": "hat ein Zentrum nach Kanada verlegt."},
+                    {"key": "b", "text": "ist nicht nur in Europa vertreten."},
+                    {"key": "c", "text": "umfasst sämtliche Mitgliedstaaten der Europäischen Union."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Die Weltraumagentur unterhält weltweite Niederlassungen und Stationen."
+            },
+            {
+                "id": "57",
+                "question": "Die Arbeit in dem Zentrum,",
+                "options": [
+                    {"key": "a", "text": "gefällt Azra wegen der besonderen Stimmung dort."},
+                    {"key": "b", "text": "ist für Azra sehr spannend."},
+                    {"key": "c", "text": "ist für eine Informatikerin extraorbitant."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Azra schätzt die einmalige, internationale Atmosphäre."
+            },
+            {
+                "id": "58",
+                "question": "In dem Zentrum,",
+                "options": [
+                    {"key": "a", "text": "sprechen viele Mitarbeiter Englisch als Erstsprache."},
+                    {"key": "b", "text": "werden auch gemeinsame Freizeitaktivitäten angeboten."},
+                    {"key": "c", "text": "wird Wert darauf gelegt, dass alle Mitarbeiter Deutsch lernen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Für Mitarbeiter gibt es viele Freizeit- und Sportangebote."
+            },
+            {
+                "id": "59",
+                "question": "Azra,",
+                "options": [
+                    {"key": "a", "text": "hörte erst während des Studiums von den Arbeitsmöglichkeiten bei der ESA."},
+                    {"key": "b", "text": "träumte schon als Kind von einer Karriere bei der Raumfahrt."},
+                    {"key": "c", "text": "wollte ursprünglich Ingenieurwesen oder Physik studieren."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie erfuhr erst im Laufe ihres Studiums von den Karrieremöglichkeiten bei der ESA."
+            },
+            {
+                "id": "60",
+                "question": "Vor ihrer Bewerbung,",
+                "options": [
+                    {"key": "a", "text": "bekam Azra die Gelegenheit, ihren jetzigen Arbeitsplatz zu besuchen."},
+                    {"key": "b", "text": "durfte Azra ein Schnupper-Praktikum bei ESA machen."},
+                    {"key": "c", "text": "musste ein Freund Azra erst zu diesem Schritt überreden."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie konnte die Arbeitsstätte vor der Bewerbung besichtigen."
+            },
+            {
+                "id": "61",
+                "question": "Über das Trainee-Programm,",
+                "options": [
+                    {"key": "a", "text": "bekommt man Stellenangebote für sämtliche ESA-Niederlassungen."},
+                    {"key": "b", "text": "kann man sich das ganze Jahr über bewerben."},
+                    {"key": "c", "text": "wird eine bestimmte Anzahl von Jobs bei der ESA angeboten."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Über das Programm wird ein festes Kontingent an Stellen vergeben."
+            },
+            {
+                "id": "62",
+                "question": "Bewerberinnen und Bewerber,",
+                "options": [
+                    {"key": "a", "text": "dürfen jede Staatsangehörigkeit besitzen."},
+                    {"key": "b", "text": "können sich schon kurz vor dem Studienabschluss bewerben."},
+                    {"key": "c", "text": "sollen sich für mehrere Stellen gleichzeitig bewerben."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Bewerbungen sind bereits kurz vor Erhalt des Abschlusszeugnisses zulässig."
+            },
+            {
+                "id": "63",
+                "question": "Die Vorstellungsgespräche,",
+                "options": [
+                    {"key": "a", "text": "erfolgen meistens zwischen Mai und September."},
+                    {"key": "b", "text": "finden vor dem Eignungstest statt."},
+                    {"key": "c", "text": "werden von den jeweiligen Ressorts durchgeführt."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die Gespräche werden regulär in der Phase von Mai bis September geführt."
+            },
+            {
+                "id": "64",
+                "question": "In Zukunft möchte die junge Frau Azra",
+                "options": [
+                    {"key": "a", "text": "auf alle Fälle im Ausland arbeiten."},
+                    {"key": "b", "text": "sich bei einem Forschungsinstitut bewerben."},
+                    {"key": "c", "text": "schätzungsweise an eine andere ESA-Niederlassung wechseln."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Sie plant voraussichtlich den Wechsel an einen anderen ESA-Standort."
+            }
+        ]
+    },
+
+    # 8. ROBOTER
+    {
+        "id": "hv2-roboter",
+        "themeTitle": "Roboter – Autonome Systeme in unserem Alltag",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Autonome Roboter verlassen die Fabrikhallen und betreten den öffentlichen Raum. Zu Gast ist Professor Wolfram Burgard, Robotikexperte an der Universität Freiburg. Herr Burgard, was macht der bekannte Roboter Tourbot?
+Prof. Burgard: Tourbot ist ein interaktiver Museumsroboter, der Touristen selbstständig durch Ausstellungen führt.
+Moderator: Und sein Vorgänger Rhino in Bonn?
+Prof. Burgard: Rhino war wegweisend: Er hat unabhängig von der genauen Besucherzahl stets zuverlässig seine Führungen gemacht.
+Moderator: Wo liegt derzeit die größte Herausforderung bei der Weiterentwicklung?
+Prof. Burgard: Nicht bei den Motoren. Vor allem die Programmierung und die Navigationsalgorithmen müssen weiterentwickelt werden.
+Moderator: Was dürfen wir im Haushalt bald erwarten?
+Prof. Burgard: In naher Zukunft können sich moderne Reinigungsroboter selbstständig aufladen und reinigen.
+Moderator: Welche ungewöhnlichen Aufgaben könnten Roboter übernehmen?
+Prof. Burgard: Roboter könnten künftig auch als patente Wachhunde Häuser und Firmengelände sichern.
+Moderator: Wie sieht die Robotik in 50 Jahren aus?
+Prof. Burgard: Roboter werden sich in 50 Jahren mit zwei Beinen so flexibel fortbewegen wie Menschen.
+Moderator: Der Futurist Hans Moravec prophezeit künstliche Roboterkinder...
+Prof. Burgard: Nach Moravecs Theorie werden Roboter beliebter und unkomplizierter sein als Menschenkinder.
+Moderator: Teilen Sie diese Sichtweise?
+Prof. Burgard: Nein, ich halte Moravecs Prognose für stark übertrieben und wirklichkeitsfern.
+Moderator: Doch in vielen Aufgaben sind Maschinen schon überlegen?
+Prof. Burgard: Ja, Roboter sind Menschen bei speziellen Rechen- und Suchaufgaben heute schon manchmal haushoch überlegen.
+Moderator: Welche Verantwortung tragen wir als Gesellschaft?
+Prof. Burgard: Forscher und Gesellschaft müssen ethische Aspekte der Robotik und Künstlichen Intelligenz stets genau im Auge behalten.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Tourbot ist ein Roboter, der",
+                "options": [
+                    {"key": "a", "text": "im Deutschen Museum Bonn ausgestellt ist."},
+                    {"key": "b", "text": "sich noch in der Entwicklung befindet."},
+                    {"key": "c", "text": "Touristen durch ein Museum führt."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Tourbot begleitet und leitet Touristen durch Museumsräume."
+            },
+            {
+                "id": "56",
+                "question": "Der Museumsroboter Rhino",
+                "options": [
+                    {"key": "a", "text": "hat Führungen abgebrochen, wenn die Besucher weggegangen sind."},
+                    {"key": "b", "text": "hat nur Führungen gemacht, wenn Besucher da waren."},
+                    {"key": "c", "text": "hat unabhängig von der Besucherzahl Führungen gemacht."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Rhino führte seine Runden unabhängig von der Personenanzahl durch."
+            },
+            {
+                "id": "57",
+                "question": "Bei der Entwicklung von Robotern muss vor allem",
+                "options": [
+                    {"key": "a", "text": "die Mechanik verbessert werden."},
+                    {"key": "b", "text": "die Programmierung weiter entwickelt werden."},
+                    {"key": "c", "text": "die Rechenleistung der Chips erhöht werden."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Der größte Fortschrittsbedarf liegt in der Software und Programmierung."
+            },
+            {
+                "id": "58",
+                "question": "Schon in naher Zukunft",
+                "options": [
+                    {"key": "a", "text": "können Putzroboter auch Rasen mähen."},
+                    {"key": "b", "text": "können sich Reinigungsroboter selbst aufladen."},
+                    {"key": "c", "text": "kann man gut funktionierende Bügelroboter kaufen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Selbstaufladung an der Dockingstation wird Standard."
+            },
+            {
+                "id": "59",
+                "question": "Herr Burgard sagt, dass Roboter",
+                "options": [
+                    {"key": "a", "text": "als Wachhunde eingesetzt werden können."},
+                    {"key": "b", "text": "den Briefkasten leeren können."},
+                    {"key": "c", "text": "in den Urlaub mitgenommen werden."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Burgard nennt den Wachdienst als reale Anwendungsmöglichkeit."
+            },
+            {
+                "id": "60",
+                "question": "Laut Burgard werden Roboter in 50 Jahren",
+                "options": [
+                    {"key": "a", "text": "von Menschen äußerlich gar nicht zu unterscheiden sein."},
+                    {"key": "b", "text": "Schauspieler in Science-Fiction-Filmen sein."},
+                    {"key": "c", "text": "sich so fortbewegen wie Menschen."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Die motorische Fortbewegung wird sich an die des Menschen angleichen."
+            },
+            {
+                "id": "61",
+                "question": "Nach Moravec werden Roboterkinder",
+                "options": [
+                    {"key": "a", "text": "auf Basis der Gene ihrer Besitzer programmiert werden."},
+                    {"key": "b", "text": "beliebter sein als Menschenkinder."},
+                    {"key": "c", "text": "nicht intelligenter sein als Insekten."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Moravec mutmaßt, Roboterkinder könnten beliebter als echte Kinder sein."
+            },
+            {
+                "id": "62",
+                "question": "Herr Burgard hält Moravecs Prognose für",
+                "options": [
+                    {"key": "a", "text": "realistisch."},
+                    {"key": "b", "text": "übertrieben."},
+                    {"key": "c", "text": "untertrieben."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Burgard bewertet diese Theorien als maßlos übertrieben."
+            },
+            {
+                "id": "63",
+                "question": "Herr Burgard",
+                "options": [
+                    {"key": "a", "text": "denkt, dass Roboter nie mit Menschen mithalten werden."},
+                    {"key": "b", "text": "hält Roboter für die besseren Menschen."},
+                    {"key": "c", "text": "sagt, dass Roboter Menschen manchmal überlegen sind."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: In spezifischen Bereichen sind Roboter menschlichen Fähigkeiten überlegen."
+            },
+            {
+                "id": "64",
+                "question": "Forscher und Gesellschaft",
+                "options": [
+                    {"key": "a", "text": "dürfen aus ethischen Gründen nicht weiter an Robotern arbeiten."},
+                    {"key": "b", "text": "können ethische Aspekte bei der Entwicklung von Robotern vernachlässigen."},
+                    {"key": "c", "text": "müssen ethische Aspekte der Robotik im Auge behalten."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Gesellschaft und Forschung müssen ethische Fragestellungen stets beachten."
+            }
+        ]
+    },
+
+    # 9. SCHLAFSTÖRUNG
+    {
+        "id": "hv2-schlafstoerung",
+        "themeTitle": "Schlafstörung – Biorhythmus bei Kindern und Jugendlichen",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Müde Teenager in der ersten Schulstunde – ist das bloß Faulheit oder biologische Notwendigkeit? Wir sprechen mit Schlafforscherin Frau Prof. Reinecke. Frau Reinecke, wie sieht es neurologisch aus?
+Prof. Reinecke: In der Neurobiologie gilt als gesichert, dass Kinder und Jugendliche in bestimmten Entwicklungsphasen unter Schlafstörungen leiden.
+Moderator: Warum gehen Jugendliche abends eigentlich so spät ins Bett?
+Prof. Reinecke: Nicht wegen der Handys: Jugendliche gehen abends später zu Bett, weil sich ihr innerer Biorhythmus in der Pubertät natürlicherweise nach hinten verschiebt.
+Moderator: Welche Rolle spielt das Schlafhormon Melatonin?
+Prof. Reinecke: Das Hormon Melatonin hilft beim Einschlafen – bei Jugendlichen wird es abends jedoch erst bis zu zwei Stunden später ausgeschüttet.
+Moderator: Wie wirkt sich der frühe Unterrichtsbeginn um 8 Uhr aus?
+Prof. Reinecke: Jugendliche schaden durch zu frühes Aufstehen auf Dauer ihrer körperlichen und geistigen Gesundheit.
+Moderator: Welche Folgen hat dauerhafter Schlafmangel?
+Prof. Reinecke: Chronischer Schlafmangel kann bei Kindern und Jugendlichen zu massiven Entwicklungsproblemen und Leistungseinbrüchen führen.
+Moderator: Was schlagen Sie als Lösung vor?
+Prof. Reinecke: Ich spreche mich ganz klar für eine Änderung der Schulzeiten und einen späteren Unterrichtsbeginn um 9 Uhr aus.
+Moderator: Warum sträuben sich viele Schulen dagegen?
+Prof. Reinecke: Weil die Schulen einen starren, über Jahrzehnte festgefahrenen organisatorischen Zeitrahmen haben.
+Moderator: Was wäre der Vorteil einer flexiblen Schule?
+Prof. Reinecke: Schülerinnen und Schüler sollten in der idealen Schule ihr volles individuelles Leistungspotenzial nutzen können, anstatt übermüdet im Unterricht zu sitzen.
+Moderator: Wie reagieren Lehrer auf Ihre Forderung?
+Prof. Reinecke: Viele konservative Lehrer meinen nach wie vor, dass frühes Aufstehen fit macht und Disziplin lehrt.
+Moderator: Wie beurteilen Sie dieses Argument?
+Prof. Reinecke: Frau Prof. Reinecke denkt, dass frühes Aufstehen rein kulturell bedingt ist und unserer jugendlichen Biologie schlicht widerspricht.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "In der Neurobiologie gilt als gesichert, dass Jugendliche",
+                "options": [
+                    {"key": "a", "text": "in bestimmten Entwicklungsphasen Schlafstörungen haben."},
+                    {"key": "b", "text": "mit Eintritt ins Jugendalter besonders wenig Schlaf brauchen."},
+                    {"key": "c", "text": "genauso viel schlafen wie Erwachsene."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: In Umbruchphasen der Entwicklung treten gehäuft Schlafprobleme auf."
+            },
+            {
+                "id": "56",
+                "question": "Jugendliche gehen abends später zu Bett,",
+                "options": [
+                    {"key": "a", "text": "weil sich der Biorhythmus verändert."},
+                    {"key": "b", "text": "weil sie abends ausgehen."},
+                    {"key": "c", "text": "weil sie weniger Schlaf brauchen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die innere biologische Uhr verschiebt sich nach hinten."
+            },
+            {
+                "id": "57",
+                "question": "Das Hormon Melatonin",
+                "options": [
+                    {"key": "a", "text": "hilft beim Einschlafen."},
+                    {"key": "b", "text": "ist bei Jugendlichen selten zu finden."},
+                    {"key": "c", "text": "steigert die gute Stimmung."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Melatonin signalisiert dem Körper Müdigkeit und leitet Schlaf ein."
+            },
+            {
+                "id": "58",
+                "question": "Jugendliche",
+                "options": [
+                    {"key": "a", "text": "lernen um 8 Uhr morgens am besten."},
+                    {"key": "b", "text": "schaden durch zu frühes Aufstehen ihrer Gesundheit."},
+                    {"key": "c", "text": "sollten früh aufstehen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Das erzwungene Früherwachen beeinträchtigt das physische Wohlbefinden."
+            },
+            {
+                "id": "59",
+                "question": "Schlafmangel bei Kindern und Jugendlichen",
+                "options": [
+                    {"key": "a", "text": "beeinträchtigt die Leistungsfähigkeit nur unwesentlich."},
+                    {"key": "b", "text": "kann zu starken Entwicklungsproblemen führen."},
+                    {"key": "c", "text": "wurde noch nicht wissenschaftlich untersucht."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Defizite im Schlaf hemmen die gesunde seelische und geistige Entwicklung."
+            },
+            {
+                "id": "60",
+                "question": "Frau Prof Reinecke",
+                "options": [
+                    {"key": "a", "text": "fordert die Bedürfnisse der Eltern stärker zu berücksichtigen."},
+                    {"key": "b", "text": "spricht sich für eine Änderung der Schulzeiten aus."},
+                    {"key": "c", "text": "würde gern den Arbeitsbeginn der Eltern verschieben."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie plädiert energisch für spätere Unterrichtsanfangszeiten."
+            },
+            {
+                "id": "61",
+                "question": "Schulen",
+                "options": [
+                    {"key": "a", "text": "dürfen die Unterrichtszeiten nicht ändern."},
+                    {"key": "b", "text": "haben einen starren Zeitrahmen."},
+                    {"key": "c", "text": "orientieren sich vorwiegend an den Bedürfnissen der Schüler."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Schulstrukturen zeichnen sich durch unbewegliche Zeitpläne aus."
+            },
+            {
+                "id": "62",
+                "question": "Schülerinnen und Schüler sollten in der idealen Schule",
+                "options": [
+                    {"key": "a", "text": "ihr Leistungspotenzial nutzen können."},
+                    {"key": "b", "text": "jeden Nachmittag Unterricht haben."},
+                    {"key": "c", "text": "mittags nur eine kurze Essenspause haben."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Schule sollte Schülern ermöglichen, ihr Leistungspotenzial voll abzurufen."
+            },
+            {
+                "id": "63",
+                "question": "Viele Lehrer meinen, dass frühes Aufstehen",
+                "options": [
+                    {"key": "a", "text": "fit macht."},
+                    {"key": "b", "text": "zum Erwachsenwerden gehört."},
+                    {"key": "c", "text": "in der Natur des Menschen liegt."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Lehrkräfte hegen oft den Glauben, Frühaufstehen aktiviere den Geist."
+            },
+            {
+                "id": "64",
+                "question": "Frau Prof Reinecke denkt, dass",
+                "options": [
+                    {"key": "a", "text": "Faulheit bei Jugendlichen zu entschuldigen ist."},
+                    {"key": "b", "text": "frühes Aufstehen kulturell bedingt ist."},
+                    {"key": "c", "text": "Jugendliche früh aufstehen und trotzdem fit sein können."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Die frühe Weckzeit ist eine historische und kulturelle Konvention."
+            }
+        ]
+    },
+
+    # 10. SCHWIEGERMUTTER
+    {
+        "id": "hv2-schwiegermutter",
+        "themeTitle": "Schwiegermutter – Dynamiken in der Familie",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Das Verhältnis zur Schwiegermutter liefert Stoff für zahllose Witze und Konflikte. Zu Gast ist Psychologin Frau Heyne. Wie wird das Thema heute wissenschaftlich erforscht?
+Frau Heyne: Das Image der Schwiegermutter wird nun endlich von einer Wissenschaftlerin, Frau Kletterer, fundiert und objektiv beleuchtet.
+Moderator: Zu welchen Ergebnissen kommt die Forscherin?
+Frau Heyne: Frau Kletterer hat in ihrer Studie verschiedene Gruppen und Typologien beschrieben, statt bloße Klischees zu bedienen.
+Moderator: Welche Perspektive nimmt sie ein?
+Frau Heyne: Frau Kletterer möchte auch den anderen Blickwinkel, nämlich den der Schwiegermütter selbst, einfühlsam berücksichtigen.
+Moderator: Wie sah dieses Verhältnis früher aus?
+Frau Heyne: Vor hundert Jahren gab es im Mehrgenerationenhaushalt einen ständigen Wettbewerb zwischen den Frauen im Haus um die häusliche Vorherrschaft.
+Moderator: Ab wann wandelte sich die Wahrnehmung?
+Frau Heyne: Im 19. Jahrhundert wurden Schwiegermütter erstmals vermehrt zum Gegenstand der Literatur und Romane.
+Moderator: Sie erwähnen auch historische Persönlichkeiten...
+Frau Heyne: Kaiserin Sisi litt extrem unter ihrer Schwiegermutter Erzherzogin Sophie, während Kaiser Franz Joseph von Historikern als willensschwacher Sohn beschrieben wird, der seiner Mutter nicht widersprechen konnte.
+Moderator: Wie sieht die statistische Realität heute aus?
+Frau Heyne: Umfrageergebnisse zeigen, dass knapp ein Drittel der Ehefrauen handfeste Probleme mit der Schwiegermutter hat.
+Moderator: Welche Rolle spielen dabei die Ehemänner?
+Frau Heyne: Männer verschärfen den Konflikt der beiden Frauen oft fatal, indem sie sich bequem aus Streitereien heraushalten.
+Moderator: Können Sie ein typisches Fallbeispiel nennen?
+Frau Heyne: In unserer Fallstudie missachtet die Schwiegermutter systematisch die Privatsphäre des jungen Paares durch unangemeldete Besuche.
+Moderator: Wann scheitert eine Ehe besonders häufig?
+Frau Heyne: Eheprobleme sind vorprogrammiert, wenn Männer ihre Herkunftsfamilie stets der neuen Partnerschaft vorziehen.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Das Image der Schwiegermutter",
+                "options": [
+                    {"key": "a", "text": "entspricht dem weitverbreiteten negativen Klischee."},
+                    {"key": "b", "text": "wird nun von einer Wissenschaftlerin beleuchtet."},
+                    {"key": "c", "text": "wurde bereits in vielen Kulturen erforscht."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Eine Wissenschaftlerin analysiert das Phänomen nun objektiv."
+            },
+            {
+                "id": "56",
+                "question": "Frau Kletterer hat",
+                "options": [
+                    {"key": "a", "text": "eine bestehende Kategorisierung übernommen."},
+                    {"key": "b", "text": "Interviews mit zahlreichen Schwiegermüttern geführt."},
+                    {"key": "c", "text": "verschiedene Gruppen beschrieben."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: In der Analyse werden diverse Gruppen und Reaktionsmuster differenziert."
+            },
+            {
+                "id": "57",
+                "question": "Frau Kletterer",
+                "options": [
+                    {"key": "a", "text": "Möchte auch den anderen Blickwinkel berücksichtigen."},
+                    {"key": "b", "text": "Sieht in allen Gruppen die gängigen Stereotypen."},
+                    {"key": "c", "text": "Stellt drei voneinander unabhängige Typen vor."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie bezieht auch die Sichtweise der älteren Generation mit ein."
+            },
+            {
+                "id": "58",
+                "question": "Vor hundert Jahren",
+                "options": [
+                    {"key": "a", "text": "gab es einen Wettbewerb zwischen den Frauen im Haus."},
+                    {"key": "b", "text": "mussten Männer die Vermittlerrolle übernehmen."},
+                    {"key": "c", "text": "standen alle Frauen im Haus oben in der Hierarchie."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Unter einem Dach herrschte Konkurrenzkampf um Macht und Einfluss."
+            },
+            {
+                "id": "59",
+                "question": "Im 19. Jahrhundert",
+                "options": [
+                    {"key": "a", "text": "änderte sich das Image der Schwiegermutter."},
+                    {"key": "b", "text": "verhielten sich die Schwiegermütter immer grausamer."},
+                    {"key": "c", "text": "wurden Schwiegermütter Gegenstand der Literatur."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Romane und Erzählungen thematisierten die Figur der Schwiegermutter."
+            },
+            {
+                "id": "60",
+                "question": "Frau Heyne beschreibt Kaiser Franz Joseph als",
+                "options": [
+                    {"key": "a", "text": "einfühlsamen Ehemann."},
+                    {"key": "b", "text": "fürsorglichen Vater."},
+                    {"key": "c", "text": "willensschwachen Sohn."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Franz Joseph handelte gegenüber seiner herrschsüchtigen Mutter nachgiebig und willensschwach."
+            },
+            {
+                "id": "61",
+                "question": "Umfrageergebnisse zeigen, dass",
+                "options": [
+                    {"key": "a", "text": "Frauen auf dem Land harmonischer mit ihren Schwiegermüttern zusammenleben."},
+                    {"key": "b", "text": "Knapp ein Drittel der Ehefrauen Probleme mit der Schwiegermutter hat."},
+                    {"key": "c", "text": "Schwiegermütter die Ursache für etwa ein Drittel aller Scheidungen sind."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Etwa 30 Prozent der befragten Ehefrauen beklagen Spannungen."
+            },
+            {
+                "id": "62",
+                "question": "Männer verschärfen den Konflikt der Frauen, indem sie",
+                "options": [
+                    {"key": "a", "text": "Ihre Mutter zurechtweisen."},
+                    {"key": "b", "text": "Partei für Ihre Frau ergreifen."},
+                    {"key": "c", "text": "Sich aus Streitereien heraushalten."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Das passive Heraushalten heizt die Konflikte meist noch weiter an."
+            },
+            {
+                "id": "63",
+                "question": "In der Beispielgeschichte",
+                "options": [
+                    {"key": "a", "text": "bietet die Schwiegermutter der Schwiegertochter Hilfe an."},
+                    {"key": "b", "text": "hat der Konflikt keine Konsequenzen auf das Eheleben des Paares."},
+                    {"key": "c", "text": "missachtet die Schwiegermutter Privatsphäre des jungen Paares."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Grenzverletzungen und Respektlosigkeit gegenüber dem Rückzugsraum belasten das Paar."
+            },
+            {
+                "id": "64",
+                "question": "Eheprobleme sind vorprogrammiert, wenn",
+                "options": [
+                    {"key": "a", "text": "Ehefrauen in Konfliktsituationen zu viel Rückhalt haben."},
+                    {"key": "b", "text": "Gespräche zu stark reglementiert werden."},
+                    {"key": "c", "text": "Männer ihre Herkunftsfamilie der neuen Familie vorziehen."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Wenn die Loyalität den Eltern statt dem Lebenspartner gilt, gerät die Ehe in Gefahr."
+            }
+        ]
+    },
+
+    # 11. MODE
+    {
+        "id": "hv2-mode",
+        "themeTitle": "Mode – Blick hinter die Kulissen der Modebranche",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Schöne Stoffe, Laufstege und harter Wettbewerb: Wie funktioniert die Modebranche? Bei uns zu Gast ist Nadja Müller. Frau Müller, was ist Ihre genaue Aufgabe?
+Nadja Müller: Ich bin Modeeinkäuferin für ein großes Handelsunternehmen; das heißt, ich wähle Mode für den Verkauf in unseren Filialen aus.
+Moderator: Wie sieht es bei den weltberühmten Modehäusern aus?
+Nadja Müller: Viele denken, Haute Couture sei das Hauptgeschäft. In Wahrheit verkaufen renommierte Modehäuser nur wenige ihrer exklusiven Haute-Couture-Modelle.
+Moderator: Womit verdienen sie dann ihr Geld?
+Nadja Müller: Bekannte Modeschöpfer verdanken ihren finanziellen Erfolg dem Verkauf von lukrativen Accessoires wie Parfüms, Taschen und Gürteln.
+Moderator: Spielt reine Kreativität die Hauptrolle?
+Nadja Müller: Nein, in der modernen Modebranche ist nüchterne Wirtschaftlichkeit der alles entscheidende Faktor.
+Moderator: Wo haben Sie das Handwerk gelernt?
+Nadja Müller: Ich profitiere enorm von meinen früheren praktischen Erfahrungen bei einem Modefabrikanten, wo ich Produktion von der Pike auf lernte.
+Moderator: Was braucht man für diesen Beruf?
+Nadja Müller: Ein Einkäufer braucht ein untrügliches Gespür für gut verkäufliche Modelle, die der breite Markt auch tatsächlich annimmt.
+Moderator: Nach welchen Kriterien bestellen Sie Kollektionen?
+Nadja Müller: Man verlässt sich nicht nur auf Intuition; ich treffe Entscheidungen auch fundiert aufgrund früherer Verkaufszahlen und Absatzerfolge.
+Moderator: Wo sitzen Ihre Zulieferer?
+Nadja Müller: Entgegen dem Trend zu Fernost haben unsere wichtigsten Lieferanten ihren festen Firmensitz in Europa.
+Moderator: Wie entwickelt sich der deutsche Modemarkt?
+Nadja Müller: Überraschenderweise befindet sich die deutsche Modeindustrie nach Jahren des Umbruchs wieder in einem spürbaren Aufwärtstrend.
+Moderator: Und wie spüren Sie die Trends von morgen auf?
+Nadja Müller: Neben Messen erfasst man neue Modeströmungen heute blitzschnell mithilfe der sozialen Medien wie Instagram und TikTok.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Nadja Müller",
+                "options": [
+                    {"key": "a", "text": "entwirft Mode für junge Leute."},
+                    {"key": "b", "text": "ist Modeberaterin in einem Kaufhaus."},
+                    {"key": "c", "text": "wählt Mode für den Verkauf aus."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Als Modeeinkäuferin wählt sie Kollektionen für den Weiterverkauf aus."
+            },
+            {
+                "id": "56",
+                "question": "Die berühmten Modehäuser",
+                "options": [
+                    {"key": "a", "text": "schneidern für einen immer größer werdenden Kundenkreis."},
+                    {"key": "b", "text": "verkaufen nur wenige ihrer Haute-Couture-Modelle."},
+                    {"key": "c", "text": "vernachlässigen die Mode für Männer."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Maßgeschneiderte Haute-Couture-Kreationen werden nur in minimaler Stückzahl verkauft."
+            },
+            {
+                "id": "57",
+                "question": "Bekannte Modeschöpfer",
+                "options": [
+                    {"key": "a", "text": "möchten die Exklusivität ihrer Marke bewahren."},
+                    {"key": "b", "text": "produzieren selten Kleidung für einen weiten Kundenkreis."},
+                    {"key": "c", "text": "verdanken ihren finanziellen Erfolg dem Verkauf von Accessoires."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Accessoires wie Kosmetik und Taschen bringen den Hauptgewinn."
+            },
+            {
+                "id": "58",
+                "question": "In der Modebranche",
+                "options": [
+                    {"key": "a", "text": "bestimmt der Ideenreichtum eines Designers über den Erfolg."},
+                    {"key": "b", "text": "ist Wirtschaftlichkeit der entscheidende Faktor."},
+                    {"key": "c", "text": "können Modedesigner sich vollkommen frei entfalten."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Ökonomische Rentabilität ist die dominierende Maßgabe."
+            },
+            {
+                "id": "59",
+                "question": "Nadja Müller",
+                "options": [
+                    {"key": "a", "text": "profitiert von ihren Erfahrungen bei einem Modefabrikanten."},
+                    {"key": "b", "text": "sammelte erste Berufserfahrungen in der Pariser Modeszene."},
+                    {"key": "c", "text": "träumte schon in der Schule von einer Karriere in der Modebranche."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die Praxis beim Textilproduzenten kommt ihr täglich zugute."
+            },
+            {
+                "id": "60",
+                "question": "Nadja Müller",
+                "options": [
+                    {"key": "a", "text": "denkt, dass man das Gefühl für Mode nicht erlernen kann."},
+                    {"key": "b", "text": "durfte in ihrem Job von Anfang an allein entscheiden."},
+                    {"key": "c", "text": "hat ein untrügliches Gespür für gut verkäufliche Modelle."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Sie besitzt ein sicheres Auge dafür, was beim Kunden ankommt."
+            },
+            {
+                "id": "61",
+                "question": "Sie trifft ihre Entscheidungen",
+                "options": [
+                    {"key": "a", "text": "auch aufgrund früherer Verkaufszahlen."},
+                    {"key": "b", "text": "durch die Auswertung von Kundenumfragen."},
+                    {"key": "c", "text": "hauptsächlich nach Markennamen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Vergangene Abverkaufsdaten bilden die Basis für Neubestellungen."
+            },
+            {
+                "id": "62",
+                "question": "Die Lieferanten",
+                "options": [
+                    {"key": "a", "text": "haben ihren Firmensitz in Europa."},
+                    {"key": "b", "text": "kommen zunehmend aus Asien."},
+                    {"key": "c", "text": "kooperieren nur mit deutschen Unternehmen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Ihre Hauptpartner und Lieferanten sind in Europa ansässig."
+            },
+            {
+                "id": "63",
+                "question": "Die deutsche Modeindustrie",
+                "options": [
+                    {"key": "a", "text": "befindet sich in einem Aufwärtstrend."},
+                    {"key": "b", "text": "steckt derzeit in einer Krise."},
+                    {"key": "c", "text": "verzeichnet einen Exportrückgang."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Der Branchenzweig verzeichnet positive Zuwächse."
+            },
+            {
+                "id": "64",
+                "question": "Nadja Müller",
+                "options": [
+                    {"key": "a", "text": "arbeitet mit einem professionellen Fotografen."},
+                    {"key": "b", "text": "erfasst Trends mithilfe der Sozialen Medien."},
+                    {"key": "c", "text": "kauft auch gern im Internet ein."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Soziale Plattformen dienen ihr als Trendbarometer."
+            }
+        ]
+    },
+
+    # 12. FINJA
+    {
+        "id": "hv2-finja",
+        "themeTitle": "Finja – Hochbegabung und frühzeitiges Studium",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Mit 14 Jahren an der Universität studieren – das ist die Realität von Finja. Finja, wie erlebst du den Unialltag im Vergleich zu deinen älteren Kommilitonen?
+Finja: Im Hörsaal fühle ich mich wohl, aber an Partys oder dem Studentenleben außerhalb der Vorlesungen habe ich ehrlich gesagt kein Interesse.
+Moderator: Wann haben deine Eltern gemerkt, wie schnell du lernst?
+Finja: Als Baby wirkte ich völlig normal. Meine Eltern erkannten meine Besonderheit erst nach einigen Jahren, als ich mir im Kindergartenalter das Lesen selbst beibrachte.
+Moderator: Wie gefiel dir damals der Kindergarten?
+Finja: Ich war am Anfang sehr neugierig und interessiert an den Gruppenaktivitäten, doch bald langweilten mich die einfachen Spiele.
+Moderator: Haben sich deine Eltern professionelle Hilfe geholt?
+Finja: Ja, die Familienberaterin meinte nach ersten Tests, Finja sei vermutlich hochbegabt und brauche geistige Förderung.
+Moderator: Wie gingen deine Eltern damit um?
+Finja: Meine Eltern wollten kein 'Wunderkind' vorzeigen; sie reagierten zuerst eher verunsichert und ablehnend auf das Thema Hochbegabung.
+Moderator: Was lag dir als Kind besonders?
+Finja: Ich konnte schon als kleines Kind besonders schnell und gut knifflige Denkspiele und Logikrätsel lösen.
+Moderator: Was unterscheidet hochbegabte Kinder von Gleichaltrigen?
+Finja: Sie haben oft völlig andere Interessen und Themen als Gleichaltrige ihres Jahrgangs.
+Moderator: Bedeutet frühes Lesen immer Hochbegabung?
+Finja: Die Forschung zeigt: Sehr frühes Lesen deutet keineswegs immer zwingend auf eine Hochbegabung hin.
+Moderator: Was sagen Psychologen zur Diagnose?
+Finja: Experten raten heute generell dazu, Kinder aufmerksam miteinander zu vergleichen und auf Entwicklungsunterschiede einzugehen.
+Moderator: Und nach welchen Kriterien hast du dein Studium gewählt?
+Finja: Bei meiner Studienwahl standen ausschließlich meine wissenschaftlichen Interessen und meine Neugier im Vordergrund.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Finja",
+                "options": [
+                    {"key": "a", "text": "freut sich aufs Ausgehen mit anderen Studenten."},
+                    {"key": "b", "text": "hat kein Interesse am Studentenleben außerhalb der Uni."},
+                    {"key": "c", "text": "wird an der Uni wegen ihres Alters ausgegrenzt."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Das studentische Freizeit- und Nachtleben interessiert sie nicht."
+            },
+            {
+                "id": "56",
+                "question": "Finjas Eltern",
+                "options": [
+                    {"key": "a", "text": "dachten sofort, dass ihr Kind anders sei."},
+                    {"key": "b", "text": "erkannten Finjas Besonderheit erst nach einigen Jahren."},
+                    {"key": "c", "text": "verglichen ihr Baby oft mit anderen Kindern."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Erst nach einigen Jahren fiel ihre intellektuelle Frühreife auf."
+            },
+            {
+                "id": "57",
+                "question": "Finja",
+                "options": [
+                    {"key": "a", "text": "ging nur ein Jahr lang in den Kindergarten."},
+                    {"key": "b", "text": "konnte sich nie für den Kindergarten begeistern."},
+                    {"key": "c", "text": "war zuerst an den Aktivitäten im Kindergarten interessiert."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Zu Beginn zeigte sie Interesse an den Kindergartenangeboten."
+            },
+            {
+                "id": "58",
+                "question": "Die Familienberaterin meinte, Finja",
+                "options": [
+                    {"key": "a", "text": "müsse lernen, mit Enttäuschungen umzugehen."},
+                    {"key": "b", "text": "sei vermutlich hochbegabt."},
+                    {"key": "c", "text": "solle sich regelmäßig sportlich betätigen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Die Beraterin stellte die Vermutung einer Hochbegabung auf."
+            },
+            {
+                "id": "59",
+                "question": "Finjas Eltern",
+                "options": [
+                    {"key": "a", "text": "hatten sich immer ein intelligentes Kind gewünscht."},
+                    {"key": "b", "text": "reagierten zuerst ablehnend auf das Thema Hochbegabung."},
+                    {"key": "c", "text": "wollten Finjas Begabung mit einem Test beweisen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie standen der Diagnose zunächst skeptisch und abweisend gegenüber."
+            },
+            {
+                "id": "60",
+                "question": "Finja konnte als Kind",
+                "options": [
+                    {"key": "a", "text": "besonders gut Denkspiele lösen."},
+                    {"key": "b", "text": "nicht verstehen, warum sie mit anderen spielen sollte."},
+                    {"key": "c", "text": "selbst Spielanleitungen erstellen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Knifflige Denksportaufgaben fielen ihr spielend leicht."
+            },
+            {
+                "id": "61",
+                "question": "Hochbegabte Kinder",
+                "options": [
+                    {"key": "a", "text": "brauchen viel Schlaf, um sich zu erholen."},
+                    {"key": "b", "text": "fangen oft später an zu sprechen."},
+                    {"key": "c", "text": "haben andere Interessen als Gleichaltrige."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Hochbegabte beschäftigen sich häufig mit abweichenden Schwerpunkten."
+            },
+            {
+                "id": "62",
+                "question": "Frühzeitiges Lesen",
+                "options": [
+                    {"key": "a", "text": "beruht auf einer angeborenen Begabung."},
+                    {"key": "b", "text": "deutet nicht immer auf eine Hochbegabung hin."},
+                    {"key": "c", "text": "gilt als sicherer Hinweis auf eine hohe Intelligenz."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Frühe Lesekompetenz ist kein garantierter Beweis für Hochbegabung."
+            },
+            {
+                "id": "63",
+                "question": "Experten",
+                "options": [
+                    {"key": "a", "text": "raten dazu, Kinder miteinander zu vergleichen."},
+                    {"key": "b", "text": "sagen, dass Hochbegabung oft stark vom Elternhaus abhängt."},
+                    {"key": "c", "text": "schließen von guten Schulnoten auf besondere Begabung."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Fachleute empfehlen vergleichende Beobachtungen."
+            },
+            {
+                "id": "64",
+                "question": "Als Finja sich für ihr Studienfach entschied,",
+                "options": [
+                    {"key": "a", "text": "dachte sie an eine Laufbahn im sozialen Bereich."},
+                    {"key": "b", "text": "spielten Zukunftsperspektiven keine Rolle."},
+                    {"key": "c", "text": "standen ihre wissenschaftlichen Interessen im Vordergrund."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Inhaltliche Neugier und wissenschaftliches Interesse leiteten ihre Entscheidung."
+            }
+        ]
+    },
+
+    # 13. BERUF WECHSELN
+    {
+        "id": "hv2-beruf-wechseln",
+        "themeTitle": "Beruf wechseln – Neuorientierung in der Lebensmitte",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Frust im Job, der Wunsch nach Sinnerfüllung: Immer mehr Berufstätige wagen den Quereinstieg. Zu Gast ist Karriereberater Dr. Dahlbeck. Herr Dahlbeck, warum sind so viele Menschen unglücklich im Beruf?
+Dr. Dahlbeck: Der Hauptgrund für Unzufriedenheit im Beruf ist laut unseren Analysen fehlende Wertschätzung und fehlende Anerkennung im Unternehmen.
+Moderator: Was hindert junge Berufstätige am Wechsel?
+Dr. Dahlbeck: Berufsanfänger fürchten oft, dass ein früher Berufswechsel bei künftigen Arbeitgebern Misstrauen und Skepsis weckt.
+Moderator: Was raten Sie wechselwilligen Angestellten?
+Dr. Dahlbeck: Nichts überstürzen! Ich rate eindringlich dazu, vor einem beruflichen Neuanfang eine gründliche Bedenkzeit einzuplanen.
+Moderator: Sie selbst waren früher Banker. Warum wechselten Sie?
+Dr. Dahlbeck: Ich habe mich zu einem Berufswechsel entschlossen, weil ich im alten Job mit der Zeit deutliche, quälende Stresssymptome entwickelte.
+Moderator: Und was geschah nach Ihrer Kündigung?
+Dr. Dahlbeck: Nachdem ich meine Stelle gekündigt hatte, leitete ich umgehend meine eigene Existenzgründung in die Wege.
+Moderator: Warum schätzen Sie Ihre Klienten?
+Dr. Dahlbeck: Herrn Dr. Dahlbecks Kunden schätzen ihn vor allem wegen seiner fundierten Kenntnisse und methodischen Kompetenz.
+Moderator: Was für Menschen kommen zu Ihnen in die Beratung?
+Dr. Dahlbeck: Viele von meinen Kunden wagen einen kompletten, radikalen Neuanfang in einer völlig fremden Branche.
+Moderator: Wie sieht es für ältere Arbeitnehmer aus?
+Dr. Dahlbeck: In Pflegeberufen und im Sozialwesen werden lebenserfahrene Bewerber oft sogar ausdrücklich bevorzugt.
+Moderator: Warum zögern manche Firmen bei Quereinsteigern?
+Dr. Dahlbeck: Unternehmen reagieren skeptisch auf Jobwechsler, weil sie befürchten, diese könnten nach kurzer Zeit wieder kündigen.
+Moderator: Wie sollte man seine Bewerbung verfassen?
+Dr. Dahlbeck: Ich rate Bewerbern, im Anschreiben die Gründe für die Neuorientierung keinesfalls zu verschweigen, sondern transparent darzulegen – und im Zweifelsfall unbezahlte Probearbeit anzubieten.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Der Hauptgrund für Unzufriedenheit im Beruf ist laut Herrn Dr. Dahlbeck",
+                "options": [
+                    {"key": "a", "text": "fehlende Anerkennung im Unternehmen."},
+                    {"key": "b", "text": "viel Langeweile am Arbeitsplatz."},
+                    {"key": "c", "text": "ein schwieriges Verhältnis zum Chef."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Mangelnde Wertschätzung und Anerkennung führen am häufigsten zu Frustration."
+            },
+            {
+                "id": "56",
+                "question": "Berufsanfänger fürchten oft, dass",
+                "options": [
+                    {"key": "a", "text": "ein Neubeginn mit hohen Kosten verbunden ist."},
+                    {"key": "b", "text": "sie weniger verdienen, wenn sie woanders neu anfangen."},
+                    {"key": "c", "text": "ein Berufswechsel bei Arbeitgebern Skepsis weckt."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Sie haben Angst, als sprunghaft wahrgenommen zu werden."
+            },
+            {
+                "id": "57",
+                "question": "Herr Dr. Dahlbeck rät,",
+                "options": [
+                    {"key": "a", "text": "sich keinesfalls von seinen Wünschen abbringen zu lassen."},
+                    {"key": "b", "text": "vor einem beruflichen Neuanfang Bedenkzeit einzuplanen."},
+                    {"key": "c", "text": "für eine interessante Stelle den Wohnort zu wechseln."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Er empfiehlt eine ausreichende Reflexions- und Bedenkphase."
+            },
+            {
+                "id": "58",
+                "question": "Herr Dr. Dahlbeck hat sich zu einem Berufswechsel entschlossen, weil er",
+                "options": [
+                    {"key": "a", "text": "mit der Zeit deutliche Stresssymptome entwickelte."},
+                    {"key": "b", "text": "sich von seinen Aufgaben oft unterfordert fühlte."},
+                    {"key": "c", "text": "in seinem Unternehmen wenig Aufstiegsmöglichkeiten hatte."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Zunehmende Belastung und Stresssymptome gaben den Ausschlag."
+            },
+            {
+                "id": "59",
+                "question": "Nachdem Herr Dr. Dahlbeck seine Stelle gekündigt hatte,",
+                "options": [
+                    {"key": "a", "text": "bewarb er sich lange um Führungspositionen."},
+                    {"key": "b", "text": "leitete er seine Existenzgründung in die Wege."},
+                    {"key": "c", "text": "begann er als Führungskraft in einer anderen Firma."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Er startete den Schritt in die Selbstständigkeit."
+            },
+            {
+                "id": "60",
+                "question": "Herrn Dr. Dahlbecks Kunden",
+                "options": [
+                    {"key": "a", "text": "schätzen ihn wegen seiner Kenntnisse."},
+                    {"key": "b", "text": "vertrauen ihm, weil er selbst den Beruf gewechselt hat."},
+                    {"key": "c", "text": "kommen zum großen Teil aus derselben Branche."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Klienten vertrauen auf seine Fach- und Beratungskompetenz."
+            },
+            {
+                "id": "61",
+                "question": "Viele von Herrn Dr. Dahlbecks Kunden",
+                "options": [
+                    {"key": "a", "text": "streben mehr Erfolg in ihrem Arbeitsbereich an."},
+                    {"key": "b", "text": "wagen einen kompletten Neuanfang."},
+                    {"key": "c", "text": "möchten in ihrem neuen Beruf ihr eigener Chef sein."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Viele Kunden entscheiden sich für einen radikalen Branchenwechsel."
+            },
+            {
+                "id": "62",
+                "question": "Herr Dr. Dahlbeck weist darauf hin, dass",
+                "options": [
+                    {"key": "a", "text": "es für Betriebe vorteilhaft sein kann, ältere Auszubildende einzustellen."},
+                    {"key": "b", "text": "in Pflegeberufen erfahrene Bewerber oft bevorzugt werden."},
+                    {"key": "c", "text": "ältere Bewerber nur schwer einen Ausbildungsplatz finden."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: In der Pflege wird Reife und Lebenserfahrung geschätzt."
+            },
+            {
+                "id": "63",
+                "question": "Unternehmen reagieren skeptisch auf Jobwechsler, weil",
+                "options": [
+                    {"key": "a", "text": "ihre Einarbeitung langwierig sein kann."},
+                    {"key": "b", "text": "sie wenig branchenspezifische Erfahrung mitbringen."},
+                    {"key": "c", "text": "diese nach kurzer Zeit wieder kündigen könnten."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Arbeitgeber befürchten eine rasche erneute Kündigung."
+            },
+            {
+                "id": "64",
+                "question": "Herr Dr. Dahlbeck rät Bewerbern,",
+                "options": [
+                    {"key": "a", "text": "durch eine Vielzahl an Bewerbungen ihre Chancen zu verbessern."},
+                    {"key": "b", "text": "im Bewerbungsschreiben die Gründe für die Neuorientierung wegzulassen."},
+                    {"key": "c", "text": "Bereitschaft zu Probearbeit zu signalisieren."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Er empfiehlt im Anschreiben auf ausufernde Rechtfertigungen zu verzichten."
+            }
+        ]
+    },
+
+    # 14. BÜRGERFORSCHUNG
+    {
+        "id": "hv2-buergerforschung",
+        "themeTitle": "Bürgerforschung – Citizen Science in der Praxis",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Laien, die Vögel zählen, Sterne beobachten oder Wasserproben analysieren: Bürgerforschung boomt. Unser Studiogast ist Professor Adler. Herr Adler, wie steht die Gesellschaft zur Wissenschaft?
+Prof. Adler: Es ist leider eine weit verbreitete Meinung in der Bevölkerung, dass Forschung nur eine Sache für hochspezialisierte Experten sei.
+Moderator: Was genau tun Bürgerforscher?
+Prof. Adler: Die Aufgaben der Bürgerforscher bestehen ganz oft darin, im Freien riesige Mengen an Daten zu erheben.
+Moderator: Wie kamen Sie selbst zur Bürgerforschung?
+Prof. Adler: Ich begann mich intensiv dafür einzusetzen, weil ich in Diskussionen mit interessierten Laien unglaublich wertvolle Anregungen und Perspektiven erhielt.
+Moderator: Hatten Sie schon als Kind eine Affinität zur Forschung?
+Prof. Adler: Ja, ich habe mich schon als Schulkind fasziniert für die theoretischen Grundlagen meines späteren Fachs interessiert.
+Moderator: Und Ihre eigenen Kinder?
+Prof. Adler: Meine Kinder zeigen glücklicherweise schon jetzt großes Interesse an den Naturwissenschaften und an Experimenten.
+Moderator: Wie finden Interessierte passende Projekte?
+Prof. Adler: Bürgerforscher können auf einer zentralen Internetseite nach interessanten und aktuellen Forschungsvorhaben in ihrer Region suchen.
+Moderator: Brauchen Universitäten die Hilfe von Laien wirklich?
+Prof. Adler: Absolut! Wissenschaftler können auf die Arbeit von ehrenamtlichen Leuten im Gelände oft nicht mehr verzichten.
+Moderator: Wo liegen die Grenzen der Laienarbeit?
+Prof. Adler: Ausschließlich hauptberufliche Wissenschaftler werden wohl weiterhin hochkomplexe Versuche und Laboranalysen durchführen.
+Moderator: Wie ist die Qualität der erhobenen Daten?
+Prof. Adler: Die Ergebnisse von engagierten Laien gehen meist aus außerordentlich gewissenhafter und präziser Arbeit hervor.
+Moderator: Und historisch gesehen?
+Prof. Adler: Schon in der Vergangenheit haben ambitionierte Hobbyforscher einige der größten wissenschaftlichen Entdeckungen der Menschheit gemacht.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Es ist laut Professor Adler eine weit verbreitete Meinung, dass",
+                "options": [
+                    {"key": "a", "text": "die Wissenschaft zu wenig mit der Öffentlichkeit kommuniziert."},
+                    {"key": "b", "text": "Forschung nur eine Sache für Spezialisten ist."},
+                    {"key": "c", "text": "mehr Bürger wissenschaftlich arbeiten sollten."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Viele Bürger glauben fälschlich, Forschung sei nur Experten vorbehalten."
+            },
+            {
+                "id": "56",
+                "question": "Die Aufgaben der Bürgerforscher",
+                "options": [
+                    {"key": "a", "text": "bestehen oft darin, Daten zu erheben."},
+                    {"key": "b", "text": "lassen sich nur gemeinsam mit Wissenschaftlern erledigen."},
+                    {"key": "c", "text": "sind auf wenige Fachgebiete beschränkt."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die Kernaufgabe ist das flächendeckende Sammeln von Messdaten."
+            },
+            {
+                "id": "57",
+                "question": "Professor Adler begann sich für Bürgerforschung einzusetzen, weil",
+                "options": [
+                    {"key": "a", "text": "er bei seiner Arbeit Hilfe von Laien benötigte."},
+                    {"key": "b", "text": "er von Laien wertvolle Anregungen bekam."},
+                    {"key": "c", "text": "ihm seine Arbeit an der Hochschule nicht gefiel."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Laien lieferten ihm fruchtbare Impulse für seine Forschungsarbeit."
+            },
+            {
+                "id": "58",
+                "question": "Professor Adler hat sich schon als Kind",
+                "options": [
+                    {"key": "a", "text": "für die theoretischen Grundlagen seines Fachs interessiert."},
+                    {"key": "b", "text": "für seine spätere berufliche Laufbahn entschieden."},
+                    {"key": "c", "text": "mit seinem späteren Forschungsgegenstand beschäftigt."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Schon früh begeisterten ihn die theoretischen Grundlagen."
+            },
+            {
+                "id": "59",
+                "question": "Professor Adlers Kinder",
+                "options": [
+                    {"key": "a", "text": "lassen sich nur schwer von Computerspielen abhalten."},
+                    {"key": "b", "text": "spielen lieber im Freien mit elektronischen Geräten."},
+                    {"key": "c", "text": "zeigen schon jetzt Interesse an den Naturwissenschaften."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Auch seine Kinder begeistern sich für wissenschaftliche Fragen."
+            },
+            {
+                "id": "60",
+                "question": "Bürgerforscher",
+                "options": [
+                    {"key": "a", "text": "können auf einer Internetseite nach interessanten Forschungsvorhaben suchen."},
+                    {"key": "b", "text": "sollen auf der Internetseite ihre eigenen Projekte eintragen."},
+                    {"key": "c", "text": "sollen gemeinsam mit Wissenschaftlern Forschungsvorhaben bekannter machen."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Eine Online-Plattform listet Mitmach-Projekte auf."
+            },
+            {
+                "id": "61",
+                "question": "Wissenschaftler",
+                "options": [
+                    {"key": "a", "text": "können auch ohne fremde Hilfe genug Daten für ihre Forschung gewinnen."},
+                    {"key": "b", "text": "können auf die Arbeit von Leuten nicht immer verzichten."},
+                    {"key": "c", "text": "sorgen sich wegen der Bürgerforschung um ihre Arbeitsplätze."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Auf die Unterstützung durch Freiwillige sind Forscher angewiesen."
+            },
+            {
+                "id": "62",
+                "question": "Ausschließlich Wissenschaftler",
+                "options": [
+                    {"key": "a", "text": "können die Ergebnisse der Bürgerforscher richtig deuten."},
+                    {"key": "b", "text": "können wissenschaftliche Kriterien ausreichend berücksichtigen."},
+                    {"key": "c", "text": "werden wohl weiterhin komplexe Versuche durchführen."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Komplizierte Labor- und Versuchsreihen verbleiben bei Fachwissenschaftlern."
+            },
+            {
+                "id": "63",
+                "question": "Die Ergebnisse von Laien",
+                "options": [
+                    {"key": "a", "text": "gehen meist aus gewissenhafter Arbeit hervor."},
+                    {"key": "b", "text": "sind verlässlicher, wenn Wissenschaftler beteiligt waren."},
+                    {"key": "c", "text": "werden in der Regel sofort überprüft."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die Mitarbeitenden arbeiten ausgesprochen sorgfältig und gewissenhaft."
+            },
+            {
+                "id": "64",
+                "question": "In der Vergangenheit",
+                "options": [
+                    {"key": "a", "text": "haben Hobbyforscher einige große Entdeckungen gemacht."},
+                    {"key": "b", "text": "waren Wissenschaftler häufig stark spezialisiert."},
+                    {"key": "c", "text": "wurden nur unbedeutende Entdeckungen von Laien gemacht."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Historisch gehen fundamentale Erkenntnisse auf Amateure zurück."
+            }
+        ]
+    },
+
+    # 15. GARTEN
+    {
+        "id": "hv2-garten",
+        "themeTitle": "Garten – Kulturgeschichte historischer Schlossgärten",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Willkommen zu unserer Kultursendung über Gartenarchitektur und historische Parks. Unser Gast ist Gartenhistoriker Herr Martinek. Herr Martinek, pflegen Sie selbst ein Beet?
+Herr Martinek: Viele vermuten es, aber ich wohne mitten im Stadtzentrum und wünsche mir ganz bewusst keinen eigenen Garten – der Pflegeaufwand wäre mir zu groß.
+Moderator: Sie erforschen unter anderem historische Parkanlagen in Österreich...
+Herr Martinek: Die berühmte österreichische Schlossanlage ist heute glücklicherweise komplett öffentlich für alle Besucher zugänglich.
+Moderator: Welche Rolle spielte Ihre Familie?
+Herr Martinek: Meine Großmutter Ella Martinek gestaltete die Gartenanlage damals mit viel Sachverstand mit.
+Moderator: Was fasziniert Sie persönlich an historischen Gärten?
+Herr Martinek: An Gärten begeistert mich vor allem der tiefe kulturgeschichtliche Hintergrund und die Symbolik der Epochen.
+Moderator: Wie veränderte sich die Funktion des Gartens über die Jahrhunderte?
+Herr Martinek: Im Laufe der Zeit dienten Gärten ganz unterschiedlichen Zwecken und Bedeutungen – vom Nutzgarten bis zum fürstlichen Repräsentationsraum.
+Moderator: Welche spannenden Geschichten verbergen sich hinter unseren Gemüsesorten?
+Herr Martinek: Denken Sie an die Kartoffel: Kartoffeln wurden in Europa keineswegs sofort gegessen, sondern zuerst ausschließlich von Botanikern und Wissenschaftlern in botanischen Gärten angebaut.
+Moderator: Und wie verhielt es sich mit Tomaten?
+Herr Martinek: Von Tomaten weiß man, dass sie anfangs nur als Heilmittel und Zierpflanze verwendet wurden.
+Moderator: Was hatte es mit den barocken Orangerien auf sich?
+Herr Martinek: Die Orangerie diente dem baulichen Schutz der empfindlichen mediterranen Pflanzen vor der mitteleuropäischen Kälte.
+Moderator: Sie haben ein neues Grundlagenwerk veröffentlicht...
+Herr Martinek: Das neue Buch stellt alle zentralen Fachbegriffe und Gestaltungsmerkmale historischer Gärten fundiert vor.
+Moderator: Zum Abschluss unserer Sendung gibt es ein Gewinnspiel für unsere Hörerinnen und Hörer!
+Herr Martinek: Genau: Was sollen die Anrufer machen? Wer gewinnen will, muss ein bestimmtes Lösungswort aus der Gartengeschichte wissen und nennen!""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Herr Martinek",
+                "options": [
+                    {"key": "a", "text": "beschäftigt sich in der Freizeit mit Gartengeschichte."},
+                    {"key": "b", "text": "möchte bald aus der Stadt wegziehen."},
+                    {"key": "c", "text": "wünscht sich keinen eigenen Garten."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Er möchte privat keinen eigenen Garten besitzen."
+            },
+            {
+                "id": "56",
+                "question": "Österreichische Schlossanlage",
+                "options": [
+                    {"key": "a", "text": "beherbergt auch eine botanische Forschungsrichtung."},
+                    {"key": "b", "text": "ist heute öffentlich für Besucher zugänglich."},
+                    {"key": "c", "text": "wurde von französischen Gärtnern entworfen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Das Areal steht der Öffentlichkeit frei zur Verfügung."
+            },
+            {
+                "id": "57",
+                "question": "Ella Martinek",
+                "options": [
+                    {"key": "a", "text": "bietet regelmäßig Führungen an."},
+                    {"key": "b", "text": "gestaltete die Gartenanlage mit."},
+                    {"key": "c", "text": "leitete die Restaurierungsarbeiten."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie war an der gestalterischen Ausführung des Gartens beteiligt."
+            },
+            {
+                "id": "58",
+                "question": "An Gärten begeistert Herrn Martinek...",
+                "options": [
+                    {"key": "a", "text": "der kulturgeschichtliche Hintergrund."},
+                    {"key": "b", "text": "die üppige Blumenpracht."},
+                    {"key": "c", "text": "ihre erholsame Wirkung."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Ihn faszinieren die kultur- und ideengeschichtlichen Aspekte."
+            },
+            {
+                "id": "59",
+                "question": "Im Laufe der Zeit",
+                "options": [
+                    {"key": "a", "text": "dienten Gärten unterschiedlichen Zwecken und Bedeutungen."},
+                    {"key": "b", "text": "verloren Gärten als Orte von Ausstellungen an Wert."},
+                    {"key": "c", "text": "wurden Gärten auf ihre Funktion als Nutzgarten reduziert."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die Rolle und Funktion des Gartens wandelte sich beständig."
+            },
+            {
+                "id": "60",
+                "question": "Kartoffeln",
+                "options": [
+                    {"key": "a", "text": "fanden sofort Verbreitung in den europäischen Küchen."},
+                    {"key": "b", "text": "wurden vom Adel als seltene Delikatesse geschätzt."},
+                    {"key": "c", "text": "wurden zuerst von Wissenschaftlern angebaut."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Naturforscher pflanzten sie anfangs als botanische Rarität an."
+            },
+            {
+                "id": "61",
+                "question": "Von Tomaten weiß man, dass sie",
+                "options": [
+                    {"key": "a", "text": "auch als Heilmittel verwendet wurden."},
+                    {"key": "b", "text": "lange nicht als Nahrungsmittel betrachtet wurden."},
+                    {"key": "c", "text": "nie wegen ihrer Schönheit angebaut wurden."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie fanden früher auch medizinische Anwendung."
+            },
+            {
+                "id": "62",
+                "question": "Die Orangerie",
+                "options": [
+                    {"key": "a", "text": "diente dem Schutz der Pflanzen vor Kälte."},
+                    {"key": "b", "text": "kam ab dem Ende des 16. Jahrhunderts in Mode."},
+                    {"key": "c", "text": "war früher für die Wohngebäude bezeichnet."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Die Bauten schützten exotische Pflanzen vor Frost."
+            },
+            {
+                "id": "63",
+                "question": "Das neue Buch...",
+                "options": [
+                    {"key": "a", "text": "enthält Porträts von Schlossbesitzern."},
+                    {"key": "b", "text": "erklärt zentrale Begriffe der Gartenkunst."},
+                    {"key": "c", "text": "erzählt die komplette Geschichte für jeden Garten."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Das Fachbuch widmet sich zentralen Begriffen und Konzepten."
+            },
+            {
+                "id": "64",
+                "question": "Was sollen die Anrufer machen?",
+                "options": [
+                    {"key": "a", "text": "Eintrittskarten bestellen."},
+                    {"key": "b", "text": "ein bestimmtes Wort wissen."},
+                    {"key": "c", "text": "Fotos an den Sender schicken."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Teilnehmer des Hörer-Gewinnspiels müssen ein Lösungswort nennen."
+            }
+        ]
+    },
+
+    # 16. FAHRRAD
+    {
+        "id": "hv2-fahrrad",
+        "themeTitle": "Fahrrad – Radverkehr und urbane Mobilität",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Das Fahrrad erobert unsere Städte zurück. Bei uns im Studio ist die Verkehrsforscherin Dr. Julia Henzel. Frau Henzel, wie bewegen Sie sich selbst fort?
+Dr. Henzel: Ich fahre leidenschaftlich gern Rad, aber ich nutze das Fahrrad nicht oft für den Weg zur Arbeit, da ich außerhalb wohne und meist den Zug nehme.
+Moderator: Wie kamen Sie zu Ihrem Promotionsthema über Radmobilität?
+Dr. Henzel: Als ich mit meiner Doktorarbeit begann, schwebte mir ursprünglich noch ein ganz anderer Forschungsschwerpunkt vor.
+Moderator: Welchen Hauptvorteil sehen Sie im Radfahren?
+Dr. Henzel: Alle Studien belegen: Radfahren wirkt sich überaus positiv auf die kardiovaskuläre Gesundheit und das seelische Wohlbefinden aus.
+Moderator: Was muss passieren, damit noch mehr Autofahrer aufs Rad umsteigen?
+Dr. Henzel: Reine Appelle reichen nicht: Es müssen handfeste finanzielle und infrastrukturelle Anreize für den Umstieg vom Auto aufs Rad geschaffen werden.
+Moderator: Wie lässt sich der Verkehr in Innenstädten am schnellsten beruhigen?
+Dr. Henzel: Damit sich die Verkehrssituation in Städten verbessert, sollte man flächendeckend die Höchstgeschwindigkeit in Städten auf Tempo 30 senken.
+Moderator: Wie können wir Kinder frühzeitig begeistern?
+Dr. Henzel: Um Kinder zum Radfahren zu motivieren, ist das gelebte Vorbild der Eltern besonders wichtig.
+Moderator: Was sollte sich in den Schulen ändern?
+Dr. Henzel: Ich meine, dass der klassische schulische Fahrradunterricht um verschiedene lebensnahe Inhalte und Verkehrssituationen erweitert werden sollte.
+Moderator: Was stört Sie am morgendlichen Verkehrschaos vor den Schulen?
+Dr. Henzel: Ich finde es extrem ärgerlich, dass der öffentliche Nahverkehr auf dem Land schlecht ausgebaut ist und Eltern daher kaum Alternativen zum Auto haben.
+Moderator: Welche Alternative empfehlen Sie Eltern?
+Dr. Henzel: Kinder sollten auch längere Strecken selbstständig in Gruppen mit dem Rad zur Schule fahren, anstatt im Elterntaxi zu sitzen.
+Moderator: Welche Pläne haben Sie nach Abschluss Ihres aktuellen Projekts?
+Dr. Henzel: Ich liebe die Wissenschaft und plane fest, auch weiterhin in der universitären Forschung zu arbeiten.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Dr. Julia Henzel",
+                "options": [
+                    {"key": "a", "text": "nutzt das Fahrrad nicht oft für den Weg zur Arbeit."},
+                    {"key": "b", "text": "hält sich mit regelmäßigem Radfahren fit."},
+                    {"key": "c", "text": "erledigt ihre Einkäufe per Fahrrad."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Für den Arbeitsweg nutzt sie das Rad wegen der Distanz eher selten."
+            },
+            {
+                "id": "56",
+                "question": "Als Julia Henzel mit ihrer Doktorarbeit begann,",
+                "options": [
+                    {"key": "a", "text": "stieß sie auf interessante Veröffentlichungen zum Thema Radfahren."},
+                    {"key": "b", "text": "schwebte ihr noch ein anderer Forschungsschwerpunkt vor."},
+                    {"key": "c", "text": "rief ihr Thema bei anderen Wissenschaftlern Skepsis hervor."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie hatte ursprünglich ein anderes Thema im Blick."
+            },
+            {
+                "id": "57",
+                "question": "Dr. Julia Henzel meint über das Radfahren,",
+                "options": [
+                    {"key": "a", "text": "dass immer mehr Leute mit dem Rad zur Arbeit fahren."},
+                    {"key": "b", "text": "dass sich das Radfahren positiv auf die Gesundheit auswirkt."},
+                    {"key": "c", "text": "dass die Zahl der Unfälle mit Fahrrädern sinkt."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Regelmäßiges Radfahren hat nachweislich gesundheitsfördernde Effekte."
+            },
+            {
+                "id": "58",
+                "question": "Damit mehr Autofahrer auf das Fahrrad umsteigen, müssen",
+                "options": [
+                    {"key": "a", "text": "mehr Schulungen zur richtigen Nutzung des Rads angeboten werden."},
+                    {"key": "b", "text": "Anreize für den Umstieg vom Auto aufs Rad geschaffen werden."},
+                    {"key": "c", "text": "Strafen für den Kauf großer Autos eingeführt werden."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Gezielte Anreize sind notwendig, um die Verkehrswende zu beschleunigen."
+            },
+            {
+                "id": "59",
+                "question": "Damit sich die Verkehrssituation in Städten verbessert, sollte man",
+                "options": [
+                    {"key": "a", "text": "die Höchstgeschwindigkeit in Städten senken."},
+                    {"key": "b", "text": "Autos aus den Innenstädten verbannen."},
+                    {"key": "c", "text": "auf mehr Gehwegen das Radfahren erlauben."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Temporeduzierungen entlasten den innerstädtischen Verkehrsfluss."
+            },
+            {
+                "id": "60",
+                "question": "Um Kinder zum Radfahren zu motivieren,",
+                "options": [
+                    {"key": "a", "text": "sollten Familien lange Ausflüge mit dem Rad unternehmen."},
+                    {"key": "b", "text": "muss hauptsächlich der Fahrradunterricht verbessert werden."},
+                    {"key": "c", "text": "ist das Vorbild der Eltern besonders wichtig."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Eltern prägen das Mobilitätsverhalten ihrer Kinder als Vorbild."
+            },
+            {
+                "id": "61",
+                "question": "Dr. Julia Henzel meint, dass der Fahrradunterricht",
+                "options": [
+                    {"key": "a", "text": "um verschiedene Inhalte erweitert werden sollte."},
+                    {"key": "b", "text": "für alle Altersstufen praktische Übungen enthalten sollte."},
+                    {"key": "c", "text": "auf jüngere Schüler beschränkt bleiben sollte."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Zusätzliche praxisnahe Inhalte sollten in den Unterricht einfließen."
+            },
+            {
+                "id": "62",
+                "question": "Dr. Julia Henzel findet es ärgerlich, dass",
+                "options": [
+                    {"key": "a", "text": "manche Eltern direkt vor dem Schulgebäude halten."},
+                    {"key": "b", "text": "Eltern ihre Kinder regelmäßig mit dem Auto zur Schule fahren."},
+                    {"key": "c", "text": "der öffentliche Nahverkehr auf dem Land schlecht ausgebaut ist."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Unzureichender ÖPNV im ländlichen Raum zwingt zum Autoverkehr."
+            },
+            {
+                "id": "63",
+                "question": "Dr. Julia Henzel empfiehlt, dass",
+                "options": [
+                    {"key": "a", "text": "Kinder auch längere Strecken mit dem Rad zur Schule fahren."},
+                    {"key": "b", "text": "Eltern ihre Kinder bis zur nächsten Bushaltestelle fahren."},
+                    {"key": "c", "text": "die Eltern Fahrgemeinschaften bilden."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Auch längere Distanzen können Schüler selbstständig bewältigen."
+            },
+            {
+                "id": "64",
+                "question": "Dr. Julia Henzel plant,",
+                "options": [
+                    {"key": "a", "text": "weiter in der Forschung zu arbeiten."},
+                    {"key": "b", "text": "sich selbstständig zu machen."},
+                    {"key": "c", "text": "langfristig im Ausland zu leben."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie möchte ihre wissenschaftliche Laufbahn fortsetzen."
+            }
+        ]
+    },
+
+    # 17. START-UP
+    {
+        "id": "hv2-start-up",
+        "themeTitle": "Start-Up – Gründung einer studentischen Buchungsplattform",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Noch während des Studiums ein eigenes Unternehmen gründen: Niklas Bosch hat es gewagt. Niklas, was bietet deine Plattform an?
+Niklas: Unser Start-up bietet eine Vermittlungsplattform, deren Angebot sich in erster Linie an preisbewusste Studenten richtet.
+Moderator: Welche Möglichkeiten bietet eure Website?
+Niklas: Auf unserer Website kann man ausschließlich Unterkünfte in günstigen Preiskategorien für Praktika und Auslandssemester buchen.
+Moderator: Wie wohnst du selbst gern auf Reisen?
+Niklas: Wenn ich verreise, lege ich bei meiner Unterkunft vor allem Wert auf eine zentrale Lage im Stadtgeschehen.
+Moderator: Was steht als Nächstes auf eurer Roadmap?
+Niklas: Wir möchten als Nächstes einige Funktionen und Filter auf der Website technisch verbessern.
+Moderator: Wie reagieren Vermieter auf deine Anfragen?
+Niklas: Viele Vermieter fürchten anfangs oft zu hohe Kosten oder Vermittlungsgebühren.
+Moderator: Wer hat die Akquise am Telefon erledigt?
+Niklas: Ich hatte anfangs keine Mitarbeiter, daher habe ich die Telefongespräche an eine externe Agentur delegiert.
+Moderator: Wie habt ihr euch in der Startphase finanziert?
+Niklas: Da Banken abwinkten, habe ich mein eigenes Geld und Erspartes in das Unternehmen gesteckt.
+Moderator: Wie hast du Studium und Firmengründung unter einen Hut gebracht?
+Niklas: Ich musste Prioritäten setzen und verzichtete fast komplett auf private Freizeitaktivitäten.
+Moderator: Was haben deine Freunde dazu gesagt?
+Niklas: Einige Freunde befürchteten besorgt, ich würde meine eigenen Kräfte und meine Gesundheit überschätzen.
+Moderator: Gab es Momente der Frustration?
+Niklas: Ja, am Anfang war ich sehr enttäuscht, weil unsere Website in den ersten Monaten nur extrem wenige Besucher fand.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Niklas Bosch hat ein Start-up-Unternehmen gegründet,",
+                "options": [
+                    {"key": "a", "text": "das auf Internet-Werbung spezialisiert ist."},
+                    {"key": "b", "text": "dessen Angebot sich in erster Linie an Studenten richtet."},
+                    {"key": "c", "text": "dessen Tätigkeit in der Vermittlung von Reisen besteht."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Das Portal adressiert gezielt Studierende."
+            },
+            {
+                "id": "56",
+                "question": "Auf der Website kann man",
+                "options": [
+                    {"key": "a", "text": "Kontakte mit anderen Reisenden knüpfen."},
+                    {"key": "b", "text": "nur Unterkünfte in günstigen Preiskategorien buchen."},
+                    {"key": "c", "text": "zahlreiche Tipps für die Reiseplanung finden."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Es werden ausschließlich preiswerte Zimmer und Wohnungen vermittelt."
+            },
+            {
+                "id": "57",
+                "question": "Wenn Niklas verreist, legt er bei seiner Unterkunft Wert auf",
+                "options": [
+                    {"key": "a", "text": "besonders viel Ruhe"},
+                    {"key": "b", "text": "ein gewisses Maß an Komfort"},
+                    {"key": "c", "text": "eine zentrale Lage"}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Eine Lage im Stadtzentrum ist ihm persönlich am wichtigsten."
+            },
+            {
+                "id": "58",
+                "question": "Niklas plant als nächstes,",
+                "options": [
+                    {"key": "a", "text": "auch einen internationalen Kundenkreis anzusprechen"},
+                    {"key": "b", "text": "einen Job in einem anderen Unternehmen anzunehmen"},
+                    {"key": "c", "text": "einige Funktionen der Website zu verbessern"}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Geplant sind technische und funktionale Verbesserungen der Plattform."
+            },
+            {
+                "id": "59",
+                "question": "Potentielle Vermieter",
+                "options": [
+                    {"key": "a", "text": "ärgern sich über die telefonische Kontaktaufnahme"},
+                    {"key": "b", "text": "fürchten oft zu hohe Kosten"},
+                    {"key": "c", "text": "lassen sich meist schnell überzeugen"}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Viele Vermieter hegen Bedenken wegen möglicher Kosten."
+            },
+            {
+                "id": "60",
+                "question": "Die Telefongespräche hat Niklas",
+                "options": [
+                    {"key": "a", "text": "an ein anderes Unternehmen delegiert"},
+                    {"key": "b", "text": "von einem Mitarbeiter führen lassen"},
+                    {"key": "c", "text": "zum Großteil selbst übernommen"}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Er übergab diese Aufgabe extern an einen Dienstleister."
+            },
+            {
+                "id": "61",
+                "question": "In der Anfangszeit hat Niklas",
+                "options": [
+                    {"key": "a", "text": "die anfallenden Kosten recht präzise einschätzen können"},
+                    {"key": "b", "text": "sehr schnell für sein Unternehmen einen Investor gefunden"},
+                    {"key": "c", "text": "sein eigenes Geld für das Unternehmen verwendet"}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Die Finanzierung stemmte er aus eigenen Ersparnissen."
+            },
+            {
+                "id": "62",
+                "question": "Um genug Zeit für sein Unternehmen zu haben,",
+                "options": [
+                    {"key": "a", "text": "hält Niklas mehrere Vormittage in der Woche frei"},
+                    {"key": "b", "text": "lässt Niklas manchmal eine Vorlesung ausfallen"},
+                    {"key": "c", "text": "verzichtet Niklas auf Freizeitaktivitäten"}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Er strich Freizeitaktivitäten fast vollständig aus seinem Alltag."
+            },
+            {
+                "id": "63",
+                "question": "Einige Freunde befürchteten, Niklas würde",
+                "options": [
+                    {"key": "a", "text": "die Nachfrage falsch einschätzen"},
+                    {"key": "b", "text": "ein zu hohes finanzielles Risiko eingehen"},
+                    {"key": "c", "text": "seine eigenen Kräfte überschätzen"}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Sein Umfeld warnte vor Überlastung und Selbstüberschätzung."
+            },
+            {
+                "id": "64",
+                "question": "Niklas war enttäuscht, weil",
+                "options": [
+                    {"key": "a", "text": "die ersten Gewinne hinter seinen Vorstellungen zurückblieben"},
+                    {"key": "b", "text": "seine Website am Anfang nur wenige Besucher fand"},
+                    {"key": "c", "text": "seine Werbemaßnahmen fruchtlos blieben"}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Zu Beginn blieben die Nutzerzahlen der Website weit hinter den Erwartungen."
+            }
+        ]
+    },
+
+    # 18. ANNA PALMER
+    {
+        "id": "hv2-anna-palmer",
+        "themeTitle": "Anna Palmer – Wissenschaftsbloggen und Autorenschaft",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Wissenschaft verständlich erklären: Die Medizinstudentin Anna Palmer betreibt einen der meistgelesenen Wissenschaftsblogs und wurde dafür mit einem Medienpreis geehrt. Anna, wie hast du den Preis empfunden?
+Anna Palmer: Ich habe mich unglaublich gefreut, denn ich hatte mir im Vorfeld ehrlich gesagt gar keine großen Hoffnungen auf einen Preis gemacht.
+Moderator: Was ist dir beim Bloggen am wichtigsten?
+Anna Palmer: Mir ist es vor allem wichtig, dass mein Blog in der Fachwelt und bei Kollegen echtes inhaltliches Interesse weckt.
+Moderator: Wo hast du gelernt, so packend zu formulieren?
+Anna Palmer: Ich suchte im Netz nach Schreibwerkstätten und Anleitungen im Internet, um meinen Stil Schritt für Schritt zu verbessern.
+Moderator: Welche neuen Pläne verfolgst du?
+Anna Palmer: Ich plane, bald auch Blogartikel zu völlig anderen, interdisziplinären Themengebieten zu verfassen.
+Moderator: Wie fühlst du dich beim Verfassen deiner Artikel?
+Anna Palmer: Schreiben ist anstrengend; ich nehme mir für das gründliche Recherchieren und Schreiben jedes Artikels sehr viel Zeit.
+Moderator: Woher nimmst du die Ideen für deine Beiträge?
+Anna Palmer: Meine Themen finde ich vor allem durch die akribische Lektüre neuester internationaler wissenschaftlicher Fachpublikationen.
+Moderator: Was bringt dir das Schreiben für dein Medizinstudium?
+Anna Palmer: Das Tolle ist: Ich knüpfe durch die Diskussionen viele wertvolle Kontakte zu anderen Forschern und Wissenschaftlern weltweit.
+Moderator: Wann findest du neben dem vollen Studienplan Zeit dafür?
+Anna Palmer: Ich habe mir angewöhnt, jeden Tag sehr früh aufzustehen und die frühen Morgenstunden ungestört zum Schreiben zu nutzen.
+Moderator: Was rätst du Kolleginnen und Kollegen, die auch bloggen wollen?
+Anna Palmer: Ich empfehle künftigen Bloggern, nicht planlos draufloszuschreiben, sondern zunächst einen strukturierten Themenplan zu erstellen.
+Moderator: Wie sehen deine beruflichen Zukunftspläne aus?
+Anna Palmer: Mein Traumziel steht fest: Ich strebe nach der Promotion eine wissenschaftliche Karriere an der Universität an.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Anna Palmer hat",
+                "options": [
+                    {"key": "a", "text": "sich keine große Hoffnung auf einen Preis gemacht."},
+                    {"key": "b", "text": "bereits für verschiedene Printmedien geschrieben."},
+                    {"key": "c", "text": "selbst den Wettbewerb im Internet entdeckt."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie rechnete nicht ernsthaft mit einem Preisgewinn."
+            },
+            {
+                "id": "56",
+                "question": "Für Anna Palmer ist es wichtig, dass",
+                "options": [
+                    {"key": "a", "text": "ihr Blog vor allem in der Fachwelt Interesse weckt."},
+                    {"key": "b", "text": "sie für Blogartikel sofort Reaktionen von ihren Lesern bekommt."},
+                    {"key": "c", "text": "ihre Beiträge von vielen Lesern wahrgenommen werden."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Fachliche Resonanz in der Wissenschaft ist ihr zentrales Anliegen."
+            },
+            {
+                "id": "57",
+                "question": "Um Schreiben zu lernen,",
+                "options": [
+                    {"key": "a", "text": "suchte Anna Palmer Anleitungen im Internet."},
+                    {"key": "b", "text": "legte Anna Palmer ihre Artikel einem Journalisten vor."},
+                    {"key": "c", "text": "besuchte Anna Palmer eine Weiterbildung."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Sie eignete sich Textkompetenz über Online-Leitfäden an."
+            },
+            {
+                "id": "58",
+                "question": "Anna Palmer plant,",
+                "options": [
+                    {"key": "a", "text": "mit einer Freundin ein neues Projekt zu beginnen."},
+                    {"key": "b", "text": "Blogartikel zu anderen Themen zu schreiben."},
+                    {"key": "c", "text": "Videos über Wissenschaft zu produzieren."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie möchte ihre Themenpalette erweitern."
+            },
+            {
+                "id": "59",
+                "question": "Anna Palmer",
+                "options": [
+                    {"key": "a", "text": "spricht mittlerweile gerne vor Publikum."},
+                    {"key": "b", "text": "hat bei Vorträgen kein Lampenfieber."},
+                    {"key": "c", "text": "nimmt sich für das Schreiben viel Zeit."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Sie investiert viel Zeit in die Ausarbeitung der Texte."
+            },
+            {
+                "id": "60",
+                "question": "Ihre Themen findet Anna Palmer vor allem",
+                "options": [
+                    {"key": "a", "text": "durch die Lektüre wissenschaftlicher Publikationen."},
+                    {"key": "b", "text": "durch intensiven Austausch mit Wissenschaftlern."},
+                    {"key": "c", "text": "auf Anregung von Studentinnen und Studenten."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Fachzeitschriften und Paper dienen ihr als wichtigste Quelle."
+            },
+            {
+                "id": "61",
+                "question": "Anna Palmer meint, dass sie durch das Bloggen",
+                "options": [
+                    {"key": "a", "text": "Lerninhalte selbst besser verstehen kann."},
+                    {"key": "b", "text": "gut auf Gespräche mit Patienten vorbereitet ist."},
+                    {"key": "c", "text": "viele Kontakte zu anderen Wissenschaftlern knüpft."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Die Blogarbeit vernetzt sie mit Fachkollegen weltweit."
+            },
+            {
+                "id": "62",
+                "question": "Um genügend Zeit fürs Schreiben zu finden,",
+                "options": [
+                    {"key": "a", "text": "verzichtet Anna Palmer unter der Woche auf Freizeitaktivitäten."},
+                    {"key": "b", "text": "hat sich Anna Palmer angewöhnt früh aufzustehen."},
+                    {"key": "c", "text": "plant Anna Palmer am Wochenende oft Zeit ein."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Sie nutzt die frühen Morgenstunden vor den Vorlesungen."
+            },
+            {
+                "id": "63",
+                "question": "Anna Palmer empfiehlt zukünftigen Bloggern,",
+                "options": [
+                    {"key": "a", "text": "zunächst einen Themenplan zu erstellen."},
+                    {"key": "b", "text": "zur Vorbereitung Online-Artikel zu lesen."},
+                    {"key": "c", "text": "ihre Beiträge vor dem Schreiben gründlich zu konzipieren."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Ein strukturierter Redaktionsplan erleichtert den Einstieg."
+            },
+            {
+                "id": "64",
+                "question": "Anna Palmer",
+                "options": [
+                    {"key": "a", "text": "sucht nach neuen Autorinnen und Autoren für ihren Blog."},
+                    {"key": "b", "text": "möchte später eine neue Praxis eröffnen."},
+                    {"key": "c", "text": "strebt eine Karriere an der Uni an."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Sie strebt eine akademische Laufbahn an der Hochschule an."
+            }
+        ]
+    },
+
+    # 19. UMWELTFREUNDLICHE STÄDTE
+    {
+        "id": "hv2-umweltfreundliche-staedte",
+        "themeTitle": "Umweltfreundliche Städte – Nachhaltige Stadtplanung",
+        "difficulty": "C1 Hochschule",
+        "readingTime": "ca. 10 Min",
+        "instructions": "Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Entscheiden Sie beim Hören, welche Aussage (a, b oder c) am besten passt. Markieren Sie Ihre Lösungen für die Aufgaben 55–64 auf dem Antwortbogen.",
+        "audioTranscript": """Moderator: Grüne Metropolen, autofreie Quartiere: Wie sieht die Stadt der Zukunft aus? Zu Gast ist der renommierte Stadtplaner Herr Dr. Müller. Herr Müller, wie kamen Sie zu Ihrem Beruf?
+Dr. Müller: Ich habe erst in einer Berufsberatung nach dem Abitur von meinem späteren Studienfach Stadt- und Raumplanung erfahren.
+Moderator: Was macht Ihnen an Ihrer täglichen Arbeit am meisten Freude?
+Dr. Müller: Mir gefällt an meinem Beruf besonders, dass ich regelmäßig direkten Kontakt zu Bürgern habe und ihre Anliegen einbinden kann.
+Moderator: Wie lässt sich die Verkehrsbelastung im Zentrum senken?
+Dr. Müller: Um den Autoverkehr wirksam zu reduzieren, sollten wir darauf hinarbeiten, dass generell weniger Menschen eigene PKW erwerben und stattdessen Carsharing nutzen.
+Moderator: Was hilft Alltagsradlern am meisten?
+Dr. Müller: Wir brauchen mehr gesicherte Stellplätze und Abstellboxen für Lastenräder im gesamten Stadtgebiet.
+Moderator: Wie verändert sich der innerstädtische Einzelhandel?
+Dr. Müller: Gegen den Onlinehandel können vor allem spezialisierte Geschäfte mit ganz besonderem Angebot und hoher Beratungsqualität erfolgreich sein.
+Moderator: Was geschieht mit den riesigen Kaufhäusern?
+Dr. Müller: Ich prognostiziere, dass in Zukunft viele nicht mehr genutzte Kaufhäuser abgerissen oder zu Wohnraum und Parks umgewandelt werden.
+Moderator: Wie entwickelt sich das Zusammenleben?
+Dr. Müller: Ich bin überzeugt, dass die Menschen in Zukunft durch neue Quartierskonzepte und Co-Housing wieder weniger isoliert wohnen werden.
+Moderator: Warum wollen immer noch so viele Menschen in der Stadt leben?
+Dr. Müller: Städte sind als Wohnort extrem attraktiv, weil sie vielfältige Vorteile und maßgeschneiderte Infrastruktur für verschiedene Altersgruppen bieten.
+Moderator: Worin besteht Ihre größte bauliche Herausforderung?
+Dr. Müller: Eine besonders große bauliche und gesellschaftliche Herausforderung ist für mich die lückenlose Herstellung von Barrierefreiheit im öffentlichen Raum.
+Moderator: Gibt es in Deutschland Vorzeigestädte?
+Dr. Müller: Laut meinen Beobachtungen ist die Stadt Hamburg bundesweiter Vorreiter beim konsequenten Umweltschutz und grüner Stadtgestaltung.""",
+        "items": [
+            {
+                "id": "55",
+                "question": "Herr Dr. Müller hat",
+                "options": [
+                    {"key": "a", "text": "ein Lehramtsstudium begonnen und dann abgebrochen."},
+                    {"key": "b", "text": "in der Berufsberatung von seinem späteren Studienfach erfahren."},
+                    {"key": "c", "text": "sich erst nach längerer Bedenkzeit für sein Studienfach entschieden."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Er entdeckte sein Fachgebiet erst im Rahmen einer Berufsberatung."
+            },
+            {
+                "id": "56",
+                "question": "Herrn Dr. Müller gefällt es an seinem Beruf, dass er",
+                "options": [
+                    {"key": "a", "text": "viel Zeit im Büro verbringen kann."},
+                    {"key": "b", "text": "regelmäßig Kontakt zu Bürgern hat."},
+                    {"key": "c", "text": "allein für verschiedene Planungen verantwortlich ist."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Der unmittelbare Bürgerkontakt ist ihm besonders wichtig."
+            },
+            {
+                "id": "57",
+                "question": "Um den Autoverkehr in Innenstädten zu reduzieren, sollten",
+                "options": [
+                    {"key": "a", "text": "nur noch Elektroautos zugelassen werden."},
+                    {"key": "b", "text": "möglichst viele Waren mit dem Fahrrad transportiert werden."},
+                    {"key": "c", "text": "weniger Menschen eigene PKW erwerben."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Der Verzicht auf privaten Autobesitz entlastet die Straßen."
+            },
+            {
+                "id": "58",
+                "question": "Um die Innenstädte für Radfahrer attraktiver zu machen, empfiehlt Herr Dr. Müller",
+                "options": [
+                    {"key": "a", "text": "bessere Mitnahmeregelungen in Bus und Bahn."},
+                    {"key": "b", "text": "mehr Stellplätze für Lastenräder."},
+                    {"key": "c", "text": "einen kostenlosen Reparaturservice für Fahrräder."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Ausreichende Stellflächen für Lastenräder fördern den Radverkehr."
+            },
+            {
+                "id": "59",
+                "question": "In den Städten",
+                "options": [
+                    {"key": "a", "text": "können vor allem Geschäfte mit besonderem Angebot erfolgreich sein."},
+                    {"key": "b", "text": "wird die Gastronomie den Handel verdrängen."},
+                    {"key": "c", "text": "werden internationale Verkaufsketten zukünftig weniger Bedeutung haben."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Spezialisierte Läden mit individuellem Angebot behaupten sich gegen Ketten."
+            },
+            {
+                "id": "60",
+                "question": "Herr Dr. Müller prognostiziert, dass in Zukunft",
+                "options": [
+                    {"key": "a", "text": "viele nicht mehr genutzte Kaufhäuser abgerissen werden."},
+                    {"key": "b", "text": "das Stadtbild stärker von Grünflächen geprägt sein wird."},
+                    {"key": "c", "text": "Restaurants in der Innenstadt an Attraktivität verlieren."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Leerstehende Warenhäuser werden zunehmend rückgebaut."
+            },
+            {
+                "id": "61",
+                "question": "Dr. Müller sagt, dass",
+                "options": [
+                    {"key": "a", "text": "die Menschen in Zukunft weniger isoliert wohnen werden."},
+                    {"key": "b", "text": "es jüngere Menschen in Deutschland in letzter Zeit vermehrt in die Städte zieht."},
+                    {"key": "c", "text": "30 Prozent der Weltbevölkerung zukünftig in Metropolen leben werden."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Neue Wohn- und Nachbarschaftskonzepte verringern soziale Isolation."
+            },
+            {
+                "id": "62",
+                "question": "Städte sind als Wohnort attraktiv, weil",
+                "options": [
+                    {"key": "a", "text": "Familien von dem gut ausgebauten Nahverkehr profitieren."},
+                    {"key": "b", "text": "sie Vorteile für verschiedene Altersgruppen bieten."},
+                    {"key": "c", "text": "älteren Menschen dort viele Freizeitangebote zur Verfügung stehen."}
+                ],
+                "correctAnswer": "b",
+                "explanation": "Richtig ist b: Die urbane Infrastruktur deckt die Bedürfnisse aller Generationen ab."
+            },
+            {
+                "id": "63",
+                "question": "Eine besonders große Herausforderung ist für Herrn Dr. Müller",
+                "options": [
+                    {"key": "a", "text": "die Finanzierbarkeit von Wohnraum."},
+                    {"key": "b", "text": "die Isolation älterer Menschen."},
+                    {"key": "c", "text": "die Herstellung von Barrierefreiheit."}
+                ],
+                "correctAnswer": "c",
+                "explanation": "Richtig ist c: Die Umsetzung barrierefreier Zugänge erfordert enorme Anstrengungen."
+            },
+            {
+                "id": "64",
+                "question": "Laut Herrn Dr. Müller ist die Stadt Hamburg ein Vorreiter",
+                "options": [
+                    {"key": "a", "text": "beim Umweltschutz."},
+                    {"key": "b", "text": "bei der Digitalisierung."},
+                    {"key": "c", "text": "bei der Verkehrsplanung."}
+                ],
+                "correctAnswer": "a",
+                "explanation": "Richtig ist a: Hamburg gilt laut Müller als Vorbild für ökologische Stadtentwicklung."
+            }
+        ]
+    }
+]
+
+output_path = r'server/data/hv2_topics.json'
+with open(output_path, 'w', encoding='utf-8') as f:
+    json.dump(topics, f, ensure_ascii=False, indent=2)
+
+print(f"Successfully wrote {len(topics)} topics to {output_path}")
