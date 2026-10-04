@@ -295,15 +295,16 @@ export const db = {
     if (!data.topicsData) data.topicsData = seedTopics;
     
     if (sectionKey === 'schriftlicherAusdruck') {
+      if (!data.topicsData.schriftlicherAusdruck) data.topicsData.schriftlicherAusdruck = { topics: [] };
       if (!data.topicsData.schriftlicherAusdruck.topics) data.topicsData.schriftlicherAusdruck.topics = [];
       data.topicsData.schriftlicherAusdruck.topics.push(newTopic);
     } else {
-      if (data.topicsData[sectionKey] && data.topicsData[sectionKey][subteilKey]) {
-        if (!data.topicsData[sectionKey][subteilKey].topics) {
-          data.topicsData[sectionKey][subteilKey].topics = [];
-        }
-        data.topicsData[sectionKey][subteilKey].topics.push(newTopic);
+      if (!data.topicsData[sectionKey]) data.topicsData[sectionKey] = {};
+      if (!data.topicsData[sectionKey][subteilKey]) data.topicsData[sectionKey][subteilKey] = { topics: [] };
+      if (!data.topicsData[sectionKey][subteilKey].topics) {
+        data.topicsData[sectionKey][subteilKey].topics = [];
       }
+      data.topicsData[sectionKey][subteilKey].topics.push(newTopic);
     }
     db.write(data);
     return newTopic;

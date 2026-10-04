@@ -234,6 +234,17 @@ export const api = {
     return data;
   },
 
+  createAdminTopic: async (section, subteil, newTopicData) => {
+    const res = await fetch(`${BASE_URL}/admin/topics/${section}/${subteil}`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify(newTopicData)
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Erstellen des Themas');
+    return data;
+  },
+
   updateAdminTopic: async (section, subteil, topicId, updatedTopicData) => {
     const res = await fetch(`${BASE_URL}/admin/topics/${section}/${subteil}/${topicId}`, {
       method: 'PUT',

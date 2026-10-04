@@ -21,6 +21,7 @@ const extraLv1 = loadJsonSafe('data/lv1_topics.json');
 const extraLv2 = loadJsonSafe('data/lv2_topics.json');
 const extraLv3 = loadJsonSafe('data/lv3_topics.json');
 const extraSb = loadJsonSafe('data/sb_topics.json');
+const extraHv1 = loadJsonSafe('data/hv1_topics.json');
 const extraHv2 = loadJsonSafe('data/hv2_topics.json');
 
 export const seedTopics = {
@@ -318,7 +319,8 @@ Sprecher 8: Als Student habe ich mir mit einem Freund ein Zimmer bei einer älte
             { id: "53", prompt: "Sprecherin 7", correctAnswer: "h", explanation: "Sprecherin 7 betont den beidseitigen Nutzen von Alt und Jung." },
             { id: "54", prompt: "Sprecher 8", correctAnswer: "j", explanation: "Sprecher 8 berichtet von Konflikten mit der älteren Vermieterin im Alltag." }
           ]
-        }
+        },
+        ...extraHv1
       ]
     },
     teil2: {

@@ -267,6 +267,28 @@ app.delete('/api/admin/users/:id', authMiddleware, requireAdmin, (req, res) => {
 });
 
 // Admin CRUD on Exam Topics, Questions & Options
+app.post('/api/admin/topics/:section/:subteil', authMiddleware, requireAdmin, (req, res) => {
+  try {
+    const { section, subteil } = req.params;
+    const newTopic = req.body;
+    if (!newTopic || (!newTopic.themeTitle && !newTopic.title)) {
+      return res.status(400).json({ error: 'Titel des Themas ist erforderlich.' });
+    }
+    if (!newTopic.id) {
+      const slug = (newTopic.themeTitle || newTopic.title || 'thema')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '');
+      newTopic.id = `${section.slice(0, 2)}-${subteil}-${slug}-${Date.now().toString().slice(-4)}`;
+    }
+    const created = db.addTopicToSection(section, subteil, newTopic);
+    res.status(201).json({ message: 'Neues Thema erfolgreich angelegt!', topic: created });
+  } catch (err) {
+    console.error('Error creating topic:', err);
+    res.status(500).json({ error: 'Fehler beim Anlegen des Themas' });
+  }
+});
+
 app.put('/api/admin/topics/:section/:subteil/:topicId', authMiddleware, requireAdmin, (req, res) => {
   try {
     const { section, subteil, topicId } = req.params;

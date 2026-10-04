@@ -10,6 +10,7 @@ const lv1Path = path.join(ROOT, 'data', 'lv1_topics.json');
 const lv2Path = path.join(ROOT, 'data', 'lv2_topics.json');
 const lv3Path = path.join(ROOT, 'data', 'lv3_topics.json');
 const sbPath = path.join(ROOT, 'data', 'sb_topics.json');
+const hv1Path = path.join(ROOT, 'data', 'hv1_topics.json');
 const hv2Path = path.join(ROOT, 'data', 'hv2_topics.json');
 const guidePath = path.join(ROOT, 'data', 'lv2_guide.json');
 const dbPath = path.join(ROOT, 'database.json');
@@ -18,6 +19,7 @@ const lv1Topics = JSON.parse(fs.readFileSync(lv1Path, 'utf8'));
 const lv2Topics = JSON.parse(fs.readFileSync(lv2Path, 'utf8'));
 const lv3Topics = JSON.parse(fs.readFileSync(lv3Path, 'utf8'));
 const sbTopics = JSON.parse(fs.readFileSync(sbPath, 'utf8'));
+const hv1Topics = JSON.parse(fs.readFileSync(hv1Path, 'utf8'));
 const hv2Topics = JSON.parse(fs.readFileSync(hv2Path, 'utf8'));
 const guide = JSON.parse(fs.readFileSync(guidePath, 'utf8'));
 
@@ -56,13 +58,20 @@ db.topicsData.sprachbausteine.teil1.topics = mergeTopics(
   sbTopics
 );
 
-// 5. Hören Teil 2
+// 5. Hören Teil 1 & Teil 2
 if (!db.topicsData.hoerverstehen) {
   db.topicsData.hoerverstehen = { teil1: { topics: [] }, teil2: { topics: [] }, teil3: { topics: [] } };
+}
+if (!db.topicsData.hoerverstehen.teil1) {
+  db.topicsData.hoerverstehen.teil1 = { topics: [] };
 }
 if (!db.topicsData.hoerverstehen.teil2) {
   db.topicsData.hoerverstehen.teil2 = { topics: [] };
 }
+db.topicsData.hoerverstehen.teil1.topics = mergeTopics(
+  db.topicsData.hoerverstehen.teil1.topics,
+  hv1Topics
+);
 db.topicsData.hoerverstehen.teil2.topics = mergeTopics(
   db.topicsData.hoerverstehen.teil2.topics,
   hv2Topics
@@ -76,4 +85,5 @@ console.log(`- Lesen Teil 1: ${db.topicsData.leseverstehen.teil1.topics.length} 
 console.log(`- Lesen Teil 2: ${db.topicsData.leseverstehen.teil2.topics.length} topics`);
 console.log(`- Lesen Teil 3: ${db.topicsData.leseverstehen.teil3.topics.length} topics`);
 console.log(`- Sprachbausteine: ${db.topicsData.sprachbausteine.teil1.topics.length} topics`);
+console.log(`- Hören Teil 1: ${db.topicsData.hoerverstehen.teil1.topics.length} topics`);
 console.log(`- Hören Teil 2: ${db.topicsData.hoerverstehen.teil2.topics.length} topics`);
