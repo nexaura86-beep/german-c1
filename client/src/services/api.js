@@ -153,6 +153,37 @@ export const api = {
     return data;
   },
 
+  getDatabaseStatus: async () => {
+    const res = await fetch(`${BASE_URL}/admin/database/status`, { headers: getHeaders() });
+    if (!res.ok) throw new Error('Fehler beim Abrufen des Datenbankstatus');
+    return res.json();
+  },
+
+  exportDatabase: async () => {
+    const res = await fetch(`${BASE_URL}/admin/database/export`, { headers: getHeaders() });
+    if (!res.ok) throw new Error('Fehler beim Exportieren der Datenbank');
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `telc-c1-database-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+  },
+
+  importDatabase: async (jsonData) => {
+    const res = await fetch(`${BASE_URL}/admin/database/import`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify(jsonData)
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Importieren');
+    return data;
+  },
+
   digitizePaper: async (formData) => {
     const token = localStorage.getItem('telc_token');
     const res = await fetch(`${BASE_URL}/admin/digitize-paper`, {

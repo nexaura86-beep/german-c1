@@ -9,7 +9,7 @@ import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
 import pdfParse from 'pdf-parse/lib/pdf-parse.js';
 
-import { db } from './db.js';
+import { db, initMongo } from './db.js';
 import { generateToken, authMiddleware, requireAdmin, requireActiveUser } from './auth.js';
 import { digitizeQuestionPaper, evaluateEssay } from './aiService.js';
 
@@ -334,6 +334,52 @@ app.get('/api/admin/stats', authMiddleware, requireAdmin, (req, res) => {
   });
 });
 
+// Database backup export (Admin only)
+app.get('/api/admin/database/export', authMiddleware, requireAdmin, (req, res) => {
+  const data = db.read();
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Content-Disposition', `attachment; filename="telc-c1-database-${new Date().toISOString().slice(0, 10)}.json"`);
+  res.send(JSON.stringify(data, null, 2));
+});
+
+// Database backup import / restore (Admin only)
+app.post('/api/admin/database/import', authMiddleware, requireAdmin, (req, res) => {
+  try {
+    const importedData = req.body;
+    if (!importedData || typeof importedData !== 'object') {
+      return res.status(400).json({ error: 'Ungültiges Datenbankformat' });
+    }
+    if (!Array.isArray(importedData.users)) {
+      return res.status(400).json({ error: 'Importierte Datenbank muss ein "users"-Array enthalten' });
+    }
+
+    db.write({
+      ...db.read(),
+      ...importedData
+    });
+
+    res.json({
+      message: `Datenbank erfolgreich wiederhergestellt! (${importedData.users.length} Benutzer aktiv)`,
+      totalUsers: importedData.users.length
+    });
+  } catch (err) {
+    console.error('Import error:', err);
+    res.status(500).json({ error: 'Fehler beim Importieren der Datenbank' });
+  }
+});
+
+// Database status & info (Admin only)
+app.get('/api/admin/database/status', authMiddleware, requireAdmin, (req, res) => {
+  const data = db.read();
+  res.json({
+    storage: db.getStorageInfo ? db.getStorageInfo() : { mode: 'file_storage' },
+    totalUsers: data.users?.length || 0,
+    totalExams: data.exams?.length || 0,
+    totalSubmissions: data.submissions?.length || 0,
+    timestamp: new Date().toISOString()
+  });
+});
+
 // ==========================================
 // 3. TOPIC SELECTION & PRACTICE PORTAL
 // ==========================================
@@ -599,6 +645,11 @@ if (fs.existsSync(clientDist)) {
   });
 }
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`🚀 telc Deutsch C1 Hochschule Server running on http://localhost:${PORT}`);
+  try {
+    await initMongo();
+  } catch (err) {
+    console.warn('MongoDB initialization check failed:', err.message);
+  }
 });

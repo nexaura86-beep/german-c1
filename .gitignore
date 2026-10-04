@@ -16,3 +16,5 @@ server/uploads/*
 .DS_Store
 Thumbs.db
 *.log
+*.bak
+*.tmp
