@@ -112,7 +112,12 @@ export function AdminDashboard({ initialTab = 'students' }) {
     e.preventDefault();
     setAddingUser(true);
     try {
-      const res = await api.createUser(newUserData);
+      const cleanUserData = {
+        ...newUserData,
+        name: newUserData.name.trim(),
+        email: newUserData.email.trim().toLowerCase()
+      };
+      const res = await api.createUser(cleanUserData);
       setUsers(prev => [...prev, res.user]);
       setShowAddUserModal(false);
       setNewUserData({
@@ -143,14 +148,18 @@ export function AdminDashboard({ initialTab = 'students' }) {
     }
   }
 
-  async function handleToggleStatus(userId) {
+  async function handleToggleStatus(userId, currentStatus) {
     try {
-      const res = await api.toggleUserStatus(userId);
-      setUsers(users.map(u => u.id === userId ? { ...u, status: res.user.status } : u));
-      setStatusMessage({ type: 'success', text: res.message });
+      const targetStatus = currentStatus === 'active' ? 'pending' : 'active';
+      const res = await api.updateUserStatus(userId, targetStatus);
+      setUsers(prev => prev.map(u => u.id === userId ? { ...u, status: res.user?.status || targetStatus } : u));
+      setStatusMessage({
+        type: 'success',
+        text: res.message || `Konto ist nun ${targetStatus === 'active' ? 'aktiviert' : 'gesperrt'}.`
+      });
       setTimeout(() => setStatusMessage(null), 3000);
     } catch (err) {
-      alert(`Fehler: ${err.message}`);
+      alert(`Fehler beim Ändern des Status: ${err.message}`);
     }
   }
 
@@ -413,7 +422,7 @@ export function AdminDashboard({ initialTab = 'students' }) {
                       <td className="py-3.5 px-4 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <button
-                            onClick={() => handleToggleStatus(u.id)}
+                            onClick={() => handleToggleStatus(u.id, u.status)}
                             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 shadow-sm cursor-pointer ${
                               isActive
                                 ? 'bg-slate-100 hover:bg-slate-200 text-slate-700'

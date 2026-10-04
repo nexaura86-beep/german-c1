@@ -40,40 +40,64 @@ const defaultUsers = [
   }
 ];
 
-function initDb() {
+let dbCache = null;
+
+function loadDb() {
+  if (dbCache) return dbCache;
+
   if (!fs.existsSync(DB_FILE)) {
     const initialData = {
       users: defaultUsers,
       topicsData: seedTopics,
-      submissions: []
+      submissions: [],
+      exams: []
     };
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf8');
-    return initialData;
+    try {
+      fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf8');
+    } catch (e) {
+      console.error('Failed to create initial database file:', e);
+    }
+    dbCache = initialData;
+    return dbCache;
   }
+
   try {
     const content = fs.readFileSync(DB_FILE, 'utf8');
     const parsed = JSON.parse(content);
-    if (!parsed.topicsData) {
-      parsed.topicsData = seedTopics;
-      fs.writeFileSync(DB_FILE, JSON.stringify(parsed, null, 2), 'utf8');
-    }
-    return parsed;
+    if (!parsed.topicsData) parsed.topicsData = seedTopics;
+    if (!parsed.users) parsed.users = defaultUsers;
+    if (!parsed.exams) parsed.exams = [];
+    if (!parsed.submissions) parsed.submissions = [];
+    dbCache = parsed;
+    return dbCache;
   } catch (err) {
-    console.error('Error reading database, resetting:', err);
-    return initDb();
+    console.error('Error reading database file:', err);
+    if (dbCache) return dbCache;
+    dbCache = { users: defaultUsers, topicsData: seedTopics, submissions: [], exams: [] };
+    return dbCache;
   }
 }
 
 export const db = {
-  read: () => initDb(),
+  read: () => loadDb(),
   write: (data) => {
-    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
+    dbCache = data;
+    try {
+      const tmpFile = `${DB_FILE}.tmp`;
+      fs.writeFileSync(tmpFile, JSON.stringify(data, null, 2), 'utf8');
+      fs.renameSync(tmpFile, DB_FILE);
+    } catch (err) {
+      console.error('Error saving database to file:', err);
+    }
   },
   
   // Users
-  getUsers: () => db.read().users || [],
+  getUsers: () => (db.read().users || []),
   getUserById: (id) => (db.read().users || []).find(u => u.id === id),
-  getUserByEmail: (email) => (db.read().users || []).find(u => u.email.toLowerCase() === email.toLowerCase()),
+  getUserByEmail: (email) => {
+    const clean = (email || '').trim().toLowerCase();
+    return (db.read().users || []).find(u => (u.email || '').trim().toLowerCase() === clean);
+  },
   addUser: (user) => {
     const data = db.read();
     if (!data.users) data.users = [];

@@ -15,7 +15,7 @@ export const api = {
     const res = await fetch(`${BASE_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email: (email || '').trim().toLowerCase(), password })
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Login fehlgeschlagen');
@@ -84,6 +84,17 @@ export const api = {
     const res = await fetch(`${BASE_URL}/admin/users/${userId}/toggle-status`, {
       method: 'PATCH',
       headers: getHeaders()
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Fehler beim Ändern des Status');
+    return data;
+  },
+
+  updateUserStatus: async (userId, status) => {
+    const res = await fetch(`${BASE_URL}/admin/users/${userId}/status`, {
+      method: 'PATCH',
+      headers: getHeaders(),
+      body: JSON.stringify({ status })
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Fehler beim Ändern des Status');

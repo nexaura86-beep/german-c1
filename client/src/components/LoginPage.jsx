@@ -43,18 +43,20 @@ export function LoginPage() {
         if (!name.trim() || !email.trim() || !password) {
           throw new Error('Bitte füllen Sie alle Pflichtfelder aus.');
         }
+        const cleanEmail = email.trim().toLowerCase();
         const res = await register({
           name: name.trim(),
-          email: email.trim(),
+          email: cleanEmail,
           password,
           targetExamDate
         });
         setSuccessMsg(res.message || 'Registrierung erfolgreich! Ihr Konto wartet auf Freischaltung durch den Administrator.');
+        setIsRegister(false); // Switch to login tab so user can log in immediately once activated
       } else {
         if (!email.trim() || !password) {
           throw new Error('Bitte geben Sie E-Mail und Passwort ein.');
         }
-        await login(email.trim(), password);
+        await login(email.trim().toLowerCase(), password);
       }
     } catch (err) {
       setErrorMsg(err.message || 'Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Daten.');
@@ -125,18 +127,34 @@ export function LoginPage() {
 
           {/* Alerts */}
           {errorMsg && (
-            <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 font-medium flex items-start gap-2 animate-shake">
-              <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-              <span>{errorMsg}</span>
+            <div className={`mb-4 p-3.5 rounded-xl border text-xs font-medium flex items-start gap-2.5 animate-shake ${
+              errorMsg.includes('freigeschaltet') || errorMsg.includes('Freischaltung')
+                ? 'bg-amber-50 border-amber-300 text-amber-900 shadow-xs'
+                : 'bg-red-50 border-red-200 text-red-700'
+            }`}>
+              <AlertCircle className={`w-4 h-4 shrink-0 mt-0.5 ${
+                errorMsg.includes('freigeschaltet') || errorMsg.includes('Freischaltung') ? 'text-amber-600' : 'text-red-600'
+              }`} />
+              <div>
+                <p className="font-bold">
+                  {errorMsg.includes('freigeschaltet') || errorMsg.includes('Freischaltung')
+                    ? 'Freischaltung erforderlich'
+                    : 'Anmeldung fehlgeschlagen'}
+                </p>
+                <p className="mt-0.5 leading-relaxed">{errorMsg}</p>
+              </div>
             </div>
           )}
 
           {successMsg && (
-            <div className="mb-4 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium flex items-start gap-2">
+            <div className="mb-4 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
               <div>
-                <p className="font-bold">Konto erfolgreich angelegt!</p>
-                <p className="mt-0.5 text-emerald-700">{successMsg}</p>
+                <p className="font-bold">Konto erfolgreich registriert!</p>
+                <p className="mt-0.5 text-emerald-700 leading-relaxed">{successMsg}</p>
+                <p className="mt-1 text-[11px] text-emerald-900 font-semibold">
+                  👉 Sobald die Prüfungsleitung Ihr Konto aktiviert hat, können Sie sich direkt hier mit Ihren Zugangsdaten anmelden.
+                </p>
               </div>
             </div>
           )}

@@ -92,7 +92,8 @@ app.post('/api/auth/login', (req, res) => {
       return res.status(400).json({ error: 'E-Mail und Passwort sind erforderlich' });
     }
 
-    const user = db.getUserByEmail(email);
+    const cleanEmail = (email || '').trim().toLowerCase();
+    const user = db.getUserByEmail(cleanEmail);
     if (!user) {
       return res.status(401).json({ error: 'Ungültige Anmeldedaten (E-Mail oder Passwort falsch)' });
     }
